@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.toc-main-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.toc-heading {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.toc-description {
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.form-links-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.form-link {
+  display: block;
+  font-size: 18px;
+  color: #0066cc;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.form-link:hover {
+  background-color: #e6f0ff;
+}

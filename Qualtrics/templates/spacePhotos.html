@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convening Survey Form</title>
+  <link rel="stylesheet" href="../static/CSS/style.css">
+  <!-- <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/form-components.css">
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="css/tabs.css">
+  <link rel="stylesheet" href="css/form-specific.css"> -->
+  <style>
+    /* .upload-section {
+      margin-bottom: 20px;
+    }
+
+    .upload-label {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: block;
+    }*/
+
+    .upload-box {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f8f8f8;
+      width: 100%;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+    }
+    /*
+    .table-of-content-button {
+      display: inline-block;
+      padding: 10px 15px;
+      font-size: 14px;
+      color: #fff;
+      background-color: #7b3b3b;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .table-of-content-button:hover {
+      background-color: #5a2929;
+    } */
+  </style>
+</head>
+<body>
+
+  <div class="formbold-main-wrapper ">
+    <div class="formbold-form-wrapper">
+      <form action="https://formbold.com/s/FORM_ID" method="POST">
+
+        <h1>Space Photos</h1>
+
+        <div class="upload-section">
+          <label class="upload-label">Photo 1: Upload a Photo of Space or Virtual Host Video Feed (not in-person or virtual participants)</label>
+          <div class="upload-box" onclick="document.getElementById('photo1').click()">Drop files or click here to upload</div>
+          <input type="file" id="photo1" style="display: none;">
+        </div>
+
+        <div class="upload-section">
+          <label class="upload-label">Photo 2 Optional: Upload another Photo of Space or Virtual Host Video Feed</label>
+          <div class="upload-box" onclick="document.getElementById('photo2').click()">Drop files or click here to upload</div>
+          <input type="file" id="photo2" style="display: none;">
+        </div>
+
+        <div class="upload-section">
+          <label class="upload-label">Photo 3 Optional: Upload another Photo of Space or Virtual Host Video Feed</label>
+          <div class="upload-box" onclick="document.getElementById('photo3').click()">Drop files or click here to upload</div>
+          <input type="file" id="photo3" style="display: none;">
+        </div>
+
+        <div class="button-container">
+          <button type="button" class="formbold-btn" onclick="navigateForm(-1)">Previous</button>
+          <button type="button" class="formbold-btn" onclick="navigateForm(1)">Next</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='index.html'">Index</button>
+        </div>
+
+        <!-- Tab Navigation for Forms -->
+        <div class="form-navigation">
+          <a href="conveningBasics.html" class="form-tab">Convening Basics</a>
+          <a href="conveningFormats&Spaces.html" class="form-tab">Convening Formats & Spaces</a>
+          <a href="spacePhotos.html" class="form-tab">Space Photos</a>
+          <a href="times&Counts.html" class="form-tab">Times and Counts</a>
+          <a href="procedures&Norms.html" class="form-tab">Procedures & Norms</a>
+          <a href="activities.html" class="form-tab">Activities</a>
+          <a href="organizing&Mobilizing.html" class="form-tab">Organizing & Mobilizing</a>
+          <a href="publicSphere.html" class="form-tab">Public-Sphere Discussion</a>
+          <a href="decisionMaking.html" class="form-tab">Decision Making</a>
+          <a href="planningStrategizing.html" class="form-tab">Planning/Strategizing</a>
+          <a href="leaders.html" class="form-tab">Leaders</a>
+          <a href="socialBoundaries.html" class="form-tab">Social Boundaries</a>
+          <a href="interactionStyles.html" class="form-tab">Interactions & Styles</a>
+          <a href="fieldNotes.html" class="form-tab">Field Notes</a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+<script>
+  document.getElementById('organization-role').addEventListener('change', function() {
+    var otherRoleGroup = document.getElementById('other-role-group');
+    if (this.value === 'other') {
+      otherRoleGroup.style.display = 'block';
+    } else {
+      otherRoleGroup.style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Times and Counts</title>
+  <link rel="stylesheet" href="../static/CSS/style.css">
+
+</head>
+<body>
+
+  <div class="formbold-main-wrapper ">
+    <div class="formbold-form-wrapper">
+      <form action="https://formbold.com/s/FORM_ID" method="POST">
+        <h1 class="formbold-heading">Times and Counts</h1>
+
+        <div class="formbold-input-group">
+          <label for="scheduled_start" class="formbold-form-label">Scheduled Start</label>
+          <input type="text" name="scheduled_start" id="scheduled_start" placeholder="Scheduled Start Time" class="formbold-form-input" />
+        </div>
+
+        <div class="formbold-input-group">
+          <label for="observer_arrives" class="formbold-form-label">Observer Arrives</label>
+          <input type="text" name="scheduled_start" id="scheduled_start" placeholder="Observer Arrives" class="formbold-form-input" />
+        </div>
+        <div class="formbold-input-group">
+          <label for="first_person_arrives" class="formbold-form-label">Forst Person Arrives</label>
+          <input type="text" name="first_person_arrives" id="first_person_arrives" placeholder="First Person Arrives" class="formbold-form-input" />
+        </div>
+
+        <div class="formbold-input-group">
+          <label for="first_person_arrives" class="formbold-form-label">First Person Arrives</label>
+          <input type="text" name="first_person_arrives" id="first_person_arrives" placeholder="First Person Arrives" class="formbold-form-input" />
+        </div>
+        <div class="formbold-input-group">
+          <label for="actual_start" class="formbold-form-label">Actual Start</label>
+          <input type="text" name="actual_start" id="actual_start" placeholder="Actual Start" class="formbold-form-input" />
+        </div>
+        <div class="formbold-input-group">
+          <label for="scheduled_half_time" class="formbold-form-label">Scheduled Half Time</label>
+          <input type="text" name="scheduled_half_time" id="scheduled_half_time" placeholder="Scheduled Half Time" class="formbold-form-input" />
+        </div>
+        <div class="formbold-input-group">
+          <label for="scheduled_end" class="formbold-form-label">Scheduled End</label>
+          <input type="text" name="scheduled_end" id="scheduled_end" placeholder="Scheduled End" class="formbold-form-input" />
+        </div>
+        <div class="formbold-input-group">
+          <label for="actual_end" class="formbold-form-label">Actual End</label>
+          <input type="text" name="actual_end" id="actual_end" placeholder="Actual End" class="formbold-form-input" />
+        </div>
+        <div class="formbold-input-group">
+          <label for="last_relevant_interaction" class="formbold-form-label">Last Relevant Interaction</label>
+          <input type="text" name="last_relevant_interaction" id="last_relevant_interaction" placeholder="Last Relevant Interation" class="formbold-form-input" />
+        </div>
+
+        <h2>Pre/Post Convening Talk</h2>
+        <p class="subtext"># of people in extended conversation before/after convening</p>
+  
+        <table class="convening-talk-table">
+          <tr>
+            <th class="row-header">People Talking</th>
+            <th>Number</th>
+            <th colspan="2">Talk value is...</th>
+          </tr>
+          <tr>
+            <td class="row-header">People talking 7 min Before Scheduled Start</td>
+            <td><input type="text" class="input-box" name="before_start_number"></td>
+            <td><input type="radio" name="before_start_value" value="ct"></td>
+            <td><input type="radio" name="before_start_value" value="est"></td>
+          </tr>
+          <tr>
+            <td class="row-header">People talking 7 min After Actual End</td>
+            <td><input type="text" class="input-box" name="after_end_number"></td>
+            <td><input type="radio" name="after_end_value" value="ct"></td>
+            <td><input type="radio" name="after_end_value" value="est"></td>
+          </tr>
+        </table>
+      
+        <h2>Rolling Total Counts:</h2>
+        
+        <table class="rolling-counts-table">
+          <tr>
+            <th class="row-header">Category</th>
+            <th>Number</th>
+            <th>Ct</th>
+            <th>Est</th>
+          </tr>
+          <tr>
+            <td class="row-header">Org Staff (in person)</td>
+            <td><input type="text" class="input-box" name="org_staff_in_person" value="0"></td>
+            <td><input type="radio" name="org_staff_in_person_value" value="ct"></td>
+            <td><input type="radio" name="org_staff_in_person_value" value="est"></td>
+          </tr>
+          <tr>
+            <td class="row-header">Org Staff (virtual)</td>
+            <td><input type="text" class="input-box" name="org_staff_virtual"></td>
+            <td><input type="radio" name="org_staff_virtual_value" value="ct"></td>
+            <td><input type="radio" name="org_staff_virtual_value" value="est"></td>
+          </tr>
+          <tr>
+            <td class="row-header">Non-staff Participant (in person)</td>
+            <td><input type="text" class="input-box" name="non_staff_in_person" value="0"></td>
+            <td><input type="radio" name="non_staff_in_person_value" value="ct"></td>
+            <td><input type="radio" name="non_staff_in_person_value" value="est"></td>
+          </tr>
+          <tr>
+            <td class="row-header">Participant (virtual)</td>
+            <td><input type="text" class="input-box" name="participant_virtual"></td>
+            <td><input type="radio" name="participant_virtual_value" value="ct"></td>
+            <td><input type="radio" name="participant_virtual_value" value="est"></td>
+          </tr>
+          <tr>
+            <td class="row-header">Notable Others</td>
+            <td><input type="text" class="input-box" name="notable_others"></td>
+            <td><input type="radio" name="notable_others_value" value="ct"></td>
+            <td><input type="radio" name="notable_others_value" value="est"></td>
+          </tr>
+          <tr>
+            <td class="row-header">Other belong (guard, waiter)</td>
+            <td><input type="text" class="input-box" name="other_belong" value="0"></td>
+            <td><input type="radio" name="other_belong_value" value="ct"></td>
+            <td><input type="radio" name="other_belong_value" value="est"></td>
+          </tr>
+          <tr>
+            <td class="row-header">Other random</td>
+            <td><input type="text" class="input-box" name="other_random" value="0"></td>
+            <td><input type="radio" name="other_random_value" value="ct"></td>
+            <td><input type="radio" name="other_random_value" value="est"></td>
+          </tr>
+          <tr>
+            <td class="row-header">Can't tell</td>
+            <td><input type="text" class="input-box" name="cant_tell" value="0"></td>
+            <td><input type="radio" name="cant_tell_value" value="ct"></td>
+            <td><input type="radio" name="cant_tell_value" value="est"></td>
+          </tr>
+          <tr>
+            <td class="row-header">Non-randoms wearing health/medical masks (cloth, surgical, N95, respirator)</td>
+            <td><input type="text" class="input-box" name="non_random_masks"></td>
+            <td><input type="radio" name="non_random_masks_value" value="ct"></td>
+            <td><input type="radio" name="non_random_masks_value" value="est"></td>
+          </tr>
+        </table>          
+        <!-- <button type="submit" class="formbold-btn">Submit</button> -->
+        <!-- Previous and Next Button Navigation -->
+        <div class="button-container">
+          <button type="button" class="formbold-btn" onclick="navigateForm(-1)">Previous</button>
+          <button type="button" class="formbold-btn" onclick="navigateForm(1)">Next</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='index.html'">Index</button>
+        </div>
+
+        <!-- Tab Navigation for Forms -->
+        <div class="form-navigation">
+          <a href="conveningBasics.html" class="form-tab">Convening Basics</a>
+          <a href="conveningFormats&Spaces.html" class="form-tab">Convening Formats & Spaces</a>
+          <a href="spacePhotos.html" class="form-tab">Space Photos</a>
+          <a href="times&Counts.html" class="form-tab">Times and Counts</a>
+          <a href="procedures&Norms.html" class="form-tab">Procedures & Norms</a>
+          <a href="activities.html" class="form-tab">Activities</a>
+          <a href="organizing&Mobilizing.html" class="form-tab">Organizing & Mobilizing</a>
+          <a href="publicSphere.html" class="form-tab">Public-Sphere Discussion</a>
+          <a href="decisionMaking.html" class="form-tab">Decision Making</a>
+          <a href="planningStrategizing.html" class="form-tab">Planning/Strategizing</a>
+          <a href="leaders.html" class="form-tab">Leaders</a>
+          <a href="socialBoundaries.html" class="form-tab">Social Boundaries</a>
+          <a href="interactionStyles.html" class="form-tab">Interactions & Styles</a>
+          <a href="fieldNotes.html" class="form-tab">Field Notes</a>
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+
+<script>
+  document.getElementById('organization-role').addEventListener('change', function() {
+    var otherRoleGroup = document.getElementById('other-role-group');
+    if (this.value === 'other') {
+      otherRoleGroup.style.display = 'block';
+    } else {
+      otherRoleGroup.style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>

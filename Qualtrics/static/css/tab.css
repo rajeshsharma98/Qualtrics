@@ -1,0 +1,27 @@
+/* tabs.css */
+.form-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.form-tab {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #6a64f1;
+  text-decoration: none;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  border: 1px solid #6a64f1;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.form-tab:hover {
+  background-color: #6a64f1;
+  color: #fff;
+}

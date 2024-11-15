@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convening Survey Form</title>
+  <link rel="stylesheet" href="../static/CSS/style.css">
+  <!-- <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/form-components.css">
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="css/tabs.css">
+  <link rel="stylesheet" href="css/form-specific.css"> -->
+</head>
+<body>
+
+  <div class="formbold-main-wrapper ">
+    <div class="formbold-form-wrapper">
+      <form action="https://formbold.com/s/FORM_ID" method="POST">
+        <h1 class="formbold-heading">Convening Basics</h1>
+
+        <!-- Location -->
+        <div class="formbold-input-group">
+          <label for="address" class="formbold-form-label">Address(es)</label>
+          <input type="text" name="address" id="address" placeholder="Enter location address(es) name" class="formbold-form-input" />
+        </div>
+
+        <div class="formbold-input-group">
+            <label for="place_name" class="formbold-form-label">Place Name(s)</label>
+            <input type="text" name="place_name" id="place_name" placeholder="Enter name of the place" class="formbold-form-input" />
+        </div>
+
+        <div class="formbold-input-group">
+            <label for="brief_description" class="formbold-form-label">Brtief Description</label>
+            <input type="text" name="brief_description" id="brief_description" placeholder="Enter Brief Description" class="formbold-form-input" />
+        </div>
+
+        <!-- Convening Format -->
+        <label class="formbold-form-label">Convening Format</label>
+        <!-- <p class="formbold-form-subtext">Select the applicable circumstances:</p> -->
+        <div class="formbold-grid-two-columns">
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="radio" class="formbold-input-radio" name="special_circumstances[]" value="too_long" />
+              <div class="formbold-card-content">
+                <span class="large-text">Online only (e.g. Zoom)</span>
+                <span class="small-text">observed online</span>
+              </div>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="radio" class="formbold-input-radio" name="special_circumstances[]" value="multiple_concurrent" />
+              <div class="formbold-card-content">
+                <span class="large-text">In person only (no virtual participants)</span>
+                <span class="small-text">observed in person</span>
+              </div>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="radio" class="formbold-input-radio" name="special_circumstances[]" value="fifty_or_more" />
+              <div class="formbold-card-content">
+                <span class="large-text">Hybrid, in person with virtual participants</span>
+                <span class="small-text">observed in person</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="radio" class="formbold-input-radio" name="special_circumstances[]" value="part_of_event" />
+              <div class="formbold-card-content">
+                <span class="large-text">Hybrid, in person with virtual participants</span>
+                <span class="small-text">observed online</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+          
+        <!-- Organization -->
+        <label class="formbold-form-label">Convening Format</label>
+        <!-- <p class="formbold-form-subtext">Select the applicable circumstances:</p> -->
+        <div class="formbold-grid-two-columns">
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="radio" class="formbold-input-radio" name="special_circumstances[]" value="too_long" />
+              <div class="formbold-card-content">
+                <span class="large-text">Online only (e.g. Zoom)</span>
+                <span class="small-text">observed online</span>
+              </div>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="radio" class="formbold-input-radio" name="special_circumstances[]" value="multiple_concurrent" />
+              <div class="formbold-card-content">
+                <span class="large-text">In person only (no virtual participants)</span>
+                <span class="small-text">observed in person</span>
+              </div>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="radio" class="formbold-input-radio" name="special_circumstances[]" value="fifty_or_more" />
+              <div class="formbold-card-content">
+                <span class="large-text">Hybrid, in person with virtual participants</span>
+                <span class="small-text">observed in person</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="radio" class="formbold-input-radio" name="special_circumstances[]" value="part_of_event" />
+              <div class="formbold-card-content">
+                <span class="large-text">Hybrid, in person with virtual participants</span>
+                <span class="small-text">observed online</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Organization Role -->
+        <div class="formbold-input-group">
+          <label class="formbold-form-label">Organization Role</label>
+          <select class="formbold-form-select" name="organization_role" id="organization-role">
+            <option value="sole_host">Sole/primary host</option>
+            <option value="coalition">Coalition, Committee, or Partnership</option>
+            <option value="attendee">Attendee</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+          
+        <div class="formbold-input-group" id="other-role-group" style="display: none;">
+          <label for="other-role" class="formbold-form-label">Please specify:</label>
+          <input type="text" id="other-role" name="other_role" placeholder="Enter your role" class="formbold-form-input" />
+        </div>
+          
+        <!-- Convening Type -->
+              <label class="formbold-form-label">Convening Type</label>
+              <p class="formbold-form-subtext">Select the type of convening:</p>
+              <div class="formbold-grid-two-columns">
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="radio" class="formbold-input-radio" name="convening_type" value="business_meeting" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Business/Planning/Decision-making Meeting</span>
+                    </div>
+                  </label>
+                </div>
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="radio" class="formbold-input-radio" name="convening_type" value="fundraising_event" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Fundraising Event</span>
+                    </div>
+                  </label>
+                </div>
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="radio" class="formbold-input-radio" name="convening_type" value="recruitment_event" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Recruitment Event</span>
+                    </div>
+                  </label>
+                </div>
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="radio" class="formbold-input-radio" name="convening_type" value="press_conference" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Press Conference</span>
+                    </div>
+                  </label>
+                </div>
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="radio" class="formbold-input-radio" name="convening_type" value="training_event" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Initiation/Training Event</span>
+                    </div>
+                  </label>
+                </div>
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="radio" class="formbold-input-radio" name="convening_type" value="meeting_gov_officials" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Meeting with Government Officials</span>
+                    </div>
+                  </label>
+                </div>
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="radio" class="formbold-input-radio" name="convening_type" value="social_activity" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Social/Recreational Activity</span>
+                    </div>
+                  </label>
+                </div>
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="radio" class="formbold-input-radio" name="convening_type" value="meeting_org_representatives" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Meeting with Other Organization Representatives</span>
+                    </div>
+                  </label>
+                </div>
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="radio" class="formbold-input-radio" name="convening_type" value="participant_benefit" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Member/Participant-Benefit Activity</span>
+                    </div>
+                  </label>
+                </div>
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="radio" class="formbold-input-radio" name="convening_type" value="meeting_outsiders" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Meeting with Other Outsiders</span>
+                    </div>
+                  </label>
+                </div>
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="radio" class="formbold-input-radio" name="convening_type" value="community_activity" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Community/Public-Benefit Activity</span>
+                    </div>
+                  </label>
+                </div>
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="radio" class="formbold-input-radio" name="convening_type" value="protest_event" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Protest Event</span>
+                    </div>
+                  </label>
+                </div>
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="radio" class="formbold-input-radio" name="convening_type" value="rehearsal_practice" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Rehearsal/practice</span>
+                    </div>
+                  </label>
+                </div>
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="radio" class="formbold-input-radio" name="convening_type" value="other_type" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Other Convening Type</span>
+                    </div>
+                  </label>
+                </div>
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="radio" class="formbold-input-radio" name="convening_type" value="performance_game" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Performance/game</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+          
+        <!-- Exclusivity -->
+            <label class="formbold-form-label">Exclusivity</label>
+            <p class="formbold-form-subtext">Who is allowed to attend?</p>
+            <div class="formbold-grid">
+              <div class="formbold-card">
+                <label class="formbold-radio-label">
+                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="private" />
+                  <div class="formbold-card-content">
+                    <span class="large-text">Private</span>
+                    <span class="small-text">specific people</span>
+                  </div>
+                </label>
+              </div>
+              <div class="formbold-card">
+                <label class="formbold-radio-label">
+                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="excludable_public" />
+                  <div class="formbold-card-content">
+                    <span class="large-text">Excludable public</span>
+                    <span class="small-text">anyone who buys a ticket/registers</span>
+                  </div>
+                </label>
+              </div>
+              <div class="formbold-card">
+                <label class="formbold-radio-label">
+                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="fully_public" />
+                  <div class="formbold-card-content">
+                    <span class="large-text">Fully Public</span>
+                    <span class="small-text">anyone</span>
+                  </div>
+                </label>
+              </div>
+              <div class="formbold-card">
+                <label class="formbold-radio-label">
+                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="ct" />
+                  <div class="formbold-card-content">
+                    <span class="large-text">CT</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+          
+        <!-- Attendance -->
+        <div class="formbold-input-radio-wrapper">
+            <label class="formbold-form-label">Attendance</label>
+            <div class="formbold-grid-two-columns">
+              <div class="formbold-card">
+                <label class="formbold-radio-label">
+                  <input type="radio" class="formbold-input-radio" name="attendance" value="drop_by" />
+                  <div class="formbold-card-content">
+                    <span class="large-text">Drop by</span>
+                  </div>
+                </label>
+              </div>
+              <div class="formbold-card">
+                <label class="formbold-radio-label">
+                  <input type="radio" class="formbold-input-radio" name="attendance" value="attend_whole" />
+                  <div class="formbold-card-content">
+                    <span class="large-text">Attend whole</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          
+
+        <!-- Timing -->
+        <div class="formbold-input-radio-wrapper">
+            <label class="formbold-form-label">Timing</label>
+            <div class="formbold-grid-two-columns">
+              <div class="formbold-card">
+                <label class="formbold-radio-label">
+                  <input type="radio" class="formbold-input-radio" name="timing" value="pre_planned" />
+                  <div class="formbold-card-content">
+                    <span class="large-text">Pre-planned</span>
+                  </div>
+                </label>
+              </div>
+              <div class="formbold-card">
+                <label class="formbold-radio-label">
+                  <input type="radio" class="formbold-input-radio" name="timing" value="post_impromptu" />
+                  <div class="formbold-card-content">
+                    <span class="large-text">Post/Impromptu</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          
+          <div class = "feature-table">
+            <table class="features-table">
+              <tr>
+                <th rowspan="2" class="feature-column">Features</th>
+                <th colspan="2">Available</th>
+                <th colspan="2">Works?</th>
+              </tr>
+              <tr>
+                <th>Yes</th>
+                <th>Used</th>
+                <th>Acceptable</th>
+                <th>No or Detrimental</th>
+              </tr>
+        
+              <!-- Row for each feature with unique ids and classes -->
+              <tr id="feature-stage">
+                <td class="feature-column">Stage</td>
+                <td><input type="checkbox" id="stage_available" name="stage_available" class="feature-checkbox-table"></td>
+                <td><input type="checkbox" id="stage_used" name="stage_used" class="feature-checkbox-table"></td>
+                <td><input type="radio" id="stage_works_acceptable" name="stage_works" value="acceptable" class="feature-radio-table"></td>
+                <td><input type="radio" id="stage_works_no_detrimental" name="stage_works" value="no_detrimental" class="feature-radio-table"></td>
+              </tr>
+              
+              <tr id="feature-podium">
+                <td class="feature-column">Podium</td>
+                <td><input type="checkbox" id="podium_available" name="podium_available" class="feature-checkbox-table"></td>
+                <td><input type="checkbox" id="podium_used" name="podium_used" class="feature-checkbox-table"></td>
+                <td><input type="radio" id="podium_works_acceptable" name="podium_works" value="acceptable" class="feature-radio-table"></td>
+                <td><input type="radio" id="podium_works_no_detrimental" name="podium_works" value="no_detrimental" class="feature-radio-table"></td>
+              </tr>
+              
+              <tr id="feature-amplification">
+                <td class="feature-column">Amplification System</td>
+                <td><input type="checkbox" id="amplification_available" name="amplification_available" class="feature-checkbox-table"></td>
+                <td><input type="checkbox" id="amplification_used" name="amplification_used" class="feature-checkbox-table"></td>
+                <td><input type="radio" id="amplification_works_acceptable" name="amplification_works" value="acceptable" class="feature-radio-table"></td>
+                <td><input type="radio" id="amplification_works_no_detrimental" name="amplification_works" value="no_detrimental" class="feature-radio-table"></td>
+              </tr>
+              
+              <tr id="feature-microphone">
+                <td class="feature-column">Microphone</td>
+                <td><input type="checkbox" id="microphone_available" name="microphone_available" class="feature-checkbox-table"></td>
+                <td><input type="checkbox" id="microphone_used" name="microphone_used" class="feature-checkbox-table"></td>
+                <td><input type="radio" id="microphone_works_acceptable" name="microphone_works" value="acceptable" class="feature-radio-table"></td>
+                <td><input type="radio" id="microphone_works_no_detrimental" name="microphone_works" value="no_detrimental" class="feature-radio-table"></td>
+              </tr>
+              
+              <tr id="feature-screen">
+                <td class="feature-column">Large Screen/Projection</td>
+                <td><input type="checkbox" id="screen_available" name="screen_available" class="feature-checkbox-table"></td>
+                <td><input type="checkbox" id="screen_used" name="screen_used" class="feature-checkbox-table"></td>
+                <td><input type="radio" id="screen_works_acceptable" name="screen_works" value="acceptable" class="feature-radio-table"></td>
+                <td><input type="radio" id="screen_works_no_detrimental" name="screen_works" value="no_detrimental" class="feature-radio-table"></td>
+              </tr>
+              
+              <tr id="feature-single-desk">
+                <td class="feature-column">Single-person Desks</td>
+                <td><input type="checkbox" id="single_desk_available" name="single_desk_available" class="feature-checkbox-table"></td>
+                <td><input type="checkbox" id="single_desk_used" name="single_desk_used" class="feature-checkbox-table"></td>
+                <td><input type="radio" id="single_desk_works_acceptable" name="single_desk_works" value="acceptable" class="feature-radio-table"></td>
+                <td><input type="radio" id="single_desk_works_no_detrimental" name="single_desk_works" value="no_detrimental" class="feature-radio-table"></td>
+              </tr>
+              
+              <tr id="feature-multi-table">
+                <td class="feature-column">Multi-person Tables</td>
+                <td><input type="checkbox" id="multi_table_available" name="multi_table_available" class="feature-checkbox-table"></td>
+                <td><input type="checkbox" id="multi_table_used" name="multi_table_used" class="feature-checkbox-table"></td>
+                <td><input type="radio" id="multi_table_works_acceptable" name="multi_table_works" value="acceptable" class="feature-radio-table"></td>
+                <td><input type="radio" id="multi_table_works_no_detrimental" name="multi_table_works" value="no_detrimental" class="feature-radio-table"></td>
+              </tr>
+              
+              <tr id="feature-ramps">
+                <td class="feature-column">Accessible Ramps/Lifts</td>
+                <td><input type="checkbox" id="ramps_available" name="ramps_available" class="feature-checkbox-table"></td>
+                <td><input type="checkbox" id="ramps_used" name="ramps_used" class="feature-checkbox-table"></td>
+                <td><input type="radio" id="ramps_works_acceptable" name="ramps_works" value="acceptable" class="feature-radio-table"></td>
+                <td><input type="radio" id="ramps_works_no_detrimental" name="ramps_works" value="no_detrimental" class="feature-radio-table"></td>
+              </tr>
+              
+              <tr id="feature-sink">
+                <td class="feature-column">Sink with Running Water</td>
+                <td><input type="checkbox" id="sink_available" name="sink_available" class="feature-checkbox-table"></td>
+                <td><input type="checkbox" id="sink_used" name="sink_used" class="feature-checkbox-table"></td>
+                <td><input type="radio" id="sink_works_acceptable" name="sink_works" value="acceptable" class="feature-radio-table"></td>
+                <td><input type="radio" id="sink_works_no_detrimental" name="sink_works" value="no_detrimental" class="feature-radio-table"></td>
+              </tr>
+              
+              <tr id="feature-restroom">
+                <td class="feature-column">Adjacent/Adjoining Restroom</td>
+                <td><input type="checkbox" id="restroom_available" name="restroom_available" class="feature-checkbox-table"></td>
+                <td><input type="checkbox" id="restroom_used" name="restroom_used" class="feature-checkbox-table"></td>
+                <td><input type="radio" id="restroom_works_acceptable" name="restroom_works" value="acceptable" class="feature-radio-table"></td>
+                <td><input type="radio" id="restroom_works_no_detrimental" name="restroom_works" value="no_detrimental" class="feature-radio-table"></td>
+              </tr>
+            </table>
+          </div>
+
+          
+        <!-- <button type="submit" class="formbold-btn">Submit</button> -->
+        <!-- Previous and Next Button Navigation -->
+        <div class="button-container">
+          <button type="button" class="formbold-btn" onclick="navigateForm(-1)">Previous</button>
+          <button type="button" class="formbold-btn" onclick="navigateForm(1)">Next</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='index.html'">Index</button>
+        </div>
+
+        <!-- Tab Navigation for Forms -->
+        <div class="form-navigation">
+          <a href="conveningBasics.html" class="form-tab">Convening Basics</a>
+          <a href="conveningFormats&Spaces.html" class="form-tab">Convening Formats & Spaces</a>
+          <a href="spacePhotos.html" class="form-tab">Space Photos</a>
+          <a href="times&Counts.html" class="form-tab">Times and Counts</a>
+          <a href="procedures&Norms.html" class="form-tab">Procedures & Norms</a>
+          <a href="activities.html" class="form-tab">Activities</a>
+          <a href="organizing&Mobilizing.html" class="form-tab">Organizing & Mobilizing</a>
+          <a href="publicSphere.html" class="form-tab">Public-Sphere Discussion</a>
+          <a href="decisionMaking.html" class="form-tab">Decision Making</a>
+          <a href="planningStrategizing.html" class="form-tab">Planning/Strategizing</a>
+          <a href="leaders.html" class="form-tab">Leaders</a>
+          <a href="socialBoundaries.html" class="form-tab">Social Boundaries</a>
+          <a href="interactionStyles.html" class="form-tab">Interactions & Styles</a>
+          <a href="fieldNotes.html" class="form-tab">Field Notes</a>
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+
+<script>
+  document.getElementById('organization-role').addEventListener('change', function() {
+    var otherRoleGroup = document.getElementById('other-role-group');
+    if (this.value === 'other') {
+      otherRoleGroup.style.display = 'block';
+    } else {
+      otherRoleGroup.style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>
+
+  
