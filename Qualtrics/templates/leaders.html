@@ -3,346 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Convening Survey Form</title>
+  <title>Convening Leaders</title>
   <link rel="stylesheet" href="../static/CSS/style.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .subtext {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .table-container {
+      width: 100%;
+      overflow-x: auto; /* Enable horizontal scrolling */
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      min-width: 800px; /* Ensure table retains structure */
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      font-weight: bold;
+      background-color: #f9f9f9;
+    }
+
+    .row-header {
+      text-align: center;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      transform: scale(1.2);
+      accent-color: #7b3b3b;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #000;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 600px) {
+      /* Stack table into vertical cards for smaller screens */
+      table {
+        border: 0;
+      }
+
+      table caption {
+        font-size: 1.3em;
+        margin: .5em 0;
+      }
+
+      table thead {
+        display: none; /* Hide table headers */
+      }
+
+      table tr {
+        display: block;
+        margin-bottom: 1em;
+      }
+
+      table td {
+        display: block;
+        text-align: right;
+        font-size: 14px;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        padding-left: 50%;
+      }
+
+      table td::before {
+        content: attr(data-label); /* Add label before each data cell */
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: calc(50% - 10px);
+        font-weight: bold;
+        text-align: left;
+      }
+
+      input[type="text"] {
+        width: calc(100% - 20px);
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <div class="formbold-main-wrapper ">
-    <div class="formbold-form-wrapper toc-main-wrapper">
-      <form action="https://formbold.com/s/FORM_ID" method="POST">
-        <h1 class="formbold-heading">Convening Basics</h1>
+  <h1>Convening Leaders</h1>
+  <p class="subtext">Describe anyone who is personally responsible for running a portion of the convening.</p>
+  
+  <div class="table-container">
+    <table>
+      <tr>
+        <th rowspan="2">Leader</th>
+        <th colspan="5">Status</th>
+        <th rowspan="2">Convening MC?</th>
+        <th colspan="3">Gender</th>
+        <th colspan="7">Race/Ethnicity</th>
+      </tr>
+      <tr>
+        <th>Org Staff</th>
+        <th>Non-staff Org Leader</th>
+        <th>Outsider/Guest</th>
+        <th>Other Participant</th>
+        <th>Don't Know/Can't Tell</th>
+        <th>Yes</th>
+        <th>Man</th>
+        <th>Woman</th>
+        <th>NonB/Can't Tell</th>
+        <th>White</th>
+        <th>Black</th>
+        <th>Latinx</th>
+        <th>Asian</th>
+        <th>Other (Non-White)</th>
+        <th>Can't Tell</th>
+      </tr>
 
-        <div class="formbold-input-group">
-          <label for="observer" class="formbold-form-label">Observer</label>
-          <input type="text" name="observer" id="observer" placeholder="Enter observer name" class="formbold-form-input" />
-        </div>
-
-        <div class="formbold-input-group">
-            <label for="date" class="formbold-form-label">Date (MM/DD/YY)</label>
-            <input type="text" name="date" id="date" placeholder="Enter date MM/DD/YY" class="formbold-form-input" />
-        </div>
-
-        <div class="formbold-input-group">
-            <label for="name_of_convening" class="formbold-form-label">Name of Convening</label>
-            <input type="text" name="name_of_convening" id="name_of_convening" placeholder="Enter Name of Convening" class="formbold-form-input" />
-        </div>
-
-        <!-- Special Circumstances -->
-        <div class="formbold-main-wrapper">
-            <div class="formbold-form-wrapper">
-              <label class="formbold-form-label">Special Circumstances</label>
-              <p class="formbold-form-subtext">Select the applicable circumstances:</p>
-              <div class="formbold-grid-two-columns">
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="too_long" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Too long</span>
-                      <span class="small-text">too long for one observation</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="multiple_concurrent" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Multiple concurrent locations, observing 1</span>
-                      <span class="small-text">held at several places at once</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="fifty_or_more" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">50 or more people</span>
-                      <span class="small-text">demographic %s instead of counts</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="multiple_observing" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Multiple concurrent locations observing 2+</span>
-                      <span class="small-text">held at several places at once</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Part of larger event</span>
-                      <span class="small-text">convening is part of a larger event</span>
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-
-        <!-- Organization -->
-        <div class="formbold-input-group">
-          <label for="organization" class="formbold-form-label">Organization</label>
-          <input type="text" name="organization" id="organization" placeholder="Enter organization name" class="formbold-form-input" />
-        </div>
-
-        <!-- Organization Role -->
-        <div class="formbold-input-group">
-          <label class="formbold-form-label">Organization Role</label>
-          <select class="formbold-form-select" name="organization_role" id="organization-role">
-            <option value="sole_host">Sole/primary host</option>
-            <option value="coalition">Coalition, Committee, or Partnership</option>
-            <option value="attendee">Attendee</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-          
-        <div class="formbold-input-group" id="other-role-group" style="display: none;">
-          <label for="other-role" class="formbold-form-label">Please specify:</label>
-          <input type="text" id="other-role" name="other_role" placeholder="Enter your role" class="formbold-form-input" />
-        </div>
-          
-        <!-- Convening Type -->
-        <div class="formbold-main-wrapper">
-            <div class="formbold-form-wrapper">
-              <label class="formbold-form-label">Convening Type</label>
-              <p class="formbold-form-subtext">Select the type of convening:</p>
-              <div class="formbold-grid-two-columns">
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="business_meeting" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Business/Planning/Decision-making Meeting</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="fundraising_event" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Fundraising Event</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="recruitment_event" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Recruitment Event</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="press_conference" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Press Conference</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="training_event" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Initiation/Training Event</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="meeting_gov_officials" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Meeting with Government Officials</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="social_activity" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Social/Recreational Activity</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="meeting_org_representatives" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Meeting with Other Organization Representatives</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="participant_benefit" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Member/Participant-Benefit Activity</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="meeting_outsiders" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Meeting with Other Outsiders</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="community_activity" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Community/Public-Benefit Activity</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="protest_event" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Protest Event</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="rehearsal_practice" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Rehearsal/practice</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="other_type" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Other Convening Type</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="performance_game" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Performance/game</span>
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        <!-- Exclusivity -->
-        <div class="formbold-main-wrapper">
-          <div class="formbold-form-wrapper">
-            <label class="formbold-form-label">Exclusivity</label>
-            <p class="formbold-form-subtext">Who is allowed to attend?</p>
-            <div class="formbold-grid">
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="private" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Private</span>
-                    <span class="small-text">specific people</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="excludable_public" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Excludable public</span>
-                    <span class="small-text">anyone who buys a ticket/registers</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="fully_public" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Fully Public</span>
-                    <span class="small-text">anyone</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="ct" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">CT</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-          
-        <!-- Attendance -->
-        <div class="formbold-input-radio-wrapper">
-            <label class="formbold-form-label">Attendance</label>
-            <div class="formbold-grid-two-columns">
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="attendance" value="drop_by" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Drop by</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="attendance" value="attend_whole" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Attend whole</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-          
-
-        <!-- Timing -->
-        <div class="formbold-input-radio-wrapper">
-            <label class="formbold-form-label">Timing</label>
-            <div class="formbold-grid-two-columns">
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="timing" value="pre_planned" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Pre-planned</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="timing" value="post_impromptu" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Post/Impromptu</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-          
-
-        <button type="submit" class="formbold-btn">Submit</button>
-      </form>
-    </div>
+      <!-- Row template -->
+      <tr>
+        <td data-label="Leader"><input type="checkbox" name="leader_1"></td>
+        <td data-label="Org Staff"><input type="radio" name="status_1" value="org_staff"></td>
+        <td data-label="Non-staff Org Leader"><input type="radio" name="status_1" value="non_staff_org_leader"></td>
+        <td data-label="Outsider/Guest"><input type="radio" name="status_1" value="outsider_guest"></td>
+        <td data-label="Other Participant"><input type="radio" name="status_1" value="other_participant"></td>
+        <td data-label="Don't Know/Can't Tell"><input type="radio" name="status_1" value="dont_know"></td>
+        <td data-label="Convening MC?"><input type="checkbox" name="mc_1"></td>
+        <td data-label="Man"><input type="radio" name="gender_1" value="man"></td>
+        <td data-label="Woman"><input type="radio" name="gender_1" value="woman"></td>
+        <td data-label="NonB/Can't Tell"><input type="radio" name="gender_1" value="non_binary"></td>
+        <td data-label="White"><input type="radio" name="race_1" value="white"></td>
+        <td data-label="Black"><input type="radio" name="race_1" value="black"></td>
+        <td data-label="Latinx"><input type="radio" name="race_1" value="latinx"></td>
+        <td data-label="Asian"><input type="radio" name="race_1" value="asian"></td>
+        <td data-label="Other (Non-White)"><input type="radio" name="race_1" value="other_non_white"></td>
+        <td data-label="Can't Tell"><input type="radio" name="race_1" value="cant_tell"></td>
+      </tr>
+      <!-- Add more rows as needed -->
+    </table>
+  </div>
+  <div class="button-container">
+    <button type="button" class="formbold-btn" onclick="navigateForm(-1)">Previous</button>
+    <button type="button" class="formbold-btn" onclick="navigateForm(1)">Next</button>
+    <button type="button" class="formbold-btn" onclick="window.location.href='index.html'">Index</button>
   </div>
 
-<script>
-  document.getElementById('organization-role').addEventListener('change', function() {
-    var otherRoleGroup = document.getElementById('other-role-group');
-    if (this.value === 'other') {
-      otherRoleGroup.style.display = 'block';
-    } else {
-      otherRoleGroup.style.display = 'none';
-    }
-  });
-</script>
+  <!-- Tab Navigation for Forms -->
+  <div class="form-navigation">
+    <a href="conveningBasics.html" class="form-tab">Convening Basics</a>
+    <a href="conveningFormats&Spaces.html" class="form-tab">Convening Formats & Spaces</a>
+    <a href="spacePhotos.html" class="form-tab">Space Photos</a>
+    <a href="times&Counts.html" class="form-tab">Times and Counts</a>
+    <a href="procedures&Norms.html" class="form-tab">Procedures & Norms</a>
+    <a href="activities.html" class="form-tab">Activities</a>
+    <a href="organizing&Mobilizing.html" class="form-tab">Organizing & Mobilizing</a>
+    <a href="publicSphere.html" class="form-tab">Public-Sphere Discussion</a>
+    <a href="decisionMaking.html" class="form-tab">Decision Making</a>
+    <a href="planningStrategizing.html" class="form-tab">Planning/Strategizing</a>
+    <a href="leaders.html" class="form-tab">Leaders</a>
+    <a href="socialBoundaries.html" class="form-tab">Social Boundaries</a>
+    <a href="interactionStyles.html" class="form-tab">Interactions & Styles</a>
+    <a href="fieldNotes.html" class="form-tab">Field Notes</a>
+  </div>
 </body>
 </html>

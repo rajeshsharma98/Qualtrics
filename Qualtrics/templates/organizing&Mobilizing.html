@@ -5,41 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Convening Survey Form</title>
   <link rel="stylesheet" href="../static/CSS/style.css">
+  <!-- <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/form-components.css">
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="css/tabs.css">
+  <link rel="stylesheet" href="css/form-specific.css"> -->
 </head>
 <body>
 
   <div class="formbold-main-wrapper ">
-    <div class="formbold-form-wrapper toc-main-wrapper">
+    <div class="formbold-form-wrapper">
       <form action="https://formbold.com/s/FORM_ID" method="POST">
-        <h1 class="formbold-heading">Convening Basics</h1>
+        <h1 class="formbold-heading">Organizing and Mobilizing</h1>
+        <p class="formbold-form-subtext">Organizing is an established tradition of CSO structure and operation that engages participants in collective action and builds their individual and collective political capacity. Mobilizing is a set of practices geared toward turning out large numbers of people for actions or events. The two are distinct. Organizations could practice either or both. Look closely for specific evidence of either approach in any activities or discussions at the convening.</p>
 
-        <div class="formbold-input-group">
-          <label for="observer" class="formbold-form-label">Observer</label>
-          <input type="text" name="observer" id="observer" placeholder="Enter observer name" class="formbold-form-input" />
-        </div>
-
-        <div class="formbold-input-group">
-            <label for="date" class="formbold-form-label">Date (MM/DD/YY)</label>
-            <input type="text" name="date" id="date" placeholder="Enter date MM/DD/YY" class="formbold-form-input" />
-        </div>
-
-        <div class="formbold-input-group">
-            <label for="name_of_convening" class="formbold-form-label">Name of Convening</label>
-            <input type="text" name="name_of_convening" id="name_of_convening" placeholder="Enter Name of Convening" class="formbold-form-input" />
-        </div>
-
-        <!-- Special Circumstances -->
-        <div class="formbold-main-wrapper">
-            <div class="formbold-form-wrapper">
-              <label class="formbold-form-label">Special Circumstances</label>
-              <p class="formbold-form-subtext">Select the applicable circumstances:</p>
+          <!-- Convening Type -->
+              <label class="formbold-form-label">Which of the following ORGANIZING PRACTICES were selected, assigned, or executed during the convening?
+              </label>
+              <p class="formbold-form-subtext">(actual start to actual end)</p>
               <div class="formbold-grid-two-columns">
                 <div class="formbold-card">
                   <label class="formbold-radio-label">
                     <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="too_long" />
                     <div class="formbold-card-content">
-                      <span class="large-text">Too long</span>
-                      <span class="small-text">too long for one observation</span>
+                      <span class="large-text">Unstructured 1-on-1s:</span>
+                      <span class="small-text">Participants having intentional but unstructured one-on-one conversations with each other
+                      </span>
                     </div>
                   </label>
                 </div>
@@ -47,8 +39,8 @@
                   <label class="formbold-radio-label">
                     <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="multiple_concurrent" />
                     <div class="formbold-card-content">
-                      <span class="large-text">Multiple concurrent locations, observing 1</span>
-                      <span class="small-text">held at several places at once</span>
+                      <span class="large-text">Structured 1-on-1s:</span>
+                      <span class="small-text">Participants having structured one-on-one conversations with each other</span>
                     </div>
                   </label>
                 </div>
@@ -56,17 +48,20 @@
                   <label class="formbold-radio-label">
                     <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="fifty_or_more" />
                     <div class="formbold-card-content">
-                      <span class="large-text">50 or more people</span>
-                      <span class="small-text">demographic %s instead of counts</span>
+                      <span class="large-text">Teaching 1-on-1s:</span>
+                      <span class="small-text">Teaching participants how to have effective one-on-one conversations
+                      </span>
                     </div>
                   </label>
                 </div>
+
                 <div class="formbold-card">
                   <label class="formbold-radio-label">
                     <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="multiple_observing" />
                     <div class="formbold-card-content">
-                      <span class="large-text">Multiple concurrent locations observing 2+</span>
-                      <span class="small-text">held at several places at once</span>
+                      <span class="large-text">Planning 1-on-1s:</span>
+                      <span class="small-text">Making plans for future one-on-one conversations
+                      </span>
                     </div>
                   </label>
                 </div>
@@ -74,262 +69,279 @@
                   <label class="formbold-radio-label">
                     <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
                     <div class="formbold-card-content">
-                      <span class="large-text">Part of larger event</span>
-                      <span class="small-text">convening is part of a larger event</span>
+                      <span class="large-text">Commitments:</span>
+                      <span class="small-text">Participants making public commitments to take future actions</span>
                     </div>
                   </label>
                 </div>
+  
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Accountability:</span>
+                      <span class="small-text">Participants hold other participants accountable for prior commitments
+                      </span>
+                    </div>
+                  </label>
+                </div>
+              
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Delegating Outcomes:</span>
+                      <span class="small-text">Delegating responsibility for achieving specific outcomes (not just completing certain tasks) to participants
+                      </span>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Granting Autonomy:</span>
+                      <span class="small-text">Giving participants the ability to decide how they will achieve an outcome
+                      </span>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Interdependent Teams:</span>
+                      <span class="small-text">Creating small teams of participants to work together to produce outcomes
+                      </span>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Political Voice Skills:</span>
+                      <span class="small-text">Intentionally developing participants' skills for taking political action/expressing political voice
+                      </span>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Organizational Leadership Skills:</span>
+                      <span class="small-text">Intentionally developing participants' skills for being a leader/exercising authority in the organization
+                      </span>
+                    </div>
+                  </label>
+                </div>
+              
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Public Narrative:</span>
+                      <span class="small-text">Intentionally developing, practicing, or telling participants' own personal stories (as they relate to the organization or an issue)
+                      </span>
+                    </div>
+                  </label>
+                </div>
+              
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Power Analysis:</span>
+                      <span class="small-text">Explicit discussion of who outside the organization currently holds power relative to a problem/issue
+                      </span>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="formbold-card">
+                  <label class="formbold-radio-label">
+                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
+                    <div class="formbold-card-content">
+                      <span class="large-text">Sequenced Actions:</span>
+                      <span class="small-text">Developing actions that intentionally build on one another
+                      </span>
+                    </div>
+                  </label>
+                </div>
+
+              </div>
+
+
+          <!-- Convening Type -->
+            <label class="formbold-form-label">Which of the following MOBILIZING PRACTICES were selected, assigned, or executed during the convening?
+            </label>
+            <p class="formbold-form-subtext">(actual start to actual end)</p>
+            <div class="formbold-grid-two-columns">
+              <div class="formbold-card">
+                <label class="formbold-radio-label">
+                  <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="too_long" />
+                  <div class="formbold-card-content">
+                    <span class="large-text">List Building:</span>
+                    <span class="small-text">Building large lists of names and contact information
+                    </span>
+                  </div>
+                </label>
+              </div>
+              <div class="formbold-card">
+                <label class="formbold-radio-label">
+                  <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="multiple_concurrent" />
+                  <div class="formbold-card-content">
+                    <span class="large-text">Mass Contacting:</span>
+                    <span class="small-text">Contacting large numbers of people through email or social media</span>
+                  </div>
+                </label>
+              </div>
+              <div class="formbold-card">
+                <label class="formbold-radio-label">
+                  <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="fifty_or_more" />
+                  <div class="formbold-card-content">
+                    <span class="large-text">Advertising:</span>
+                    <span class="small-text">Broadcasting messages to large numbers of people through traditional or new media</span>
+                  </div>
+                </label>
+              </div>
+              <div class="formbold-card">
+                <label class="formbold-radio-label">
+                  <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="multiple_observing" />
+                  <div class="formbold-card-content">
+                    <span class="large-text">Large Events:</span>
+                    <span class="small-text">Planning events with large numbers of anticipated participants
+                    </span>
+                  </div>
+                </label>
+              </div>
+              <div class="formbold-card">
+                <label class="formbold-radio-label">
+                  <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
+                  <div class="formbold-card-content">
+                    <span class="large-text">Easy Actions:</span>
+                    <span class="small-text">Planning activities that are easy for people to do quickly</span>
+                  </div>
+                </label>
+              </div>
+
+              <div class="formbold-card">
+                <label class="formbold-radio-label">
+                  <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
+                  <div class="formbold-card-content">
+                    <span class="large-text">Solo Actions:</span>
+                    <span class="small-text">Planning activities that are easy for people to do alone</span>
+                  </div>
+                </label>
               </div>
             </div>
-          </div>
-          
 
-        <!-- Organization -->
-        <div class="formbold-input-group">
-          <label for="organization" class="formbold-form-label">Organization</label>
-          <input type="text" name="organization" id="organization" placeholder="Enter organization name" class="formbold-form-input" />
-        </div>
-
-        <!-- Organization Role -->
-        <div class="formbold-input-group">
-          <label class="formbold-form-label">Organization Role</label>
-          <select class="formbold-form-select" name="organization_role" id="organization-role">
-            <option value="sole_host">Sole/primary host</option>
-            <option value="coalition">Coalition, Committee, or Partnership</option>
-            <option value="attendee">Attendee</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-          
-        <div class="formbold-input-group" id="other-role-group" style="display: none;">
-          <label for="other-role" class="formbold-form-label">Please specify:</label>
-          <input type="text" id="other-role" name="other_role" placeholder="Enter your role" class="formbold-form-input" />
-        </div>
-          
-        <!-- Convening Type -->
-        <div class="formbold-main-wrapper">
-            <div class="formbold-form-wrapper">
-              <label class="formbold-form-label">Convening Type</label>
-              <p class="formbold-form-subtext">Select the type of convening:</p>
+                
+        <!-- Special Circumstances -->
+              <label class="formbold-form-label">Which of the following THEORIES OF CHANGE were mentioned during the convening?</label>
+              <!-- <p class="formbold-form-subtext">Select the applicable circumstances:</p> -->
               <div class="formbold-grid-two-columns">
                 <div class="formbold-card">
                   <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="business_meeting" />
+                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="too_long" />
                     <div class="formbold-card-content">
-                      <span class="large-text">Business/Planning/Decision-making Meeting</span>
+                      <span class="large-text">Leading by Example:</span>
+                      <span class="small-text">change happens when we act right and people emulate
+                      </span>
                     </div>
                   </label>
                 </div>
                 <div class="formbold-card">
                   <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="fundraising_event" />
+                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="multiple_concurrent" />
                     <div class="formbold-card-content">
-                      <span class="large-text">Fundraising Event</span>
+                      <span class="large-text">Changing People One-by-One:</span>
+                      <span class="small-text">change happens when we convince people one at a time</span>
                     </div>
                   </label>
                 </div>
                 <div class="formbold-card">
                   <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="recruitment_event" />
+                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="fifty_or_more" />
                     <div class="formbold-card-content">
-                      <span class="large-text">Recruitment Event</span>
+                      <span class="large-text">Changing Masses of People:</span>
+                      <span class="small-text">change happens when we inform lots of people</span>
                     </div>
                   </label>
                 </div>
                 <div class="formbold-card">
                   <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="press_conference" />
+                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="multiple_observing" />
                     <div class="formbold-card-content">
-                      <span class="large-text">Press Conference</span>
+                      <span class="large-text">Changing Businesses: </span>
+                      <span class="small-text">change happens when businesses act differently
+                      </span>
                     </div>
                   </label>
                 </div>
                 <div class="formbold-card">
                   <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="training_event" />
+                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
                     <div class="formbold-card-content">
-                      <span class="large-text">Initiation/Training Event</span>
+                      <span class="large-text">Changing Government Policy or Practice:</span>
+                      <span class="small-text">change happens when government acts differently</span>
                     </div>
                   </label>
                 </div>
+
                 <div class="formbold-card">
                   <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="meeting_gov_officials" />
+                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
                     <div class="formbold-card-content">
-                      <span class="large-text">Meeting with Government Officials</span>
+                      <span class="large-text">Changing Other Organizations:</span>
+                      <span class="small-text">change happens when non-government, non-businesses act differently</span>
                     </div>
                   </label>
                 </div>
+
                 <div class="formbold-card">
                   <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="social_activity" />
+                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
                     <div class="formbold-card-content">
-                      <span class="large-text">Social/Recreational Activity</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="meeting_org_representatives" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Meeting with Other Organization Representatives</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="participant_benefit" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Member/Participant-Benefit Activity</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="meeting_outsiders" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Meeting with Other Outsiders</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="community_activity" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Community/Public-Benefit Activity</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="protest_event" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Protest Event</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="rehearsal_practice" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Rehearsal/practice</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="other_type" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Other Convening Type</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="performance_game" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Performance/game</span>
+                      <span class="large-text">Other</span>
+                      <input type="text" name="organization" id="organization" placeholder="Enter organization name" class="formbold-form-input" />
                     </div>
                   </label>
                 </div>
               </div>
-            </div>
-          </div>
-          
-        <!-- Exclusivity -->
-        <div class="formbold-main-wrapper">
-          <div class="formbold-form-wrapper">
-            <label class="formbold-form-label">Exclusivity</label>
-            <p class="formbold-form-subtext">Who is allowed to attend?</p>
-            <div class="formbold-grid">
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="private" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Private</span>
-                    <span class="small-text">specific people</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="excludable_public" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Excludable public</span>
-                    <span class="small-text">anyone who buys a ticket/registers</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="fully_public" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Fully Public</span>
-                    <span class="small-text">anyone</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="ct" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">CT</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
+
+        <!-- <button type="submit" class="formbold-btn">Submit</button> -->
+        <!-- Previous and Next Button Navigation -->
+        <div class="button-container">
+          <button type="button" class="formbold-btn" onclick="navigateForm(-1)">Previous</button>
+          <button type="button" class="formbold-btn" onclick="navigateForm(1)">Next</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='index.html'">Index</button>
         </div>
-          
-        <!-- Attendance -->
-        <div class="formbold-input-radio-wrapper">
-            <label class="formbold-form-label">Attendance</label>
-            <div class="formbold-grid-two-columns">
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="attendance" value="drop_by" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Drop by</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="attendance" value="attend_whole" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Attend whole</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-          
 
-        <!-- Timing -->
-        <div class="formbold-input-radio-wrapper">
-            <label class="formbold-form-label">Timing</label>
-            <div class="formbold-grid-two-columns">
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="timing" value="pre_planned" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Pre-planned</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="timing" value="post_impromptu" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Post/Impromptu</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-          
+        <!-- Tab Navigation for Forms -->
+        <div class="form-navigation">
+          <a href="conveningBasics.html" class="form-tab">Convening Basics</a>
+          <a href="conveningFormats&Spaces.html" class="form-tab">Convening Formats & Spaces</a>
+          <a href="spacePhotos.html" class="form-tab">Space Photos</a>
+          <a href="times&Counts.html" class="form-tab">Times and Counts</a>
+          <a href="procedures&Norms.html" class="form-tab">Procedures & Norms</a>
+          <a href="activities.html" class="form-tab">Activities</a>
+          <a href="organizing&Mobilizing.html" class="form-tab">Organizing & Mobilizing</a>
+          <a href="publicSphere.html" class="form-tab">Public-Sphere Discussion</a>
+          <a href="decisionMaking.html" class="form-tab">Decision Making</a>
+          <a href="planningStrategizing.html" class="form-tab">Planning/Strategizing</a>
+          <a href="leaders.html" class="form-tab">Leaders</a>
+          <a href="socialBoundaries.html" class="form-tab">Social Boundaries</a>
+          <a href="interactionStyles.html" class="form-tab">Interactions & Styles</a>
+          <a href="fieldNotes.html" class="form-tab">Field Notes</a>
+        </div>
 
-        <button type="submit" class="formbold-btn">Submit</button>
+
       </form>
     </div>
   </div>

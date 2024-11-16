@@ -9,12 +9,21 @@
   body {
     font-family: Arial, sans-serif; /* Using a generic sans-serif font */
     background-color: #f5f5f5;
-
   }
   
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
   .formbold-form-wrapper {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 850px;
     width: 100%;
     background: white;
     padding: 20px;
@@ -27,15 +36,14 @@
     align-items: center;
     justify-content: center;
     margin: 20px;
-
   }
   
-  .formbold-form-wrapper {
+  /* .formbold-form-wrapper {
     margin: 0 auto;
     max-width: 800px;
     width: 100%;
     background: white;
-  }
+  } */
   
   .formbold-form-label {
     font-size: 18px;
@@ -55,8 +63,7 @@
     margin-bottom: 18px;
   }
   
-  .formbold-form-select,
-  .formbold-form-input {
+  .formbold-form-select,.formbold-form-input {
     width: 100%;
     padding: 12px 22px;
     border-radius: 5px;

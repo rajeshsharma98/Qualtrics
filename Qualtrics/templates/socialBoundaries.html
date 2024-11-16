@@ -3,333 +3,523 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Convening Survey Form</title>
+  <title>Social Boundaries</title>
   <link rel="stylesheet" href="../static/CSS/style.css">
 </head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .subtext {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .table-container {
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    min-width: 800px; /* Ensure table retains structure */
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    font-weight: bold;
+    background-color: #f9f9f9;
+  }
+
+  .row-header {
+    text-align: center;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    transform: scale(1.2);
+    accent-color: #7b3b3b;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 600px) {
+    /* Stack table into vertical cards for smaller screens */
+    table {
+      border: 0;
+    }
+
+    table caption {
+      font-size: 1.3em;
+      margin: .5em 0;
+    }
+
+    table thead {
+      display: none; /* Hide table headers */
+    }
+
+    table tr {
+      display: block;
+      margin-bottom: 1em;
+    }
+
+    table td {
+      display: block;
+      text-align: right;
+      font-size: 14px;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      padding-left: 50%;
+    }
+
+    table td::before {
+      content: attr(data-label); /* Add label before each data cell */
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      width: calc(50% - 10px);
+      font-weight: bold;
+      text-align: left;
+    }
+
+    input[type="text"] {
+      width: calc(100% - 20px);
+    }
+  }
+</style>
 <body>
 
   <div class="formbold-main-wrapper ">
     <div class="formbold-form-wrapper toc-main-wrapper">
       <form action="https://formbold.com/s/FORM_ID" method="POST">
-        <h1 class="formbold-heading">Convening Basics</h1>
+        <h1 class="formbold-heading">Social Boundaries</h1>
+        <p>Indicate what groups are in/out and how you know</p>
+  
+        <h2>Gender</h2>
+  
+        <table>
+          <tr>
+            <th class="row-header"></th>
+            <th colspan="4">In/Out Status</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th>In</th>
+            <th>Out</th>
+            <th>Contested</th>
+            <th>DK</th>
+          </tr>
+      
+          <tr>
+            <td class="row-header">Men</td>
+            <td><input type="radio" name="gender_men" value="in"></td>
+            <td><input type="radio" name="gender_men" value="out"></td>
+            <td><input type="radio" name="gender_men" value="contested"></td>
+            <td><input type="radio" name="gender_men" value="dk"></td>
+          </tr>
+          <tr>
+            <td class="row-header">Women</td>
+            <td><input type="radio" name="gender_women" value="in"></td>
+            <td><input type="radio" name="gender_women" value="out"></td>
+            <td><input type="radio" name="gender_women" value="contested"></td>
+            <td><input type="radio" name="gender_women" value="dk"></td>
+          </tr>
+          <tr>
+            <td class="row-header">Non-binary</td>
+            <td><input type="radio" name="gender_nonbinary" value="in"></td>
+            <td><input type="radio" name="gender_nonbinary" value="out"></td>
+            <td><input type="radio" name="gender_nonbinary" value="contested"></td>
+            <td><input type="radio" name="gender_nonbinary" value="dk"></td>
+          </tr>
+        </table>
 
-        <div class="formbold-input-group">
-          <label for="observer" class="formbold-form-label">Observer</label>
-          <input type="text" name="observer" id="observer" placeholder="Enter observer name" class="formbold-form-input" />
+        <h2>Race/Ethnicity</h2>
+  
+        <table>
+          <tr>
+            <th class="row-header"></th>
+            <th colspan="4">In/Out Status</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th>In</th>
+            <th>Out</th>
+            <th>Contested</th>
+            <th>DK</th>
+          </tr>
+      
+          <!-- Row for White -->
+          <tr>
+            <td class="row-header">White</td>
+            <td><input type="radio" name="race_white" value="in"></td>
+            <td><input type="radio" name="race_white" value="out"></td>
+            <td><input type="radio" name="race_white" value="contested"></td>
+            <td><input type="radio" name="race_white" value="dk"></td>
+          </tr>
+          <!-- Row for Black -->
+          <tr>
+            <td class="row-header">Black</td>
+            <td><input type="radio" name="race_black" value="in"></td>
+            <td><input type="radio" name="race_black" value="out"></td>
+            <td><input type="radio" name="race_black" value="contested"></td>
+            <td><input type="radio" name="race_black" value="dk"></td>
+          </tr>
+          <!-- Row for Asian -->
+          <tr>
+            <td class="row-header">Asian</td>
+            <td><input type="radio" name="race_asian" value="in"></td>
+            <td><input type="radio" name="race_asian" value="out"></td>
+            <td><input type="radio" name="race_asian" value="contested"></td>
+            <td><input type="radio" name="race_asian" value="dk"></td>
+          </tr>
+          <!-- Row for Latinx -->
+          <tr>
+            <td class="row-header">Latinx</td>
+            <td><input type="radio" name="race_latinx" value="in"></td>
+            <td><input type="radio" name="race_latinx" value="out"></td>
+            <td><input type="radio" name="race_latinx" value="contested"></td>
+            <td><input type="radio" name="race_latinx" value="dk"></td>
+          </tr>
+          <!-- Row for People of Color -->
+          <tr>
+            <td class="row-header">People of Color</td>
+            <td><input type="radio" name="race_poc" value="in"></td>
+            <td><input type="radio" name="race_poc" value="out"></td>
+            <td><input type="radio" name="race_poc" value="contested"></td>
+            <td><input type="radio" name="race_poc" value="dk"></td>
+          </tr>
+          <!-- Row for Other -->
+          <tr>
+            <td class="row-header">Other racial/ethnic group</td>
+            <td colspan="4"><input type="text" name="race_other" placeholder="Specify other group"></td>
+          </tr>
+        </table>
+      
+        <h2>Age</h2>
+  
+        <table>
+          <tr>
+            <th class="row-header"></th>
+            <th colspan="4">In/Out Status</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th>In</th>
+            <th>Out</th>
+            <th>Contested</th>
+            <th>DK</th>
+          </tr>
+      
+          <!-- Row for Child/Teen -->
+          <tr>
+            <td class="row-header">Child/Teen (0-18)</td>
+            <td><input type="radio" name="age_child" value="in"></td>
+            <td><input type="radio" name="age_child" value="out"></td>
+            <td><input type="radio" name="age_child" value="contested"></td>
+            <td><input type="radio" name="age_child" value="dk"></td>
+          </tr>
+          <!-- Row for Young Adult -->
+          <tr>
+            <td class="row-header">Young Adult (19-35)</td>
+            <td><input type="radio" name="age_young_adult" value="in"></td>
+            <td><input type="radio" name="age_young_adult" value="out"></td>
+            <td><input type="radio" name="age_young_adult" value="contested"></td>
+            <td><input type="radio" name="age_young_adult" value="dk"></td>
+          </tr>
+          <!-- Row for Middle Age -->
+          <tr>
+            <td class="row-header">Middle Age (36-65)</td>
+            <td><input type="radio" name="age_middle" value="in"></td>
+            <td><input type="radio" name="age_middle" value="out"></td>
+            <td><input type="radio" name="age_middle" value="contested"></td>
+            <td><input type="radio" name="age_middle" value="dk"></td>
+          </tr>
+          <!-- Row for Older Adult -->
+          <tr>
+            <td class="row-header">Older Adult (66+)</td>
+            <td><input type="radio" name="age_older_adult" value="in"></td>
+            <td><input type="radio" name="age_older_adult" value="out"></td>
+            <td><input type="radio" name="age_older_adult" value="contested"></td>
+            <td><input type="radio" name="age_older_adult" value="dk"></td>
+          </tr>
+        </table>
+
+        <h2>Religion</h2>
+  
+        <table>
+          <tr>
+            <th class="row-header"></th>
+            <th colspan="4">In/Out Status</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th>In</th>
+            <th>Out</th>
+            <th>Contested</th>
+            <th>DK</th>
+          </tr>
+      
+          <!-- Row for Christians -->
+          <tr>
+            <td class="row-header">Christians</td>
+            <td><input type="radio" name="religion_christians" value="in"></td>
+            <td><input type="radio" name="religion_christians" value="out"></td>
+            <td><input type="radio" name="religion_christians" value="contested"></td>
+            <td><input type="radio" name="religion_christians" value="dk"></td>
+          </tr>
+          <!-- Row for Jews -->
+          <tr>
+            <td class="row-header">Jews</td>
+            <td><input type="radio" name="religion_jews" value="in"></td>
+            <td><input type="radio" name="religion_jews" value="out"></td>
+            <td><input type="radio" name="religion_jews" value="contested"></td>
+            <td><input type="radio" name="religion_jews" value="dk"></td>
+          </tr>
+          <!-- Row for Muslims -->
+          <tr>
+            <td class="row-header">Muslims</td>
+            <td><input type="radio" name="religion_muslims" value="in"></td>
+            <td><input type="radio" name="religion_muslims" value="out"></td>
+            <td><input type="radio" name="religion_muslims" value="contested"></td>
+            <td><input type="radio" name="religion_muslims" value="dk"></td>
+          </tr>
+          <!-- Row for Hindus -->
+          <tr>
+            <td class="row-header">Hindus</td>
+            <td><input type="radio" name="religion_hindus" value="in"></td>
+            <td><input type="radio" name="religion_hindus" value="out"></td>
+            <td><input type="radio" name="religion_hindus" value="contested"></td>
+            <td><input type="radio" name="religion_hindus" value="dk"></td>
+          </tr>
+          <!-- Row for Buddhists -->
+          <tr>
+            <td class="row-header">Buddhists</td>
+            <td><input type="radio" name="religion_buddhists" value="in"></td>
+            <td><input type="radio" name="religion_buddhists" value="out"></td>
+            <td><input type="radio" name="religion_buddhists" value="contested"></td>
+            <td><input type="radio" name="religion_buddhists" value="dk"></td>
+          </tr>
+          <!-- Row for Spiritual People -->
+          <tr>
+            <td class="row-header">Spiritual People</td>
+            <td><input type="radio" name="religion_spiritual" value="in"></td>
+            <td><input type="radio" name="religion_spiritual" value="out"></td>
+            <td><input type="radio" name="religion_spiritual" value="contested"></td>
+            <td><input type="radio" name="religion_spiritual" value="dk"></td>
+          </tr>
+          <!-- Row for Atheists -->
+          <tr>
+            <td class="row-header">Atheists</td>
+            <td><input type="radio" name="religion_atheists" value="in"></td>
+            <td><input type="radio" name="religion_atheists" value="out"></td>
+            <td><input type="radio" name="religion_atheists" value="contested"></td>
+            <td><input type="radio" name="religion_atheists" value="dk"></td>
+          </tr>
+          <!-- Row for Any Religion -->
+          <tr>
+            <td class="row-header">Any Religion</td>
+            <td><input type="radio" name="religion_any" value="in"></td>
+            <td><input type="radio" name="religion_any" value="out"></td>
+            <td><input type="radio" name="religion_any" value="contested"></td>
+            <td><input type="radio" name="religion_any" value="dk"></td>
+          </tr>
+          <!-- Row for Other Religion -->
+          <tr>
+            <td class="row-header">Other Religion</td>
+            <td colspan="4"><input type="text" name="other_religion"></td>
+          </tr>
+        </table>
+      
+        <h2>Political Beliefs & Parties</h2>
+  
+        <table>
+          <tr>
+            <th class="row-header"></th>
+            <th colspan="4">In/Out Status</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th>In</th>
+            <th>Out</th>
+            <th>Contested</th>
+            <th>DK</th>
+          </tr>
+      
+          <!-- Row for Democrats -->
+          <tr>
+            <td class="row-header">Democrats</td>
+            <td><input type="radio" name="politics_democrats" value="in"></td>
+            <td><input type="radio" name="politics_democrats" value="out"></td>
+            <td><input type="radio" name="politics_democrats" value="contested"></td>
+            <td><input type="radio" name="politics_democrats" value="dk"></td>
+          </tr>
+          <!-- Row for Republicans -->
+          <tr>
+            <td class="row-header">Republicans</td>
+            <td><input type="radio" name="politics_republicans" value="in"></td>
+            <td><input type="radio" name="politics_republicans" value="out"></td>
+            <td><input type="radio" name="politics_republicans" value="contested"></td>
+            <td><input type="radio" name="politics_republicans" value="dk"></td>
+          </tr>
+          <!-- Row for Libertarians -->
+          <tr>
+            <td class="row-header">Libertarians</td>
+            <td><input type="radio" name="politics_libertarians" value="in"></td>
+            <td><input type="radio" name="politics_libertarians" value="out"></td>
+            <td><input type="radio" name="politics_libertarians" value="contested"></td>
+            <td><input type="radio" name="politics_libertarians" value="dk"></td>
+          </tr>
+          <!-- Row for Greens -->
+          <tr>
+            <td class="row-header">Greens</td>
+            <td><input type="radio" name="politics_greens" value="in"></td>
+            <td><input type="radio" name="politics_greens" value="out"></td>
+            <td><input type="radio" name="politics_greens" value="contested"></td>
+            <td><input type="radio" name="politics_greens" value="dk"></td>
+          </tr>
+          <!-- Row for Non-party "Left" -->
+          <tr>
+            <td class="row-header">Non-party "Left"</td>
+            <td><input type="radio" name="politics_left" value="in"></td>
+            <td><input type="radio" name="politics_left" value="out"></td>
+            <td><input type="radio" name="politics_left" value="contested"></td>
+            <td><input type="radio" name="politics_left" value="dk"></td>
+          </tr>
+          <!-- Row for Non-party "Right" -->
+          <tr>
+            <td class="row-header">Non-party "Right"</td>
+            <td><input type="radio" name="politics_right" value="in"></td>
+            <td><input type="radio" name="politics_right" value="out"></td>
+            <td><input type="radio" name="politics_right" value="contested"></td>
+            <td><input type="radio" name="politics_right" value="dk"></td>
+          </tr>
+        </table>
+
+        <h2>Other Social Boundaries</h2>
+  
+  <table>
+    <tr>
+      <th class="row-header"></th>
+      <th colspan="4">Status</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>In</th>
+      <th>Out</th>
+      <th>Contested</th>
+      <th>DK</th>
+    </tr>
+
+    <!-- Row for Other 1 -->
+    <tr>
+      <td class="row-header"><input type="text" name="boundary_1" placeholder="Other 1"></td>
+      <td><input type="radio" name="status_1" value="in"></td>
+      <td><input type="radio" name="status_1" value="out"></td>
+      <td><input type="radio" name="status_1" value="contested"></td>
+      <td><input type="radio" name="status_1" value="dk"></td>
+    </tr>
+    <!-- Row for Other 2 -->
+    <tr>
+      <td class="row-header"><input type="text" name="boundary_2" placeholder="Other 2"></td>
+      <td><input type="radio" name="status_2" value="in"></td>
+      <td><input type="radio" name="status_2" value="out"></td>
+      <td><input type="radio" name="status_2" value="contested"></td>
+      <td><input type="radio" name="status_2" value="dk"></td>
+    </tr>
+    <!-- Row for Other 3 -->
+    <tr>
+      <td class="row-header"><input type="text" name="boundary_3" placeholder="Other 3"></td>
+      <td><input type="radio" name="status_3" value="in"></td>
+      <td><input type="radio" name="status_3" value="out"></td>
+      <td><input type="radio" name="status_3" value="contested"></td>
+      <td><input type="radio" name="status_3" value="dk"></td>
+    </tr>
+    <!-- Row for Other 4 -->
+    <tr>
+      <td class="row-header"><input type="text" name="boundary_4" placeholder="Other 4"></td>
+      <td><input type="radio" name="status_4" value="in"></td>
+      <td><input type="radio" name="status_4" value="out"></td>
+      <td><input type="radio" name="status_4" value="contested"></td>
+      <td><input type="radio" name="status_4" value="dk"></td>
+    </tr>
+    <!-- Row for Other 5 -->
+    <tr>
+      <td class="row-header"><input type="text" name="boundary_5" placeholder="Other 5"></td>
+      <td><input type="radio" name="status_5" value="in"></td>
+      <td><input type="radio" name="status_5" value="out"></td>
+      <td><input type="radio" name="status_5" value="contested"></td>
+      <td><input type="radio" name="status_5" value="dk"></td>
+    </tr>
+    <!-- Row for Other 6 -->
+    <tr>
+      <td class="row-header"><input type="text" name="boundary_6" placeholder="Other 6"></td>
+      <td><input type="radio" name="status_6" value="in"></td>
+      <td><input type="radio" name="status_6" value="out"></td>
+      <td><input type="radio" name="status_6" value="contested"></td>
+      <td><input type="radio" name="status_6" value="dk"></td>
+    </tr>
+    <!-- Row for Other 7 -->
+    <tr>
+      <td class="row-header"><input type="text" name="boundary_7" placeholder="Other 7"></td>
+      <td><input type="radio" name="status_7" value="in"></td>
+      <td><input type="radio" name="status_7" value="out"></td>
+      <td><input type="radio" name="status_7" value="contested"></td>
+      <td><input type="radio" name="status_7" value="dk"></td>
+    </tr>
+    <!-- Row for Other 8 -->
+    <tr>
+      <td class="row-header"><input type="text" name="boundary_8" placeholder="Other 8"></td>
+      <td><input type="radio" name="status_8" value="in"></td>
+      <td><input type="radio" name="status_8" value="out"></td>
+      <td><input type="radio" name="status_8" value="contested"></td>
+      <td><input type="radio" name="status_8" value="dk"></td>
+    </tr>
+  </table>
+  
+        <div class="button-container">
+          <button type="button" class="formbold-btn" onclick="navigateForm(-1)">Previous</button>
+          <button type="button" class="formbold-btn" onclick="navigateForm(1)">Next</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='index.html'">Index</button>
+        </div>
+        
+        <!-- Tab Navigation for Forms -->
+        <div class="form-navigation">
+          <a href="conveningBasics.html" class="form-tab">Convening Basics</a>
+          <a href="conveningFormats&Spaces.html" class="form-tab">Convening Formats & Spaces</a>
+          <a href="spacePhotos.html" class="form-tab">Space Photos</a>
+          <a href="times&Counts.html" class="form-tab">Times and Counts</a>
+          <a href="procedures&Norms.html" class="form-tab">Procedures & Norms</a>
+          <a href="activities.html" class="form-tab">Activities</a>
+          <a href="organizing&Mobilizing.html" class="form-tab">Organizing & Mobilizing</a>
+          <a href="publicSphere.html" class="form-tab">Public-Sphere Discussion</a>
+          <a href="decisionMaking.html" class="form-tab">Decision Making</a>
+          <a href="planningStrategizing.html" class="form-tab">Planning/Strategizing</a>
+          <a href="leaders.html" class="form-tab">Leaders</a>
+          <a href="socialBoundaries.html" class="form-tab">Social Boundaries</a>
+          <a href="interactionStyles.html" class="form-tab">Interactions & Styles</a>
+          <a href="fieldNotes.html" class="form-tab">Field Notes</a>
         </div>
 
-        <div class="formbold-input-group">
-            <label for="date" class="formbold-form-label">Date (MM/DD/YY)</label>
-            <input type="text" name="date" id="date" placeholder="Enter date MM/DD/YY" class="formbold-form-input" />
-        </div>
-
-        <div class="formbold-input-group">
-            <label for="name_of_convening" class="formbold-form-label">Name of Convening</label>
-            <input type="text" name="name_of_convening" id="name_of_convening" placeholder="Enter Name of Convening" class="formbold-form-input" />
-        </div>
-
-        <!-- Special Circumstances -->
-        <div class="formbold-main-wrapper">
-            <div class="formbold-form-wrapper">
-              <label class="formbold-form-label">Special Circumstances</label>
-              <p class="formbold-form-subtext">Select the applicable circumstances:</p>
-              <div class="formbold-grid-two-columns">
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="too_long" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Too long</span>
-                      <span class="small-text">too long for one observation</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="multiple_concurrent" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Multiple concurrent locations, observing 1</span>
-                      <span class="small-text">held at several places at once</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="fifty_or_more" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">50 or more people</span>
-                      <span class="small-text">demographic %s instead of counts</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="multiple_observing" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Multiple concurrent locations observing 2+</span>
-                      <span class="small-text">held at several places at once</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Part of larger event</span>
-                      <span class="small-text">convening is part of a larger event</span>
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-
-        <!-- Organization -->
-        <div class="formbold-input-group">
-          <label for="organization" class="formbold-form-label">Organization</label>
-          <input type="text" name="organization" id="organization" placeholder="Enter organization name" class="formbold-form-input" />
-        </div>
-
-        <!-- Organization Role -->
-        <div class="formbold-input-group">
-          <label class="formbold-form-label">Organization Role</label>
-          <select class="formbold-form-select" name="organization_role" id="organization-role">
-            <option value="sole_host">Sole/primary host</option>
-            <option value="coalition">Coalition, Committee, or Partnership</option>
-            <option value="attendee">Attendee</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-          
-        <div class="formbold-input-group" id="other-role-group" style="display: none;">
-          <label for="other-role" class="formbold-form-label">Please specify:</label>
-          <input type="text" id="other-role" name="other_role" placeholder="Enter your role" class="formbold-form-input" />
-        </div>
-          
-        <!-- Convening Type -->
-        <div class="formbold-main-wrapper">
-            <div class="formbold-form-wrapper">
-              <label class="formbold-form-label">Convening Type</label>
-              <p class="formbold-form-subtext">Select the type of convening:</p>
-              <div class="formbold-grid-two-columns">
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="business_meeting" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Business/Planning/Decision-making Meeting</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="fundraising_event" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Fundraising Event</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="recruitment_event" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Recruitment Event</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="press_conference" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Press Conference</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="training_event" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Initiation/Training Event</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="meeting_gov_officials" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Meeting with Government Officials</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="social_activity" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Social/Recreational Activity</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="meeting_org_representatives" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Meeting with Other Organization Representatives</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="participant_benefit" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Member/Participant-Benefit Activity</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="meeting_outsiders" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Meeting with Other Outsiders</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="community_activity" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Community/Public-Benefit Activity</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="protest_event" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Protest Event</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="rehearsal_practice" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Rehearsal/practice</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="other_type" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Other Convening Type</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="performance_game" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Performance/game</span>
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        <!-- Exclusivity -->
-        <div class="formbold-main-wrapper">
-          <div class="formbold-form-wrapper">
-            <label class="formbold-form-label">Exclusivity</label>
-            <p class="formbold-form-subtext">Who is allowed to attend?</p>
-            <div class="formbold-grid">
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="private" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Private</span>
-                    <span class="small-text">specific people</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="excludable_public" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Excludable public</span>
-                    <span class="small-text">anyone who buys a ticket/registers</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="fully_public" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Fully Public</span>
-                    <span class="small-text">anyone</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="ct" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">CT</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-          
-        <!-- Attendance -->
-        <div class="formbold-input-radio-wrapper">
-            <label class="formbold-form-label">Attendance</label>
-            <div class="formbold-grid-two-columns">
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="attendance" value="drop_by" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Drop by</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="attendance" value="attend_whole" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Attend whole</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-          
-
-        <!-- Timing -->
-        <div class="formbold-input-radio-wrapper">
-            <label class="formbold-form-label">Timing</label>
-            <div class="formbold-grid-two-columns">
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="timing" value="pre_planned" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Pre-planned</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="timing" value="post_impromptu" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Post/Impromptu</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-          
-
-        <button type="submit" class="formbold-btn">Submit</button>
       </form>
     </div>
   </div>
