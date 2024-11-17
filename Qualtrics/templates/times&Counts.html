@@ -3,8 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Times and Counts</title>
+  <title>Times & Counts</title>
   <link rel="stylesheet" href="../static/CSS/style.css">
+<style>   
+  .subtext {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    font-weight: bold;
+    background-color: #f9f9f9;
+  }
+
+  .row-header {
+    text-align: left;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    transform: scale(1.2);
+    accent-color: #7b3b3b;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    text-align: left;
+    border: 1px solid #000;
+    border-radius: 4px;
+  }
+</style>
 </head>
 <body>
 
@@ -12,7 +54,9 @@
     <div class="formbold-form-wrapper">
       <form action="https://formbold.com/s/FORM_ID" method="POST">
         <h1 class="formbold-heading">Times and Counts</h1>
-
+        <p>If observing Long convening, enter "na" for non-applicable start/end items.</p>
+        <p>Times (HH.MM am/pm)</p>
+        <p>"dk" if don't know</p>
         <div class="formbold-input-group">
           <label for="scheduled_start" class="formbold-form-label">Scheduled Start</label>
           <input type="text" name="scheduled_start" id="scheduled_start" placeholder="Scheduled Start Time" class="formbold-form-input" />
@@ -22,10 +66,10 @@
           <label for="observer_arrives" class="formbold-form-label">Observer Arrives</label>
           <input type="text" name="scheduled_start" id="scheduled_start" placeholder="Observer Arrives" class="formbold-form-input" />
         </div>
-        <div class="formbold-input-group">
+        <!-- <div class="formbold-input-group">
           <label for="first_person_arrives" class="formbold-form-label">Forst Person Arrives</label>
           <input type="text" name="first_person_arrives" id="first_person_arrives" placeholder="First Person Arrives" class="formbold-form-input" />
-        </div>
+        </div> -->
 
         <div class="formbold-input-group">
           <label for="first_person_arrives" class="formbold-form-label">First Person Arrives</label>
@@ -48,14 +92,88 @@
           <input type="text" name="actual_end" id="actual_end" placeholder="Actual End" class="formbold-form-input" />
         </div>
         <div class="formbold-input-group">
-          <label for="last_relevant_interaction" class="formbold-form-label">Last Relevant Interaction</label>
+          <label for="last_relevant_interaction" class="formbold-form-label">Last Relevant (Inter)action</label>
           <input type="text" name="last_relevant_interaction" id="last_relevant_interaction" placeholder="Last Relevant Interation" class="formbold-form-input" />
         </div>
+        <div class="formbold-input-group">
+          <label for="observer_leaves" class="formbold-form-label">Observer Leaves</label>
+          <input type="text" name="observer_leaves" id="observer_leaves" placeholder="Observer Leaves" class="formbold-form-input" />
+        </div>
 
-        <h2>Pre/Post Convening Talk</h2>
-        <p class="subtext"># of people in extended conversation before/after convening</p>
-  
-        <table class="convening-talk-table">
+        <label for="observer_leaves" class="formbold-form-label">Total Participant Counts (In Person and Virtual) at Key Times</label>
+        <p> "dk" if don't know</p>
+        <table>
+          <tr>
+            <th rowspan="2" class="row-header">Time</th>
+            <th colspan="2">In Person Participants</th>
+          </tr>
+          <tr>
+            <th>Number</th>
+            <th>In person value is...</th>
+          </tr>
+      
+          <!-- Row Template -->
+          <tr>
+            <td class="row-header">7 min before Scheduled start</td>
+            <td><input type="text" name="number_1"></td>
+            <td>
+              <input type="radio" name="value_1" value="ct"> Ct. 
+              <input type="radio" name="value_1" value="est"> Est.
+            </td>
+          </tr>
+          <tr>
+            <td class="row-header">Scheduled start</td>
+            <td><input type="text" name="number_2"></td>
+            <td>
+              <input type="radio" name="value_2" value="ct"> Ct. 
+              <input type="radio" name="value_2" value="est"> Est.
+            </td>
+          </tr>
+          <tr>
+            <td class="row-header">Actual start</td>
+            <td><input type="text" name="number_3"></td>
+            <td>
+              <input type="radio" name="value_3" value="ct"> Ct. 
+              <input type="radio" name="value_3" value="est"> Est.
+            </td>
+          </tr>
+          <tr>
+            <td class="row-header">Scheduled half time</td>
+            <td><input type="text" name="number_4"></td>
+            <td>
+              <input type="radio" name="value_4" value="ct"> Ct. 
+              <input type="radio" name="value_4" value="est"> Est.
+            </td>
+          </tr>
+          <tr>
+            <td class="row-header">Scheduled end</td>
+            <td><input type="text" name="number_5"></td>
+            <td>
+              <input type="radio" name="value_5" value="ct"> Ct. 
+              <input type="radio" name="value_5" value="est"> Est.
+            </td>
+          </tr>
+          <tr>
+            <td class="row-header">Actual end</td>
+            <td><input type="text" name="number_6"></td>
+            <td>
+              <input type="radio" name="value_6" value="ct"> Ct. 
+              <input type="radio" name="value_6" value="est"> Est.
+            </td>
+          </tr>
+          <tr>
+            <td class="row-header">7 min after Actual end</td>
+            <td><input type="text" name="number_7"></td>
+            <td>
+              <input type="radio" name="value_7" value="ct"> Ct. 
+              <input type="radio" name="value_7" value="est"> Est.
+            </td>
+          </tr>
+        </table>
+
+        <label for="observer_leaves" class="formbold-form-label">Pre/Post Convening Talk </label>
+        <p> # of people in extended conversation before/after convening</p>
+        <table>
           <tr>
             <th class="row-header">People Talking</th>
             <th>Number</th>
@@ -63,21 +181,21 @@
           </tr>
           <tr>
             <td class="row-header">People talking 7 min Before Scheduled Start</td>
-            <td><input type="text" class="input-box" name="before_start_number"></td>
-            <td><input type="radio" name="before_start_value" value="ct"></td>
-            <td><input type="radio" name="before_start_value" value="est"></td>
+            <td><input type="text" name="before_start_number"></td>
+            <td><input type="radio" name="before_start_value" value="ct"> Ct.</td>
+            <td><input type="radio" name="before_start_value" value="est"> Est.</td>
           </tr>
           <tr>
             <td class="row-header">People talking 7 min After Actual End</td>
-            <td><input type="text" class="input-box" name="after_end_number"></td>
-            <td><input type="radio" name="after_end_value" value="ct"></td>
-            <td><input type="radio" name="after_end_value" value="est"></td>
+            <td><input type="text" name="after_end_number"></td>
+            <td><input type="radio" name="after_end_value" value="ct"> Ct.</td>
+            <td><input type="radio" name="after_end_value" value="est"> Est.</td>
           </tr>
         </table>
-      
-        <h2>Rolling Total Counts:</h2>
-        
-        <table class="rolling-counts-table">
+
+        <label for="observer_leaves" class="formbold-form-label">Rolling Total Counts: </label>
+        <!-- <p> # of people in extended conversation before/after convening</p> -->
+        <table>
           <tr>
             <th class="row-header">Category</th>
             <th>Number</th>
@@ -86,65 +204,67 @@
           </tr>
           <tr>
             <td class="row-header">Org Staff (in person)</td>
-            <td><input type="text" class="input-box" name="org_staff_in_person" value="0"></td>
+            <td><input type="text" name="org_staff_in_person" value="0"></td>
             <td><input type="radio" name="org_staff_in_person_value" value="ct"></td>
             <td><input type="radio" name="org_staff_in_person_value" value="est"></td>
           </tr>
           <tr>
-            <td class="row-header">Org Staff (virtual)</td>
-            <td><input type="text" class="input-box" name="org_staff_virtual"></td>
+            <td class="row-header">Org staff (virtual)</td>
+            <td><input type="text" name="org_staff_virtual"></td>
             <td><input type="radio" name="org_staff_virtual_value" value="ct"></td>
             <td><input type="radio" name="org_staff_virtual_value" value="est"></td>
           </tr>
           <tr>
             <td class="row-header">Non-staff Participant (in person)</td>
-            <td><input type="text" class="input-box" name="non_staff_in_person" value="0"></td>
+            <td><input type="text" name="non_staff_in_person" value="0"></td>
             <td><input type="radio" name="non_staff_in_person_value" value="ct"></td>
             <td><input type="radio" name="non_staff_in_person_value" value="est"></td>
           </tr>
           <tr>
             <td class="row-header">Participant (virtual)</td>
-            <td><input type="text" class="input-box" name="participant_virtual"></td>
+            <td><input type="text" name="participant_virtual"></td>
             <td><input type="radio" name="participant_virtual_value" value="ct"></td>
             <td><input type="radio" name="participant_virtual_value" value="est"></td>
           </tr>
           <tr>
             <td class="row-header">Notable Others</td>
-            <td><input type="text" class="input-box" name="notable_others"></td>
+            <td><input type="text" name="notable_others"></td>
             <td><input type="radio" name="notable_others_value" value="ct"></td>
             <td><input type="radio" name="notable_others_value" value="est"></td>
           </tr>
           <tr>
             <td class="row-header">Other belong (guard, waiter)</td>
-            <td><input type="text" class="input-box" name="other_belong" value="0"></td>
+            <td><input type="text" name="other_belong" value="0"></td>
             <td><input type="radio" name="other_belong_value" value="ct"></td>
             <td><input type="radio" name="other_belong_value" value="est"></td>
           </tr>
           <tr>
             <td class="row-header">Other random</td>
-            <td><input type="text" class="input-box" name="other_random" value="0"></td>
+            <td><input type="text" name="other_random" value="0"></td>
             <td><input type="radio" name="other_random_value" value="ct"></td>
             <td><input type="radio" name="other_random_value" value="est"></td>
           </tr>
           <tr>
             <td class="row-header">Can't tell</td>
-            <td><input type="text" class="input-box" name="cant_tell" value="0"></td>
+            <td><input type="text" name="cant_tell" value="0"></td>
             <td><input type="radio" name="cant_tell_value" value="ct"></td>
             <td><input type="radio" name="cant_tell_value" value="est"></td>
           </tr>
           <tr>
             <td class="row-header">Non-randoms wearing health/medical masks (cloth, surgical, N95, respirator)</td>
-            <td><input type="text" class="input-box" name="non_random_masks"></td>
+            <td><input type="text" name="non_random_masks"></td>
             <td><input type="radio" name="non_random_masks_value" value="ct"></td>
             <td><input type="radio" name="non_random_masks_value" value="est"></td>
           </tr>
-        </table>          
+        </table>
+
+    
         <!-- <button type="submit" class="formbold-btn">Submit</button> -->
         <!-- Previous and Next Button Navigation -->
         <div class="button-container">
           <button type="button" class="formbold-btn" onclick="navigateForm(-1)">Previous</button>
-          <button type="button" class="formbold-btn" onclick="navigateForm(1)">Next</button>
           <button type="button" class="formbold-btn" onclick="window.location.href='index.html'">Index</button>
+          <button type="button" class="formbold-btn" onclick="navigateForm(1)">Next</button>
         </div>
 
         <!-- Tab Navigation for Forms -->

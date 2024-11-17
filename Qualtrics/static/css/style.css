@@ -1,3 +1,30 @@
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Space between buttons */
+  align-items: center; /* Align vertically in case button heights vary */
+  margin-top: 20px; /* Add some spacing above the buttons */
+}
+
+.formbold-btn {
+  flex: 1; /* Equal button widths */
+  max-width: 150px; /* Set max width to avoid very large buttons */
+  margin: 0 10px; /* Add spacing between buttons */
+  padding: 10px 15px; /* Padding for the button */
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #6a64f1;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formbold-btn:hover {
+  background-color: #5750c6; /* Change background color on hover */
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +50,7 @@
 
   .formbold-form-wrapper {
     margin: 0 auto;
-    max-width: 850px;
+    max-width: 950px;
     width: 100%;
     background: white;
     padding: 20px;
