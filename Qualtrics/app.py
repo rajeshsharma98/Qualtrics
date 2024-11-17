@@ -2,6 +2,11 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+@app.route('/conveningbasics.html')
+def convening_basics():
+    return render_template('conveningbasics.html')
+
+
 @app.route("/")
 def home():
     return render_template("index.html")  # This will load your main HTML page
