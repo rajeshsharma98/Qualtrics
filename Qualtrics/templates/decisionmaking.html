@@ -170,10 +170,12 @@
           <!-- Repeat rows as needed -->
         </table>
       </div>
+
       <div class="button-container">
-        <button type="submit" class="formbold-btn" onclick="navigateForm(-1)">Previous</button>
-        <button type="button" class="formbold-btn" onclick="window.location.href='index.html'">Index</button>
-        <button type="submit" class="formbold-btn" onclick="navigateForm(1)">Next</button>
+        <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('public_sphere') }}'">Previous</button>
+        <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('home') }}'">Index</button>
+        <!-- <button type="submit" class="formbold-btn" onclick="navigateForm(1)">Next</button> -->
+        <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for("planning_strategizing") }}'">Next</button>
       </div>
 
       <!-- Tab Navigation for Forms -->

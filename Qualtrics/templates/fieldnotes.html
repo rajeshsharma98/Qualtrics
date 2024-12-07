@@ -48,9 +48,10 @@
         <!-- <button type="submit" class="formbold-btn">Submit</button> -->
         <!-- Previous and Next Button Navigation -->
         <div class="button-container">
-          <button type="submit" class="formbold-btn" onclick="navigateForm(-1)">Previous</button>
-          <button type="button" class="formbold-btn" onclick="navigateForm(1)">Next</button>
-          <button type="submit" class="formbold-btn" onclick="window.location.href='index.html'">Index</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('social_boundaries') }}'">Previous</button>
+          <!-- <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('home') }}'">Index</button> -->
+          <!-- <button type="submit" class="formbold-btn" onclick="navigateForm(1)">Next</button> -->
+          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for("home") }}'">Index</button>
         </div>
 
         <!-- Tab Navigation for Forms -->
