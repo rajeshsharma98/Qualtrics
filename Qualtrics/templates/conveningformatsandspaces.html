@@ -18,7 +18,7 @@
   <div class="formbold-main-wrapper ">
     <div class="formbold-form-wrapper">
       <form action="/conveningformatsandspaces.html" method="POST">
-        <h1 class="formbold-heading">Convening Basics</h1>
+        <h1 class="formbold-heading">Convening Format & Space Details</h1>
 
         <!-- Location -->
         <div class="formbold-input-group">
@@ -455,9 +455,10 @@
         <!-- <button type="submit" class="formbold-btn">Submit</button> -->
         <!-- Previous and Next Button Navigation -->
         <div class="button-container">
-          <button type="submit" class="formbold-btn" onclick="navigateForm(-1)">Previous</button>
-          <button type="button" class="formbold-btn" onclick="window.location.href='index.html'">Index</button>
-          <button type="submit" class="formbold-btn" onclick="navigateForm(1)">Next</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('convening_basics') }}'">Previous</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('home') }}'">Index</button>
+          <!-- <button type="submit" class="formbold-btn" onclick="navigateForm(1)">Next</button> -->
+          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for("space_photos") }}'">Next</button>
         </div>
 
         <!-- Tab Navigation for Forms -->

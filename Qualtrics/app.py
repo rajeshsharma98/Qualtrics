@@ -28,7 +28,7 @@ def convening_basics():
     if request.method == 'POST':
         session['convening_basics'] = request.form.to_dict(flat=False)
         print("Convening Basics Data:", session['convening_basics'])
-        return jsonify({"message": "Data received", "data": session['convening_basics']})
+        # return jsonify({"message": "Data received", "data": session['convening_basics']})
     return render_template('conveningbasics.html')
 
 @app.route('/conveningformatsandspaces.html', methods=['GET', 'POST'])
@@ -36,7 +36,7 @@ def convening_formats_and_spaces():
     if request.method == 'POST':
         session['convening_formats_and_spaces'] = request.form.to_dict(flat=False)
         print("Convening Formats and Spaces Data:", session['convening_formats_and_spaces'])
-        return jsonify({"message": "Data received", "data": session['convening_formats_and_spaces']})
+        # return jsonify({"message": "Data received", "data": session['convening_formats_and_spaces']})
     return render_template('conveningformatsandspaces.html')
 
 @app.route('/spacephotos.html', methods=['GET', 'POST'])
@@ -44,7 +44,7 @@ def space_photos():
     if request.method == 'POST':
         session['space_photos'] = request.form.to_dict(flat=False)
         print("Space Photos Data:", session['space_photos'])
-        return jsonify({"message": "Data received", "data": session['space_photos']})
+        # return jsonify({"message": "Data received", "data": session['space_photos']})
     return render_template('spacephotos.html')
 
 @app.route('/timesandcounts.html', methods=['GET', 'POST'])
@@ -52,7 +52,7 @@ def times_and_counts():
     if request.method == 'POST':
         session['times_and_counts'] = request.form.to_dict(flat=False)
         print("Times and Counts Data:", session['times_and_counts'])
-        return jsonify({"message": "Data received", "data": session['times_and_counts']})
+        # return jsonify({"message": "Data received", "data": session['times_and_counts']})
     return render_template('timesandcounts.html')
 
 @app.route('/proceduresandnorms.html', methods=['GET', 'POST'])
@@ -60,7 +60,7 @@ def procedures_and_norms():
     if request.method == 'POST':
         session['procedures_and_norms'] = request.form.to_dict(flat=False)
         print("Procedures and Norms Data:", session['procedures_and_norms'])
-        return jsonify({"message": "Data received", "data": session['procedures_and_norms']})
+        # return jsonify({"message": "Data received", "data": session['procedures_and_norms']})
     return render_template('proceduresandnorms.html')
 
 @app.route('/activities.html', methods=['GET', 'POST'])
@@ -68,7 +68,7 @@ def activities():
     if request.method == 'POST':
         session['activities'] = request.form.to_dict(flat=False)
         print("Activities Data:", session['activities'])
-        return jsonify({"message": "Data received", "data": session['activities']})
+        # return jsonify({"message": "Data received", "data": session['activities']})
     return render_template('activities.html')
 
 @app.route('/organizingandmobilizing.html', methods=['GET', 'POST'])
@@ -76,7 +76,7 @@ def organizing_and_mobilizing():
     if request.method == 'POST':
         session['organizing_and_mobilizing'] = request.form.to_dict(flat=False)
         print("Organizing and Mobilizing Data:", session['organizing_and_mobilizing'])
-        return jsonify({"message": "Data received", "data": session['organizing_and_mobilizing']})
+        # return jsonify({"message": "Data received", "data": session['organizing_and_mobilizing']})
     return render_template('organizingandmobilizing.html')
 
 @app.route('/publicsphere.html', methods=['GET', 'POST'])
@@ -84,7 +84,7 @@ def public_sphere():
     if request.method == 'POST':
         session['public_sphere'] = request.form.to_dict(flat=False)
         print("Public Sphere Data:", session['public_sphere'])
-        return jsonify({"message": "Data received", "data": session['public_sphere']})
+        # return jsonify({"message": "Data received", "data": session['public_sphere']})
     return render_template('publicsphere.html')
 
 @app.route('/decisionmaking.html', methods=['GET', 'POST'])
@@ -92,7 +92,7 @@ def decision_making():
     if request.method == 'POST':
         session['decision_making'] = request.form.to_dict(flat=False)
         print("Decision Making Data:", session['decision_making'])
-        return jsonify({"message": "Data received", "data": session['decision_making']})
+        # return jsonify({"message": "Data received", "data": session['decision_making']})
     return render_template('decisionmaking.html')
 
 @app.route('/planningstrategizing.html', methods=['GET', 'POST'])
@@ -100,7 +100,7 @@ def planning_strategizing():
     if request.method == 'POST':
         session['planning_strategizing'] = request.form.to_dict(flat=False)
         print("Planning and Strategizing Data:", session['planning_strategizing'])
-        return jsonify({"message": "Data received", "data": session['planning_strategizing']})
+        # return jsonify({"message": "Data received", "data": session['planning_strategizing']})
     return render_template('planningstrategizing.html')
 
 @app.route('/leaders.html', methods=['GET', 'POST'])
@@ -108,7 +108,7 @@ def leaders():
     if request.method == 'POST':
         session['leaders'] = request.form.to_dict(flat=False)
         print("Leaders Data:", session['leaders'])
-        return jsonify({"message": "Data received", "data": session['leaders']})
+        # return jsonify({"message": "Data received", "data": session['leaders']})
     return render_template('leaders.html')
 
 @app.route('/interactionstyles.html', methods=['GET', 'POST'])
@@ -116,7 +116,7 @@ def interaction_styles():
     if request.method == 'POST':
         session['interaction_styles'] = request.form.to_dict(flat=False)
         print("Interaction Styles Data:", session['interaction_styles'])
-        return jsonify({"message": "Data received", "data": session['interaction_styles']})
+        # return jsonify({"message": "Data received", "data": session['interaction_styles']})
     return render_template('interactionstyles.html')
 
 @app.route('/socialboundaries.html', methods=['GET', 'POST'])
@@ -124,7 +124,7 @@ def social_boundaries():
     if request.method == 'POST':
         session['social_boundaries'] = request.form.to_dict(flat=False)
         print("Social Boundaries Data:", session['social_boundaries'])
-        return jsonify({"message": "Data received", "data": session['social_boundaries']})
+        # return jsonify({"message": "Data received", "data": session['social_boundaries']})
     return render_template('socialboundaries.html')
 
 @app.route('/fieldnotes.html', methods=['GET', 'POST'])
@@ -132,8 +132,9 @@ def field_notes():
     if request.method == 'POST':
         session['field_notes'] = request.form.to_dict(flat=False)
         print("Field Notes Data:", session['field_notes'])
-        return jsonify({"message": "Data received", "data": session['field_notes']})
+        # return jsonify({"message": "Data received", "data": session['field_notes']})
     return render_template('fieldnotes.html')
+    
 # @app.route('/socialboundaries.html', methods=['GET', 'POST'])
 # def social_boundaries():
 #     if request.method == 'POST':
