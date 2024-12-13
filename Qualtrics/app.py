@@ -1,25 +1,21 @@
-from flask import Flask, jsonify, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from pymongo import MongoClient
 from urllib.parse import quote_plus
 
 app = Flask(__name__)
 app.secret_key = 'a2d1c3f7e9a4b6d7c8f0e1d2c3a4b5c6' # Required for session handling
 
-#print(f"Secret Key: {app.secret_key}")
+# print(f"Secret Key: {app.secret_key}")
+MONGO_URI = f"mongodb+srv://rajeshar:rajeshar@sso.mxd3v.mongodb.net/?retryWrites=true&w=majority&appName=SSO" 
 
-# MongoDB setup
-username = "rbhogate"
-password = "World@123"
-host = "ssoapp.rgo6i.mongodb.net"
-database_name = "survey_data"
-
-# Encode username and password
-encoded_username = quote_plus(username)
-encoded_password = quote_plus(password)
-
-
-MONGO_URI = f"mongodb+srv://{encoded_username}:{encoded_password}@{host}/{database_name}?retryWrites=true&w=majority" # Replace with your MongoDB connection string
 client = MongoClient(MONGO_URI)
+
+try:
+    client.admin.command('ping')
+    print("Pinged your deployment. You successfully connected to MongoDB!")
+except Exception as e:
+    print('Error',e)
+    
 db = client['survey_data']  # Database name
 collection = db['responses']  # Collection name
 
@@ -28,6 +24,7 @@ def convening_basics():
     if request.method == 'POST':
         session['convening_basics'] = request.form.to_dict(flat=False)
         print("Convening Basics Data:", session['convening_basics'])
+        # return jsonify({"message": "Data received", "data": session['convening_basics']})
         return redirect(url_for('convening_formats_and_spaces'))
     return render_template('conveningbasics.html')
 
@@ -36,6 +33,7 @@ def convening_formats_and_spaces():
     if request.method == 'POST':
         session['convening_formats_and_spaces'] = request.form.to_dict(flat=False)
         print("Convening Formats and Spaces Data:", session['convening_formats_and_spaces'])
+        # return jsonify({"message": "Data received", "data": session['convening_formats_and_spaces']})
         return redirect(url_for('space_photos'))
     return render_template('conveningformatsandspaces.html')
 
@@ -44,6 +42,7 @@ def space_photos():
     if request.method == 'POST':
         session['space_photos'] = request.form.to_dict(flat=False)
         print("Space Photos Data:", session['space_photos'])
+        # return jsonify({"message": "Data received", "data": session['space_photos']})
         return redirect(url_for('times_and_counts'))
     return render_template('spacephotos.html')
 
@@ -52,6 +51,7 @@ def times_and_counts():
     if request.method == 'POST':
         session['times_and_counts'] = request.form.to_dict(flat=False)
         print("Times and Counts Data:", session['times_and_counts'])
+        # return jsonify({"message": "Data received", "data": session['times_and_counts']})
         return redirect(url_for('procedures_and_norms'))
     return render_template('timesandcounts.html')
 
@@ -60,6 +60,7 @@ def procedures_and_norms():
     if request.method == 'POST':
         session['procedures_and_norms'] = request.form.to_dict(flat=False)
         print("Procedures and Norms Data:", session['procedures_and_norms'])
+        # return jsonify({"message": "Data received", "data": session['procedures_and_norms']})
         return redirect(url_for('activities'))
     return render_template('proceduresandnorms.html')
 
@@ -68,6 +69,7 @@ def activities():
     if request.method == 'POST':
         session['activities'] = request.form.to_dict(flat=False)
         print("Activities Data:", session['activities'])
+        # return jsonify({"message": "Data received", "data": session['activities']})
         return redirect(url_for('organizing_and_mobilizing'))
     return render_template('activities.html')
 
@@ -76,7 +78,9 @@ def organizing_and_mobilizing():
     if request.method == 'POST':
         session['organizing_and_mobilizing'] = request.form.to_dict(flat=False)
         print("Organizing and Mobilizing Data:", session['organizing_and_mobilizing'])
+        # return jsonify({"message": "Data received", "data": session['organizing_and_mobilizing']})
         return redirect(url_for('public_sphere'))
+
     return render_template('organizingandmobilizing.html')
 
 @app.route('/publicsphere.html', methods=['GET', 'POST'])
@@ -84,6 +88,7 @@ def public_sphere():
     if request.method == 'POST':
         session['public_sphere'] = request.form.to_dict(flat=False)
         print("Public Sphere Data:", session['public_sphere'])
+        # return jsonify({"message": "Data received", "data": session['public_sphere']})
         return redirect(url_for('decision_making'))
     return render_template('publicsphere.html')
 
@@ -92,6 +97,7 @@ def decision_making():
     if request.method == 'POST':
         session['decision_making'] = request.form.to_dict(flat=False)
         print("Decision Making Data:", session['decision_making'])
+        # return jsonify({"message": "Data received", "data": session['decision_making']})
         return redirect(url_for('planning_strategizing'))
     return render_template('decisionmaking.html')
 
@@ -100,7 +106,9 @@ def planning_strategizing():
     if request.method == 'POST':
         session['planning_strategizing'] = request.form.to_dict(flat=False)
         print("Planning and Strategizing Data:", session['planning_strategizing'])
+        # return jsonify({"message": "Data received", "data": session['planning_strategizing']})
         return redirect(url_for('leaders'))
+
     return render_template('planningstrategizing.html')
 
 @app.route('/leaders.html', methods=['GET', 'POST'])
@@ -108,7 +116,9 @@ def leaders():
     if request.method == 'POST':
         session['leaders'] = request.form.to_dict(flat=False)
         print("Leaders Data:", session['leaders'])
-        return redirect(url_for('interactionstyles'))
+        # return jsonify({"message": "Data received", "data": session['leaders']})
+        return redirect(url_for('interaction_styles'))
+
     return render_template('leaders.html')
 
 @app.route('/interactionstyles.html', methods=['GET', 'POST'])
@@ -116,7 +126,9 @@ def interaction_styles():
     if request.method == 'POST':
         session['interaction_styles'] = request.form.to_dict(flat=False)
         print("Interaction Styles Data:", session['interaction_styles'])
-        return redirect(url_for('socialboundaries'))
+        # return jsonify({"message": "Data received", "data": session['interaction_styles']})
+        return redirect(url_for('social_boundaries'))
+
     return render_template('interactionstyles.html')
 
 @app.route('/socialboundaries.html', methods=['GET', 'POST'])
@@ -125,7 +137,23 @@ def social_boundaries():
         session['social_boundaries'] = request.form.to_dict(flat=False)
         print("Social Boundaries Data:", session['social_boundaries'])
         # return jsonify({"message": "Data received", "data": session['social_boundaries']})
+        return redirect(url_for('field_notes'))
     return render_template('socialboundaries.html')
+
+# @app.route('/fieldnotes.html', methods=['GET', 'POST'])
+# def field_notes():
+#     if request.method == 'POST':
+#         session['field_notes'] = request.form.to_dict(flat=False)
+#         print("Field Notes Data:", session['field_notes'])
+#         # return jsonify({"message": "Data received", "data": session['field_notes']})
+#     return render_template('fieldnotes.html')
+
+# @app.route('/socialboundaries.html', methods=['GET', 'POST'])
+# def social_boundaries():
+#     if request.method == 'POST':
+#         session['interaction_styles'] = request.form.to_dict()
+#         return redirect(url_for('field_notes'))
+#     return render_template('socialboundaries.html')
 
 @app.route('/fieldnotes.html', methods=['GET', 'POST'])
 def field_notes():
@@ -148,7 +176,6 @@ def field_notes():
             "interaction_styles": session.get('interaction_styles'),
             "social_boundaries": session.get('social_boundaries'),
             "field_notes": session.get('field_notes')
-
         }
 
         # Save to MongoDB
@@ -156,7 +183,7 @@ def field_notes():
         
         # Clear session after saving
         session.clear()
-
+    print('Yes')
     return render_template('fieldnotes.html')
 
 @app.route("/")
