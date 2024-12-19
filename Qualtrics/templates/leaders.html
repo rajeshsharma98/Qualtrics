@@ -25,14 +25,14 @@
 
     .table-container {
       width: 100%;
-      overflow-x: auto; /* Enable horizontal scrolling */
+      overflow-x: auto;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
       margin-bottom: 30px;
-      min-width: 800px; /* Ensure table retains structure */
+      min-width: 800px;
     }
 
     th, td {
@@ -62,138 +62,91 @@
       border: 1px solid #000;
       border-radius: 4px;
     }
-
-    @media (max-width: 600px) {
-      /* Stack table into vertical cards for smaller screens */
-      table {
-        border: 0;
-      }
-
-      table caption {
-        font-size: 1.3em;
-        margin: .5em 0;
-      }
-
-      table thead {
-        display: none; /* Hide table headers */
-      }
-
-      table tr {
-        display: block;
-        margin-bottom: 1em;
-      }
-
-      table td {
-        display: block;
-        text-align: right;
-        font-size: 14px;
-        border-bottom: 1px solid #ddd;
-        position: relative;
-        padding-left: 50%;
-      }
-
-      table td::before {
-        content: attr(data-label); /* Add label before each data cell */
-        position: absolute;
-        left: 10px;
-        top: 10px;
-        width: calc(50% - 10px);
-        font-weight: bold;
-        text-align: left;
-      }
-
-      input[type="text"] {
-        width: calc(100% - 20px);
-      }
-    }
   </style>
 </head>
 <body>
   <div class="formbold-main-wrapper ">
     <div class="formbold-form-wrapper">
       <form action="/leaders.html" method="POST">
-  <h1 class="formbold-heading">Leaders</h1>
+        <h1 class="formbold-heading">Leaders</h1>
+        <h1>Convening Leaders</h1>
+        <p class="subtext">Describe anyone who is personally responsible for running a portion of the convening.</p>
+        
+        <div class="table-container">
+          <table>
+            <tr>
+              <th rowspan="2">Leader</th>
+              <th colspan="5">Status</th>
+              <th rowspan="2">Convening MC?</th>
+              <th colspan="3">Gender</th>
+              <th colspan="7">Race/Ethnicity</th>
+            </tr>
+            <tr>
+              <th>Org Staff</th>
+              <th>Non-staff Org Leader</th>
+              <th>Outsider/Guest</th>
+              <th>Other Participant</th>
+              <th>Don't Know/Can't Tell</th>
+              <th>Yes</th>
+              <th>Man</th>
+              <th>Woman</th>
+              <th>NonB/Can't Tell</th>
+              <th>White</th>
+              <th>Black</th>
+              <th>Latinx</th>
+              <th>Asian</th>
+              <th>Other (Non-White)</th>
+              <th>Can't Tell</th>
+            </tr>
 
-  <h1>Convening Leaders</h1>
-  <p class="subtext">Describe anyone who is personally responsible for running a portion of the convening.</p>
-  
-  <div class="table-container">
-    <table>
-      <tr>
-        <th rowspan="2">Leader</th>
-        <th colspan="5">Status</th>
-        <th rowspan="2">Convening MC?</th>
-        <th colspan="3">Gender</th>
-        <th colspan="7">Race/Ethnicity</th>
-      </tr>
-      <tr>
-        <th>Org Staff</th>
-        <th>Non-staff Org Leader</th>
-        <th>Outsider/Guest</th>
-        <th>Other Participant</th>
-        <th>Don't Know/Can't Tell</th>
-        <th>Yes</th>
-        <th>Man</th>
-        <th>Woman</th>
-        <th>NonB/Can't Tell</th>
-        <th>White</th>
-        <th>Black</th>
-        <th>Latinx</th>
-        <th>Asian</th>
-        <th>Other (Non-White)</th>
-        <th>Can't Tell</th>
-      </tr>
+            <!-- Generate rows dynamically -->
+            {% for i in range(1, 21) %}
+            <tr>
+              <td data-label="Leader"><input type="checkbox" name="leader_{{ i }}"></td>
+              <td data-label="Org Staff"><input type="radio" name="status_{{ i }}" value="org_staff"></td>
+              <td data-label="Non-staff Org Leader"><input type="radio" name="status_{{ i }}" value="non_staff_org_leader"></td>
+              <td data-label="Outsider/Guest"><input type="radio" name="status_{{ i }}" value="outsider_guest"></td>
+              <td data-label="Other Participant"><input type="radio" name="status_{{ i }}" value="other_participant"></td>
+              <td data-label="Don't Know/Can't Tell"><input type="radio" name="status_{{ i }}" value="dont_know"></td>
+              <td data-label="Convening MC?"><input type="checkbox" name="mc_{{ i }}"></td>
+              <td data-label="Man"><input type="radio" name="gender_{{ i }}" value="man"></td>
+              <td data-label="Woman"><input type="radio" name="gender_{{ i }}" value="woman"></td>
+              <td data-label="NonB/Can't Tell"><input type="radio" name="gender_{{ i }}" value="non_binary"></td>
+              <td data-label="White"><input type="radio" name="race_{{ i }}" value="white"></td>
+              <td data-label="Black"><input type="radio" name="race_{{ i }}" value="black"></td>
+              <td data-label="Latinx"><input type="radio" name="race_{{ i }}" value="latinx"></td>
+              <td data-label="Asian"><input type="radio" name="race_{{ i }}" value="asian"></td>
+              <td data-label="Other (Non-White)"><input type="radio" name="race_{{ i }}" value="other_non_white"></td>
+              <td data-label="Can't Tell"><input type="radio" name="race_{{ i }}" value="cant_tell"></td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
 
-      <!-- Row template -->
-      <tr>
-        <td data-label="Leader"><input type="checkbox" name="leader_1"></td>
-        <td data-label="Org Staff"><input type="radio" name="status_1" value="org_staff"></td>
-        <td data-label="Non-staff Org Leader"><input type="radio" name="status_1" value="non_staff_org_leader"></td>
-        <td data-label="Outsider/Guest"><input type="radio" name="status_1" value="outsider_guest"></td>
-        <td data-label="Other Participant"><input type="radio" name="status_1" value="other_participant"></td>
-        <td data-label="Don't Know/Can't Tell"><input type="radio" name="status_1" value="dont_know"></td>
-        <td data-label="Convening MC?"><input type="checkbox" name="mc_1"></td>
-        <td data-label="Man"><input type="radio" name="gender_1" value="man"></td>
-        <td data-label="Woman"><input type="radio" name="gender_1" value="woman"></td>
-        <td data-label="NonB/Can't Tell"><input type="radio" name="gender_1" value="non_binary"></td>
-        <td data-label="White"><input type="radio" name="race_1" value="white"></td>
-        <td data-label="Black"><input type="radio" name="race_1" value="black"></td>
-        <td data-label="Latinx"><input type="radio" name="race_1" value="latinx"></td>
-        <td data-label="Asian"><input type="radio" name="race_1" value="asian"></td>
-        <td data-label="Other (Non-White)"><input type="radio" name="race_1" value="other_non_white"></td>
-        <td data-label="Can't Tell"><input type="radio" name="race_1" value="cant_tell"></td>
-      </tr>
-      <!-- Add more rows as needed -->
-    </table>
-  </div>
+        <div class="button-container">
+          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('planning_strategizing') }}'">Previous</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('home') }}'">Index</button>
+          <button type="submit" class="formbold-btn" onclick="window.location.href='{{ url_for("social_boundaries") }}'">Next</button>
+        </div>
 
-  <div class="button-container">
-    <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('planning_strategizing') }}'">Previous</button>
-    <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('home') }}'">Index</button>
-    <!-- <button type="submit" class="formbold-btn" onclick="navigateForm(1)">Next</button> -->
-    <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for("social_boundaries") }}'">Next</button>
-  </div>
-
-  <!-- Tab Navigation for Forms -->
-  <div class="form-navigation">
-    <a href="conveningBasics.html" class="form-tab">Convening Basics</a>
-    <a href="conveningFormats&Spaces.html" class="form-tab">Convening Formats & Spaces</a>
-    <a href="spacePhotos.html" class="form-tab">Space Photos</a>
-    <a href="times&Counts.html" class="form-tab">Times and Counts</a>
-    <a href="procedures&Norms.html" class="form-tab">Procedures & Norms</a>
-    <a href="activities.html" class="form-tab">Activities</a>
-    <a href="organizing&Mobilizing.html" class="form-tab">Organizing & Mobilizing</a>
-    <a href="publicSphere.html" class="form-tab">Public-Sphere Discussion</a>
-    <a href="decisionMaking.html" class="form-tab">Decision Making</a>
-    <a href="planningStrategizing.html" class="form-tab">Planning/Strategizing</a>
-    <a href="leaders.html" class="form-tab">Leaders</a>
-    <a href="socialBoundaries.html" class="form-tab">Social Boundaries</a>
-    <a href="interactionStyles.html" class="form-tab">Interactions & Styles</a>
-    <a href="fieldNotes.html" class="form-tab">Field Notes</a>
-  </div>
-
-  </form>
-  </div>
+        <div class="form-navigation">
+          <a href="conveningBasics.html" class="form-tab">Convening Basics</a>
+          <a href="conveningFormats&Spaces.html" class="form-tab">Convening Formats & Spaces</a>
+          <a href="spacePhotos.html" class="form-tab">Space Photos</a>
+          <a href="times&Counts.html" class="form-tab">Times and Counts</a>
+          <a href="procedures&Norms.html" class="form-tab">Procedures & Norms</a>
+          <a href="activities.html" class="form-tab">Activities</a>
+          <a href="organizing&Mobilizing.html" class="form-tab">Organizing & Mobilizing</a>
+          <a href="publicSphere.html" class="form-tab">Public-Sphere Discussion</a>
+          <a href="decisionMaking.html" class="form-tab">Decision Making</a>
+          <a href="planningStrategizing.html" class="form-tab">Planning/Strategizing</a>
+          <a href="leaders.html" class="form-tab">Leaders</a>
+          <a href="socialBoundaries.html" class="form-tab">Social Boundaries</a>
+          <a href="interactionStyles.html" class="form-tab">Interactions & Styles</a>
+          <a href="fieldNotes.html" class="form-tab">Field Notes</a>
+        </div>
+      </form>
+    </div>
   </div>
 </body>
 </html>

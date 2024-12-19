@@ -27,7 +27,7 @@
 <body>
   <div class="formbold-main-wrapper ">
     <div class="formbold-form-wrapper">
-      <form action="/spacephotos.html" method="POST">
+      <form action="/spacephotos.html" method="POST" enctype="multipart/form-data">
 
         <h1>Space Photos</h1>
 
@@ -53,7 +53,8 @@
           <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('convening_formats_and_spaces') }}'">Previous</button>
           <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('home') }}'">Index</button>
           <!-- <button type="submit" class="formbold-btn" onclick="navigateForm(1)">Next</button> -->
-          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for("times_and_counts") }}'">Next</button>
+          <!-- <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for("times_and_counts") }}'">Next</button> -->
+          <button type="submit" class="formbold-btn" id="next-btn">Next</button>
         </div>
 
         <!-- Tab Navigation for Forms -->

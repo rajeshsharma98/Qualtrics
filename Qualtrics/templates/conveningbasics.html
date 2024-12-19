@@ -4,13 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Convening Basics</title>
-  <link rel="stylesheet" href="../static/CSS/style.css">
-  <!-- <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/form-components.css">
-  <link rel="stylesheet" href="css/grid.css">
-  <link rel="stylesheet" href="css/tabs.css">
-  <link rel="stylesheet" href="css/form-specific.css"> -->
+  <link rel="stylesheet" href="../static/css/style.css">
+  <style>
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .schedule-table th, .schedule-table td {
+      border: 1px solid #ddd;
+      /* text-align: center; */
+      padding: 10px;
+    }
+    .schedule-table th {
+      background-color: #f4f4f4;
+    }
+    .form-input {
+      width: 90%;
+      padding: 8px;
+      margin: 5px 0;
+      box-sizing: border-box;
+    }
+  </style>
 </head>
 <body>
 
@@ -35,8 +50,8 @@
         </div>
 
         <!-- Special Circumstances -->
-              <label class="formbold-form-label">Special Circumstances</label>
-              <p class="formbold-form-subtext">Select the applicable circumstances:</p>
+            <label class="formbold-form-label">Special Circumstances</label>
+            <p class="formbold-form-subtext">Select the applicable circumstances:</p>
               <div class="formbold-grid-two-columns">
                 <div class="formbold-card">
                   <label class="formbold-radio-label">
@@ -76,7 +91,7 @@
                 </div>
                 <div class="formbold-card">
                   <label class="formbold-radio-label">
-                    <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_event" />
+                    <input type="checkbox" id="part-of-event-checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="part_of_larger_event" />
                     <div class="formbold-card-content">
                       <span class="large-text">Part of larger event</span>
                       <span class="small-text">convening is part of a larger event</span>
@@ -85,7 +100,43 @@
                 </div>
               </div>
 
-          
+         <!-- Additional Checkboxes -->
+         <div id="larger-event-fields" style="display: none; ">
+          <div class="formbold-card" style="display: flex; flex-direction: column; align-items: flex-start;">
+            <label for="larger_event_name" class="formbold-form-label" style="margin-bottom: 8px;">Name of larger event:</label>
+            <div class="formbold-card-content">
+              <input type="checkbox" class="formbold-input-checkbox" name="larger_event_name" value="name_of_event" />
+              <input type="text" name="larger_event_name" id="larger_event" placeholder="Name of larger event" class="formbold-form-input" />
+            </div>
+          </div>
+        <!-- </div> -->
+        
+          <div class="formbold-input-group">
+            <label for="organization" class="formbold-form-label">Start/End Times of Larger Event</label>
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th> </th>
+                  <th>Time</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Scheduled Event Start</td>
+                  <td><input type="time" name="start_time" class="form-input"></td>
+                  <td><input type="date" name="start_date" class="form-input"></td>
+                </tr>
+                <tr>
+                  <td>Scheduled Event End</td>
+                  <td><input type="time" name="end_time" class="form-input"></td>
+                  <td><input type="date" name="end_date" class="form-input"></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div> 
 
         <!-- Organization -->
         <div class="formbold-input-group">
@@ -103,10 +154,11 @@
             <option value="other">Other</option>
           </select>
         </div>
-          
+
+        
         <div class="formbold-input-group" id="other-role-group" style="display: none;">
           <label for="other-role" class="formbold-form-label">Please specify:</label>
-          <input type="text" id="other-role" name="other_role" placeholder="Enter your role" class="formbold-form-input" />
+          <input type="text" id="other-role" name="organization_other_role" placeholder="Enter your role" class="formbold-form-input" />
         </div>
           
         <!-- Convening Type -->
@@ -332,13 +384,13 @@
             </div>
           </div>
 
-        <!-- Timing -->
+        <!-- Difficulty Observing -->
         <div class="formbold-input-radio-wrapper">
           <label class="formbold-form-label">Difficulty Observing:</label>
           <div class="formbold-grid-two-columns">
             <div class="formbold-card">
               <label class="formbold-radio-label">
-                <input type="radio" class="formbold-input-radio" name="timing" value="pre_planned" />
+                <input type="checkbox" class="formbold-input-radio" name="difficulty_observing" value="demographic_counts" />
                 <div class="formbold-card-content">
                   <span class="large-text">Demographic Counts</span>
                 </div>
@@ -346,7 +398,7 @@
             </div>
             <div class="formbold-card">
               <label class="formbold-radio-label">
-                <input type="radio" class="formbold-input-radio" name="timing" value="post_impromptu" />
+                <input type="checkbox" class="formbold-input-radio" name="difficulty_observing" value="demographic_interactions" />
                 <div class="formbold-card-content">
                   <span class="large-text">Demographic Interactions</span>
                 </div>
@@ -354,7 +406,7 @@
             </div>
             <div class="formbold-card">
               <label class="formbold-radio-label">
-                <input type="radio" class="formbold-input-radio" name="timing" value="post_impromptu" />
+                <input type="checkbox" class="formbold-input-radio" name="difficulty_observing" value="interaction_style" />
                 <div class="formbold-card-content">
                   <span class="large-text">Interaction Style</span>
                 </div>
@@ -362,7 +414,7 @@
             </div>
             <div class="formbold-card">
               <label class="formbold-radio-label">
-                <input type="radio" class="formbold-input-radio" name="timing" value="post_impromptu" />
+                <input type="checkbox" class="formbold-input-radio" name="difficulty_observing" value="other_difficult_items" />
                 <div class="formbold-card-content">
                   <input type="text" name="organization" id="organization" placeholder="Other Difficult Items" class="formbold-form-input" />
                 </div>
@@ -377,7 +429,9 @@
           <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('home') }}'">Previous</button>
           <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('home') }}'">Index</button>
           <!-- <button type="submit" class="formbold-btn" onclick="navigateForm(1)">Next</button> -->
-          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for("convening_formats_and_spaces") }}'">Next</button>
+          <button type="submit" class="formbold-btn" id="next-btn">Next</button>
+
+          <!-- <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for("convening_formats_and_spaces") }}'">Next</button> -->
         </div>
 
         <!-- Tab Navigation for Forms -->
@@ -410,6 +464,15 @@
       otherRoleGroup.style.display = 'block';
     } else {
       otherRoleGroup.style.display = 'none';
+    }
+  });
+  
+  document.getElementById('part-of-event-checkbox').addEventListener('change', function () {
+    const largerEventFields = document.getElementById('larger-event-fields');
+    if (this.checked) {
+      largerEventFields.style.display = 'block'; // Show the fields when checkbox is checked
+    } else {
+      largerEventFields.style.display = 'none'; // Hide the fields when checkbox is unchecked
     }
   });
 </script>

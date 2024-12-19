@@ -6,21 +6,65 @@
   <title>Procedure & Norms</title>
   <link rel="stylesheet" href="../static/CSS/style.css">
 
+  <style>
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .checkbox-item, .radio-item {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .checkbox-item input {
+      display: none;
+    }
+    .checkbox-item.selected {
+      background-color: #800000;
+      color: white;
+    }
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    td input {
+      transform: scale(1.2);
+    }
+    .formbold-form-wrapper {
+    margin: 0 auto;
+    max-width: 1200px  !important;;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1) !important; /* Add !important */
+  } 
+  </style>
 </head>
 <body>
 
   <div class="formbold-main-wrapper ">
     <div class="formbold-form-wrapper">
-      <form action="/conveningbasics.html" method="POST">
+      <form action="/proceduresandnorms.html" method="POST">
         <h1 class="formbold-heading">Procedure and Norms</h1>
-
         <label class="formbold-form-label">Transition to Start</label>
               <p class="formbold-form-subtext">"DK" only if arrived too late to observe.:</p>
               
               <div class="formbold-grid-two-columns">
 
                 <div class="formbold-card">
-                  <label class="formbold-radio-label">
+                  <label class="radio-item">
                     <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="too_long" />
                     <div class="formbold-card-content">
                       <span class="large-text">Clear</span>
@@ -28,7 +72,7 @@
                   </label>
                 </div>
                 <div class="formbold-card">
-                  <label class="formbold-radio-label">
+                  <label class="radio-item">
                     <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="multiple_concurrent" />
                     <div class="formbold-card-content">
                       <span class="large-text">Soft</span>
@@ -36,7 +80,7 @@
                   </label>
                 </div>
                 <div class="formbold-card">
-                  <label class="formbold-radio-label">
+                  <label class="radio-item">
                     <input type="checkbox" class="formbold-input-checkbox" name="special_circumstances[]" value="fifty_or_more" />
                     <div class="formbold-card-content">
                       <span class="large-text">DK</span>
@@ -44,17 +88,810 @@
                   </label>
                 </div>
               </div>
-            
-        <!-- <button type="submit" class="formbold-btn">Submit</button> -->
-        <!-- Previous and Next Button Navigation -->
-        <div class="button-container">
-          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('times_and_counts') }}'">Previous</button>
-          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('home') }}'">Index</button>
-          <!-- <button type="submit" class="formbold-btn" onclick="navigateForm(1)">Next</button> -->
-          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for("activities") }}'">Next</button>
+              
+
+        <label class="formbold-form-label">Opening Ritual</label>
+        <div class="checkbox-grid" id="opening-ritual">
+          <label class="checkbox-item">
+            <input type="checkbox" name="opening_ritual" value="none" id="none-option" />
+            None
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="opening_ritual" value="recitation" />
+            Recitation
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="opening_ritual" value="formal_call_to_order" />
+            Formal Call to Order
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="opening_ritual" value="patriotic" />
+            Patriotic
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="opening_ritual" value="approval_of_minutes" />
+            Approval of Minutes
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="opening_ritual" value="warm_ups" />
+            Warm-ups
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="opening_ritual" value="song" />
+            Song
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="opening_ritual" value="prayer" />
+            Prayer
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="opening_ritual" value="moment_of_silence" />
+            Moment of Silence
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="opening_ritual" value="other" />
+            <input type="text" placeholder="Other" name="opening_ritual_other" />
+          </label>
         </div>
 
-        <!-- Tab Navigation for Forms -->
+
+      <!-- Systematic Introduction -->
+      <label class="formbold-form-label">Systematic Introduction to Start</label>
+      <div class="formbold-grid-two-columns" id="systematic-introduction">
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="checkbox" class="formbold-input-checkbox" name="systematic_introduction[]" value="none" id="systematic-none-option" />
+            <div class="formbold-card-content">
+              <span class="large-text">None</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="checkbox" class="formbold-input-checkbox" name="systematic_introduction[]" value="guest" />
+            <div class="formbold-card-content">
+              <span class="large-text">Guest</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="checkbox" class="formbold-input-checkbox" name="systematic_introduction[]" value="participants" />
+            <div class="formbold-card-content">
+              <span class="large-text">Participants</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="checkbox" class="formbold-input-checkbox" name="systematic_introduction[]" value="leaders" />
+            <div class="formbold-card-content">
+              <span class="large-text">Leaders</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Attendance-->
+      <label class="formbold-form-label">Attendance</label>
+      <div class="formbold-grid-two-columns" id="attendance-introduction">
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="checkbox" class="formbold-input-checkbox" name="attendance[]" value="none" id="attendance-none-option" />
+            <div class="formbold-card-content">
+              <span class="large-text">Not Taken</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="checkbox" class="formbold-input-checkbox" name="attendance[]" value="names" />
+            <div class="formbold-card-content">
+              <span class="large-text">Names</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="checkbox" class="formbold-input-checkbox" name="attendance[]" value="head_count" />
+            <div class="formbold-card-content">
+              <span class="large-text">Head Count</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="checkbox" class="formbold-input-checkbox" name="attendance[]" value="both" />
+            <div class="formbold-card-content">
+              <span class="large-text">Both</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Agenda/Program Section -->
+<label class="formbold-form-label">Agenda/Program</label>
+<p class="formbold-form-subtext">
+  "dk" if don't know. "na" if not applicable
+</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 20px; text-align: center;">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="6">Agenda</th>
+      <th colspan="4">Followed?</th>
+      <th colspan="2"># of Items</th>
+    </tr>
+    <tr>
+      <th>Agenda</th>
+      <th>None</th>
+      <th>On-the-spot</th>
+      <th>Routine</th>
+      <th>Distributed</th>
+      <th>Posted</th>
+      <th>Spoken (start)</th>
+      <th>Unshared</th>
+      <th>NA</th>
+      <th>Closely</th>
+      <th>Loosely</th>
+      <th>Ignored</th>
+      <th>On Agenda</th>
+      <th>Covered</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Agenda</td>
+      <td><input type="checkbox" name="agenda_type" value="none"></td>
+      <td><input type="checkbox" name="agenda_type" value="on_the_spot"></td>
+      <td><input type="checkbox" name="agenda_type" value="routine"></td>
+      <td><input type="checkbox" name="agenda_type" value="distributed"></td>
+      <td><input type="checkbox" name="agenda_type" value="posted"></td>
+      <td><input type="checkbox" name="agenda_type" value="spoken_start"></td>
+      <td><input type="checkbox" name="agenda_type" value="unshared"></td>
+      <td><input type="radio" name="agenda_followed" value="na"></td>
+      <td><input type="radio" name="agenda_followed" value="closely"></td>
+      <td><input type="radio" name="agenda_followed" value="loosely"></td>
+      <td><input type="radio" name="agenda_followed" value="ignored"></td>
+      <td><input type="text" name="agenda_items_on_agenda" style="width: 50px; text-align: center;"></td>
+      <td><input type="text" name="agenda_items_covered" style="width: 50px; text-align: center;"></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Language Section -->
+<label class="formbold-form-label">Language</label>
+<p class="formbold-form-subtext">"dk" if don't know. "na" if not applicable</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 20px; text-align: center;">
+  <thead>
+    <tr>
+      <th rowspan="2">Language</th>
+      <th colspan="2">Spoken/Written</th>
+      <th colspan="4">Who speaks?</th>
+      <th colspan="4">Convening run in language?</th>
+      <th rowspan="2">Primary Language</th>
+      <th rowspan="2">Translation Into</th>
+    </tr>
+    <tr>
+      <th>Spoken</th>
+      <th>Written</th>
+      <th>None</th>
+      <th>Some</th>
+      <th>All</th>
+      <th>DK</th>
+      <th>None</th>
+      <th>Some</th>
+      <th>All</th>
+      <th>DK</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- English -->
+    <tr>
+      <td>English</td>
+      <td><input type="checkbox" name="language_english_spoken"></td>
+      <td><input type="checkbox" name="language_english_written"></td>
+      <td><input type="radio" name="language_english_speaks" value="none"></td>
+      <td><input type="radio" name="language_english_speaks" value="some"></td>
+      <td><input type="radio" name="language_english_speaks" value="all"></td>
+      <td><input type="radio" name="language_english_speaks" value="dk"></td>
+      <td><input type="radio" name="language_english_run" value="none"></td>
+      <td><input type="radio" name="language_english_run" value="some"></td>
+      <td><input type="radio" name="language_english_run" value="all"></td>
+      <td><input type="radio" name="language_english_run" value="dk"></td>
+      <td><input type="checkbox" name="language_english_primary"></td>
+      <td><input type="checkbox" name="language_english_translation"></td>
+    </tr>
+    <!-- Spanish -->
+    <tr>
+      <td>Spanish</td>
+      <td><input type="checkbox" name="language_spanish_spoken"></td>
+      <td><input type="checkbox" name="language_spanish_written"></td>
+      <td><input type="radio" name="language_spanish_speaks" value="none"></td>
+      <td><input type="radio" name="language_spanish_speaks" value="some"></td>
+      <td><input type="radio" name="language_spanish_speaks" value="all"></td>
+      <td><input type="radio" name="language_spanish_speaks" value="dk"></td>
+      <td><input type="radio" name="language_spanish_run" value="none"></td>
+      <td><input type="radio" name="language_spanish_run" value="some"></td>
+      <td><input type="radio" name="language_spanish_run" value="all"></td>
+      <td><input type="radio" name="language_spanish_run" value="dk"></td>
+      <td><input type="checkbox" name="language_spanish_primary"></td>
+      <td><input type="checkbox" name="language_spanish_translation"></td>
+    </tr>
+    <!-- Sign Language -->
+    <tr>
+      <td>Sign Language</td>
+      <td><input type="checkbox" name="language_sign_spoken"></td>
+      <td><input type="checkbox" name="language_sign_written"></td>
+      <td><input type="radio" name="language_sign_speaks" value="none"></td>
+      <td><input type="radio" name="language_sign_speaks" value="some"></td>
+      <td><input type="radio" name="language_sign_speaks" value="all"></td>
+      <td><input type="radio" name="language_sign_speaks" value="dk"></td>
+      <td><input type="radio" name="language_sign_run" value="none"></td>
+      <td><input type="radio" name="language_sign_run" value="some"></td>
+      <td><input type="radio" name="language_sign_run" value="all"></td>
+      <td><input type="radio" name="language_sign_run" value="dk"></td>
+      <td><input type="checkbox" name="language_sign_primary"></td>
+      <td><input type="checkbox" name="language_sign_translation"></td>
+    </tr>
+    <!-- Other 1 -->
+    <tr>
+      <td><input type="text" name="language_other1_name" placeholder="Other 1"></td>
+      <td><input type="checkbox" name="language_other1_spoken"></td>
+      <td><input type="checkbox" name="language_other1_written"></td>
+      <td><input type="radio" name="language_other1_speaks" value="none"></td>
+      <td><input type="radio" name="language_other1_speaks" value="some"></td>
+      <td><input type="radio" name="language_other1_speaks" value="all"></td>
+      <td><input type="radio" name="language_other1_speaks" value="dk"></td>
+      <td><input type="radio" name="language_other1_run" value="none"></td>
+      <td><input type="radio" name="language_other1_run" value="some"></td>
+      <td><input type="radio" name="language_other1_run" value="all"></td>
+      <td><input type="radio" name="language_other1_run" value="dk"></td>
+      <td><input type="checkbox" name="language_other1_primary"></td>
+      <td><input type="checkbox" name="language_other1_translation"></td>
+    </tr>
+    <!-- Other 2 -->
+    <tr>
+      <td><input type="text" name="language_other2_name" placeholder="Other 2"></td>
+      <td><input type="checkbox" name="language_other2_spoken"></td>
+      <td><input type="checkbox" name="language_other2_written"></td>
+      <td><input type="radio" name="language_other2_speaks" value="none"></td>
+      <td><input type="radio" name="language_other2_speaks" value="some"></td>
+      <td><input type="radio" name="language_other2_speaks" value="all"></td>
+      <td><input type="radio" name="language_other2_speaks" value="dk"></td>
+      <td><input type="radio" name="language_other2_run" value="none"></td>
+      <td><input type="radio" name="language_other2_run" value="some"></td>
+      <td><input type="radio" name="language_other2_run" value="all"></td>
+      <td><input type="radio" name="language_other2_run" value="dk"></td>
+      <td><input type="checkbox" name="language_other2_primary"></td>
+      <td><input type="checkbox" name="language_other2_translation"></td>
+    </tr>
+    <!-- 3rd or More Others -->
+    <tr>
+      <td>3rd or More Others</td>
+      <td><input type="checkbox" name="language_more_spoken"></td>
+      <td><input type="checkbox" name="language_more_written"></td>
+      <td><input type="radio" name="language_more_speaks" value="none"></td>
+      <td><input type="radio" name="language_more_speaks" value="some"></td>
+      <td><input type="radio" name="language_more_speaks" value="all"></td>
+      <td><input type="radio" name="language_more_speaks" value="dk"></td>
+      <td><input type="radio" name="language_more_run" value="none"></td>
+      <td><input type="radio" name="language_more_run" value="some"></td>
+      <td><input type="radio" name="language_more_run" value="all"></td>
+      <td><input type="radio" name="language_more_run" value="dk"></td>
+      <td><input type="checkbox" name="language_more_primary"></td>
+      <td><input type="checkbox" name="language_more_translation"></td>
+    </tr>
+  </tbody>
+</table>
+
+      <!-- Break -->
+      <label class="formbold-form-label">Break</label>
+      <div class="formbold-grid-two-columns" id="attendance-introduction">
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="radio" class="formbold-input-checkbox" name="break[]" value="none" id="break-none-option" />
+            <div class="formbold-card-content">
+              <span class="large-text">No Breaks</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="radio" class="formbold-input-checkbox" name="break[]" value="planned_breaks" />
+            <div class="formbold-card-content">
+              <span class="large-text">Planned Breaks</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="radio" class="formbold-input-checkbox" name="break[]" value="unplanned_breaks" />
+            <div class="formbold-card-content">
+              <span class="large-text">Unplanned Breaks</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="radio" class="formbold-input-checkbox" name="break[]" value="both" />
+            <div class="formbold-card-content">
+              <span class="large-text">Both</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+
+      <!-- Robert's Rule of Order -->
+      <label class="formbold-form-label">Robert's Rules of Order</label>
+      <p> Motion, Second, Discussion, Votes</p>
+      <div class="formbold-grid-two-columns" id="attendance-introduction">
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="radio" class="formbold-input-checkbox" name="robert_rule" value="yes" id="break-none-option" />
+            <div class="formbold-card-content">
+              <span class="large-text">Yes</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="radio" class="formbold-input-checkbox" name="robert_rule" value="no" />
+            <div class="formbold-card-content">
+              <span class="large-text">No</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Discussion Section -->
+      <label class="formbold-form-label">Discussion</label>
+      <table style="width: 100%; border-collapse: collapse; margin-top: 20px; text-align: center;">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Occurred?</th>
+            <th colspan="4">Format</th>
+            <th colspan="4">On/off topic?</th>
+          </tr>
+          <tr>
+            <th>Discussion</th>
+            <th>Yes</th>
+            <th>Free form</th>
+            <th>Blend</th>
+            <th>Formal</th>
+            <th>NA</th>
+            <th>Mostly on</th>
+            <th>On/Off mix</th>
+            <th>Mostly off</th>
+            <th>NA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Discussion</td>
+            <td><input type="checkbox" name="discussion_occurred" value="yes"></td>
+            <td><input type="radio" name="discussion_format" value="free_form"></td>
+            <td><input type="radio" name="discussion_format" value="blend"></td>
+            <td><input type="radio" name="discussion_format" value="formal"></td>
+            <td><input type="radio" name="discussion_format" value="na"></td>
+            <td><input type="radio" name="discussion_topic" value="mostly_on"></td>
+            <td><input type="radio" name="discussion_topic" value="on_off_mix"></td>
+            <td><input type="radio" name="discussion_topic" value="mostly_off"></td>
+            <td><input type="radio" name="discussion_topic" value="na"></td>
+          </tr>
+        </tbody>
+      </table>
+
+<!-- Side Conversations Section -->
+<label class="formbold-form-label">Side Conversations</label>
+<p class="formbold-form-subtext">
+  When might break norm, like during presentation. Not when expected, like socializing.
+</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 20px; text-align: center;">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3">Occurred?</th>
+      <th colspan="4">Reaction</th>
+    </tr>
+    <tr>
+      <th>Side Conversations</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>NA</th>
+      <th>Unnoticed</th>
+      <th>Allowed</th>
+      <th>Addressed</th>
+      <th>NA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Side conversations</td>
+      <td><input type="radio" name="side_conversations_occurred" value="yes"></td>
+      <td><input type="radio" name="side_conversations_occurred" value="no"></td>
+      <td><input type="radio" name="side_conversations_occurred" value="na"></td>
+      <td><input type="checkbox" name="side_conversations_reaction" value="unnoticed"></td>
+      <td><input type="checkbox" name="side_conversations_reaction" value="allowed"></td>
+      <td><input type="checkbox" name="side_conversations_reaction" value="addressed"></td>
+      <td><input type="checkbox" name="side_conversations_reaction" value="na"></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Participant Norms Section -->
+<label class="formbold-form-label">Participant Norms: What are participants expected to do?</label>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 20px; text-align: center;">
+  <thead>
+    <tr>
+      <th style="text-align: left;"> </th>
+      <th>Noted/Reminded</th>
+      <th>Suggested/Selected</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left;">Be informed</td>
+      <td><input type="checkbox" name="norms_be_informed_noted"></td>
+      <td><input type="checkbox" name="norms_be_informed_suggested"></td>
+    </tr>
+    <tr>
+      <td style="text-align: left; background-color: #f4f4f4;">Set/be an example</td>
+      <td><input type="checkbox" name="norms_set_example_noted"></td>
+      <td><input type="checkbox" name="norms_set_example_suggested"></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Change own behavior</td>
+      <td><input type="checkbox" name="norms_change_behavior_noted"></td>
+      <td><input type="checkbox" name="norms_change_behavior_suggested"></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Change others' behaviors</td>
+      <td><input type="checkbox" name="norms_change_others_behavior_noted"></td>
+      <td><input type="checkbox" name="norms_change_others_behavior_suggested"></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Attend convenings</td>
+      <td><input type="checkbox" name="norms_attend_convenings_noted"></td>
+      <td><input type="checkbox" name="norms_attend_convenings_suggested"></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Pay dues/contribute financially</td>
+      <td><input type="checkbox" name="norms_pay_dues_noted"></td>
+      <td><input type="checkbox" name="norms_pay_dues_suggested"></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Recruit others</td>
+      <td><input type="checkbox" name="norms_recruit_others_noted"></td>
+      <td><input type="checkbox" name="norms_recruit_others_suggested"></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Volunteer time</td>
+      <td><input type="checkbox" name="norms_volunteer_time_noted"></td>
+      <td><input type="checkbox" name="norms_volunteer_time_suggested"></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Develop skills</td>
+      <td><input type="checkbox" name="norms_develop_skills_noted"></td>
+      <td><input type="checkbox" name="norms_develop_skills_suggested"></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Teach/train/mentor others</td>
+      <td><input type="checkbox" name="norms_teach_train_noted"></td>
+      <td><input type="checkbox" name="norms_teach_train_suggested"></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Lead the organization</td>
+      <td><input type="checkbox" name="norms_lead_organization_noted"></td>
+      <td><input type="checkbox" name="norms_lead_organization_suggested"></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Other expectations <br>
+      <input type="text" name="norms_other_expectations" style="width: 50%; margin-left: 20px;"></td>
+      <td><input type="checkbox" name="norms_lead_organization_noted"></td>
+      <td><input type="checkbox" name="norms_lead_organization_suggested"></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Attire Section -->
+<label class="formbold-form-label">Attire</label>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 20px; text-align: center;">
+  <thead>
+    <tr>
+      <th style="text-align: left;"> </th>
+      <th>None</th>
+      <th>Less than half</th>
+      <th>Half or more</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left;">Professional/Formal</td>
+      <td><input type="radio" name="attire_formal" value="none"></td>
+      <td><input type="radio" name="attire_formal" value="less_than_half"></td>
+      <td><input type="radio" name="attire_formal" value="half_or_more"></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Casual</td>
+      <td><input type="radio" name="attire_casual" value="none"></td>
+      <td><input type="radio" name="attire_casual" value="less_than_half"></td>
+      <td><input type="radio" name="attire_casual" value="half_or_more"></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Uniform</td>
+      <td><input type="radio" name="attire_uniform" value="none"></td>
+      <td><input type="radio" name="attire_uniform" value="less_than_half"></td>
+      <td><input type="radio" name="attire_uniform" value="half_or_more"></td>
+    </tr>
+  </tbody>
+</table>
+
+      <!-- Movement -->
+      <label class="formbold-form-label">Movement</label>
+      <div class="formbold-grid-two-columns" id="attendance-introduction">
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="radio" class="formbold-input-checkbox" name="movement" value="none" />
+            <div class="formbold-card-content">
+              <span class="large-text">None</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="radio" class="formbold-input-checkbox" name="movement" value="self_directed" />
+            <div class="formbold-card-content">
+              <span class="large-text">Self Directed</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="radio" class="formbold-input-checkbox" name="convening_directed" value="convening_directed" />
+            <div class="formbold-card-content">
+              <span class="large-text">Conveing Directed</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="radio" class="formbold-input-checkbox" name="both" value="both" />
+            <div class="formbold-card-content">
+              <span class="large-text">Both</span>
+            </div>
+          </label>
+        </div>
+
+      </div>
+
+      <!-- Food/Alcohol Section -->
+<label class="formbold-form-label">Food/Alcohol</label>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 20px; text-align: center;">
+  <thead>
+    <tr>
+      <th style="text-align: left;"> </th>
+      <th>Present</th>
+      <th colspan="4">Provided by:</th>
+      <th colspan="3">Provided for:</th>
+      <th colspan="3">Consumed by:</th>
+      <th colspan="3">Effect</th>
+    </tr>
+    <tr>
+      <th style="text-align: left;"> </th>
+      <th>Yes</th>
+      <th>Brought for self</th>
+      <th>Brought to share</th>
+      <th>Org provided</th>
+      <th>Org sold</th>
+      <th>Venue sold</th>
+      <th>Org</th>
+      <th>Public</th>
+      <th>Both</th>
+      <th>None</th>
+      <th>Some</th>
+      <th>Most</th>
+      <th>Enhanced</th>
+      <th>Detracted</th>
+      <th>Neither</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left;">Alcohol</td>
+      <td><input type="checkbox" name="alcohol_present" value="yes"></td>
+      <td><input type="checkbox" name="alcohol_brought_self" value="yes"></td>
+      <td><input type="checkbox" name="alcohol_brought_share" value="yes"></td>
+      <td><input type="checkbox" name="alcohol_org_provided" value="yes"></td>
+      <td><input type="checkbox" name="alcohol_org_sold" value="yes"></td>
+      <td><input type="checkbox" name="alcohol_venue_sold" value="yes"></td>
+      <td><input type="radio" name="alcohol_provided_for" value="org"></td>
+      <td><input type="radio" name="alcohol_provided_for" value="public"></td>
+      <td><input type="radio" name="alcohol_provided_for" value="both"></td>
+      <td><input type="radio" name="alcohol_consumed_by" value="none"></td>
+      <td><input type="radio" name="alcohol_consumed_by" value="some"></td>
+      <td><input type="radio" name="alcohol_consumed_by" value="most"></td>
+      <td><input type="radio" name="alcohol_effect" value="enhanced"></td>
+      <td><input type="radio" name="alcohol_effect" value="detracted"></td>
+      <td><input type="radio" name="alcohol_effect" value="neither"></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Food, Drink</td>
+      <td><input type="checkbox" name="food_present" value="yes"></td>
+      <td><input type="checkbox" name="food_brought_self" value="yes"></td>
+      <td><input type="checkbox" name="food_brought_share" value="yes"></td>
+      <td><input type="checkbox" name="food_org_provided" value="yes"></td>
+      <td><input type="checkbox" name="food_org_sold" value="yes"></td>
+      <td><input type="checkbox" name="food_venue_sold" value="yes"></td>
+      <td><input type="radio" name="food_provided_for" value="org"></td>
+      <td><input type="radio" name="food_provided_for" value="public"></td>
+      <td><input type="radio" name="food_provided_for" value="both"></td>
+      <td><input type="radio" name="food_consumed_by" value="none"></td>
+      <td><input type="radio" name="food_consumed_by" value="some"></td>
+      <td><input type="radio" name="food_consumed_by" value="most"></td>
+      <td><input type="radio" name="food_effect" value="enhanced"></td>
+      <td><input type="radio" name="food_effect" value="detracted"></td>
+      <td><input type="radio" name="food_effect" value="neither"></td>
+    </tr>
+  </tbody>
+</table>
+
+      <!-- Transition to End -->
+      <label class="formbold-form-label">Transition to End</label>
+      <p> "DK" only if left too early to observe.</p>
+      <div class="formbold-grid-two-columns" id="attendance-introduction">
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="radio" class="formbold-input-checkbox" name="transition" value="clear" />
+            <div class="formbold-card-content">
+              <span class="large-text">Clear</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="radio" class="formbold-input-checkbox" name="transition" value="soft" />
+            <div class="formbold-card-content">
+              <span class="large-text">Soft</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="formbold-card">
+          <label class="formbold-radio-label">
+            <input type="radio" class="formbold-input-checkbox" name="transition" value="dk" />
+            <div class="formbold-card-content">
+              <span class="large-text">DK</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+<!-- Closing Ritual-->
+<label class="formbold-form-label">Closing Ritual</label>
+<div class="formbold-grid-two-columns" id="closing_ritual-introduction">
+  <div class="formbold-card">
+    <label class="formbold-radio-label">
+      <input type="checkbox" class="formbold-input-checkbox" name="closing_ritual" value="none" id="closing_ritual-none-option" />
+      <div class="formbold-card-content">
+        <span class="large-text">None</span>
+      </div>
+    </label>
+  </div>
+
+  <div class="formbold-card">
+    <label class="formbold-radio-label">
+      <input type="checkbox" class="formbold-input-checkbox" name="closing_ritual" value="recitation" />
+      <div class="formbold-card-content">
+        <span class="large-text">Recitation</span>
+      </div>
+    </label>
+  </div>
+
+  <div class="formbold-card">
+    <label class="formbold-radio-label">
+      <input type="checkbox" class="formbold-input-checkbox" name="closing_ritual" value="formal_call_to_adjourn" />
+      <div class="formbold-card-content">
+        <span class="large-text">Formal call to adjourn</span>
+      </div>
+    </label>
+  </div>
+
+  <div class="formbold-card">
+    <label class="formbold-radio-label">
+      <input type="checkbox" class="formbold-input-checkbox" name="closing_ritual" value="patriotic" />
+      <div class="formbold-card-content">
+        <span class="large-text">Patriotic</span>
+      </div>
+    </label>
+  </div>
+
+  <div class="formbold-card">
+    <label class="formbold-radio-label">
+      <input type="checkbox" class="formbold-input-checkbox" name="closing_ritual" value="song" />
+      <div class="formbold-card-content">
+        <span class="large-text">Song</span>
+      </div>
+    </label>
+  </div>
+
+  <div class="formbold-card">
+    <label class="formbold-radio-label">
+      <input type="checkbox" class="formbold-input-checkbox" name="closing_ritual" value="cool_down" />
+      <div class="formbold-card-content">
+        <span class="large-text">Cool-Down</span>
+      </div>
+    </label>
+  </div>
+
+  <div class="formbold-card">
+    <label class="formbold-radio-label">
+      <input type="checkbox" class="formbold-input-checkbox" name="closing_ritual" value="prayer" />
+      <div class="formbold-card-content">
+        <span class="large-text">Prayer</span>
+      </div>
+    </label>
+  </div>
+
+  <div class="formbold-card">
+    <label class="formbold-radio-label">
+      <input type="checkbox" class="formbold-input-checkbox" name="closing_ritual" value="moment_of_silence" />
+      <div class="formbold-card-content">
+        <span class="large-text">Moment of Silence</span>
+      </div>
+    </label>
+  </div>
+
+  <div class="formbold-card">
+    <label class="formbold-radio-label">
+      <input type="checkbox" class="formbold-input-checkbox" name="closing_ritual" value="collective" />
+      <div class="formbold-card-content">
+        <span class="large-text">Collective</span>
+      </div>
+    </label>
+  </div>
+
+  <div class="formbold-card">
+    <label class="formbold-radio-label">
+      <input type="te" class="formbold-input-checkbox" name="closing_ritual" value="other" />
+      <div class="formbold-card-content">
+        <span class="large-text">Other</span>
+      </div>
+    </label>
+  </div>
+
+</div>
+
+      <!-- Buttons -->
+      <div class="button-container">
+        <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('times_and_counts') }}'">Previous</button>
+        <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('home') }}'">Index</button>
+        <button type="submit" class="formbold-btn" id="next-btn">Next</button>
+      </div>
+
+
         <div class="form-navigation">
           <a href="conveningBasics.html" class="form-tab">Convening Basics</a>
           <a href="conveningFormats&Spaces.html" class="form-tab">Convening Formats & Spaces</a>
@@ -72,20 +909,95 @@
           <a href="fieldNotes.html" class="form-tab">Field Notes</a>
         </div>
 
-
       </form>
     </div>
   </div>
 
 <script>
-  document.getElementById('organization-role').addEventListener('change', function() {
-    var otherRoleGroup = document.getElementById('other-role-group');
-    if (this.value === 'other') {
-      otherRoleGroup.style.display = 'block';
-    } else {
-      otherRoleGroup.style.display = 'none';
-    }
+  const checkboxes = document.querySelectorAll('#opening-ritual .checkbox-item input');
+  const noneOption = document.getElementById('none-option');
+
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', () => {
+      if (checkbox.id === 'none-option' && checkbox.checked) {
+        // Uncheck all other checkboxes if "None" is selected
+        checkboxes.forEach((cb) => {
+          if (cb !== checkbox) {
+            cb.checked = false;
+            cb.parentElement.classList.remove('selected');
+          }
+        });
+      } else if (checkbox.checked) {
+        // Uncheck "None" if any other checkbox is selected
+        noneOption.checked = false;
+        noneOption.parentElement.classList.remove('selected');
+      }
+
+      // Toggle visual "selected" state
+      checkbox.parentElement.classList.toggle('selected', checkbox.checked);
+    });
   });
+ 
+  // Logic for "Systematic Introduction to Start"
+  const systematicCheckboxes = document.querySelectorAll('#systematic-introduction .formbold-input-checkbox');
+  const systematicNoneOption = document.getElementById('systematic-none-option');
+
+  systematicCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', () => {
+      if (checkbox === systematicNoneOption && checkbox.checked) {
+        // If "None" is selected, uncheck all other checkboxes
+        systematicCheckboxes.forEach((cb) => {
+          if (cb !== systematicNoneOption) {
+            cb.checked = false;
+          }
+        });
+      } else if (checkbox.checked) {
+        // If any other checkbox is selected, uncheck "None"
+        systematicNoneOption.checked = false;
+      }
+    });
+  });
+
+  // Logic for "Systematic Introduction to Start"
+  const attendanceCheckboxes = document.querySelectorAll('#attendance-introduction .formbold-input-checkbox');
+  const attendanceNoneOption = document.getElementById('attendance-none-option');
+
+  attendanceCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', () => {
+      if (checkbox === attendanceNoneOption && checkbox.checked) {
+        // If "None" is selected, uncheck all other checkboxes
+        attendanceCheckboxes.forEach((cb) => {
+          if (cb !== attendanceNoneOption) {
+            cb.checked = false;
+          }
+        });
+      } else if (checkbox.checked) {
+        // If any other checkbox is selected, uncheck "None"
+        attendanceNoneOption.checked = false;
+      }
+    });
+  });
+
+  // Logic for "Systematic Introduction to Start"
+  const closingCheckboxes = document.querySelectorAll('#closing_ritual-introduction .formbold-input-checkbox');
+  const closingNoneOption = document.getElementById('closing_ritual-none-option');
+
+  closingCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', () => {
+      if (checkbox === closingNoneOption && checkbox.checked) {
+        // If "None" is selected, uncheck all other checkboxes
+        closingCheckboxes.forEach((cb) => {
+          if (cb !== closingNoneOption) {
+            cb.checked = false;
+          }
+        });
+      } else if (checkbox.checked) {
+        // If any other checkbox is selected, uncheck "None"
+        closingNoneOption.checked = false;
+      }
+    });
+  });
+
 </script>
 </body>
 </html>
