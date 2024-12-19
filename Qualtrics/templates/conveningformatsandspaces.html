@@ -1,48 +1,51 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Convening Format & Space Details</title>
-  <link rel="stylesheet" href="../static/CSS/style.css">
-  <!-- <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/form-components.css">
-  <link rel="stylesheet" href="css/grid.css">
-  <link rel="stylesheet" href="css/tabs.css">
-  <link rel="stylesheet" href="css/form-specific.css"> -->
+  <link rel="stylesheet" href="../static/css/style.css">
+  <style>
+    .hidden {
+      display: none; /* Hides the element */
+    }
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    font-weight: bold;
+    background-color: #f9f9f9;
+  }
+
+  .row-header {
+    text-align: left;
+  }
+
+
+  </style>
 </head>
 <body>
 
-  <div class="formbold-main-wrapper ">
+  <div class="formbold-main-wrapper">
     <div class="formbold-form-wrapper">
-      <form action="https://formbold.com/s/FORM_ID" method="POST">
-        <h1 class="formbold-heading">Convening Basics</h1>
-
-        <!-- Location -->
-        <div class="formbold-input-group">
-          <label for="address" class="formbold-form-label">Address(es)</label>
-          <input type="text" name="address" id="address" placeholder="Enter location address(es) name" class="formbold-form-input" />
-        </div>
-
-        <div class="formbold-input-group">
-            <label for="place_name" class="formbold-form-label">Place Name(s)</label>
-            <input type="text" name="place_name" id="place_name" placeholder="Enter name of the place" class="formbold-form-input" />
-        </div>
-
-        <div class="formbold-input-group">
-            <label for="brief_description" class="formbold-form-label">Brtief Description</label>
-            <input type="text" name="brief_description" id="brief_description" placeholder="Enter Brief Description" class="formbold-form-input" />
-        </div>
+      <form action="/conveningformatsandspaces.html" method="POST">
+        <h1 class="formbold-heading">Convening Format & Space Details</h1>
 
         <!-- Convening Format -->
         <label class="formbold-form-label">Convening Format</label>
-        <!-- <p class="formbold-form-subtext">Select the applicable circumstances:</p> -->
         <div class="formbold-grid-two-columns">
           <div class="formbold-card">
             <label class="formbold-radio-label">
-              <input type="radio" class="formbold-input-radio" name="special_circumstances[]" value="too_long" />
+              <input type="radio" class="formbold-input-radio" name="convening_format" value="Online only" id="online-only">
               <div class="formbold-card-content">
                 <span class="large-text">Online only (e.g. Zoom)</span>
                 <span class="small-text">observed online</span>
@@ -51,7 +54,7 @@
           </div>
           <div class="formbold-card">
             <label class="formbold-radio-label">
-              <input type="radio" class="formbold-input-radio" name="special_circumstances[]" value="multiple_concurrent" />
+              <input type="radio" class="formbold-input-radio" name="convening_format" value="In person only" id="inperson-only">
               <div class="formbold-card-content">
                 <span class="large-text">In person only (no virtual participants)</span>
                 <span class="small-text">observed in person</span>
@@ -60,17 +63,16 @@
           </div>
           <div class="formbold-card">
             <label class="formbold-radio-label">
-              <input type="radio" class="formbold-input-radio" name="special_circumstances[]" value="fifty_or_more" />
+              <input type="radio" class="formbold-input-radio" name="convening_format" value="Hybrid in person" id="hybrid-inperson">
               <div class="formbold-card-content">
                 <span class="large-text">Hybrid, in person with virtual participants</span>
                 <span class="small-text">observed in person</span>
               </div>
             </label>
           </div>
-
           <div class="formbold-card">
             <label class="formbold-radio-label">
-              <input type="radio" class="formbold-input-radio" name="special_circumstances[]" value="part_of_event" />
+              <input type="radio" class="formbold-input-radio" name="convening_format" value="Hybrid online">
               <div class="formbold-card-content">
                 <span class="large-text">Hybrid, in person with virtual participants</span>
                 <span class="small-text">observed online</span>
@@ -79,421 +81,816 @@
           </div>
         </div>
 
-          
-        <!-- Organization -->
-        <label class="formbold-form-label">Convening Format</label>
-        <!-- <p class="formbold-form-subtext">Select the applicable circumstances:</p> -->
+
+
+
+        <!-- Virtual Convening Software -->
+        <div id="virtual-software-section" class="hidden">
+          <label class="formbold-form-label">The virtual convening software platform is...</label>
+          <div class="formbold-grid-two-columns">
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="platform" value="Zoom">
+                <span class="large-text">Zoom</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="platform" value="Google Hangout">
+                <span class="large-text">Google Hangout</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="platform" value="Microsoft Teams">
+                <span class="large-text">Microsoft Teams</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="platform" value="Skype">
+                <span class="large-text">Skype</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="platform" value="FaceTime">
+                <span class="large-text">FaceTime</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="platform" value="Telephone">
+                <span class="large-text">Telephone (audio only)</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="platform" value="Other">
+                <span class="large-text">
+                  Other
+                  <input type="text" name="platform_other" placeholder="Specify other platform">
+                </span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="platform" value="Can't Tell">
+                <span class="large-text">Can't Tell</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Virtual Tools -->
+        <div id="virtual-tools-section" class="hidden">
+          <label class="formbold-form-label">Virtual Tools</label>
+          <p class="formbold-form-subtext">Which of the following virtual convening platform tools are used?</p>
+          <div class="formbold-grid-two-columns">
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="checkbox" class="formbold-input-checkbox" name="virtual_tools[]" value="Online-Virtual Waiting Room">
+                <span class="large-text">Virtual Waiting Room</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="checkbox" class="formbold-input-checkbox" name="virtual_tools[]" value="Online-Virtual backgrounds">
+                <span class="large-text">Virtual backgrounds</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="checkbox" class="formbold-input-checkbox" name="virtual_tools[]" value="Online-Participant audio on">
+                <span class="large-text">Participant audio on</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="checkbox" class="formbold-input-checkbox" name="virtual_tools[]" value="Online-Participant audio off (muted)">
+                <span class="large-text">Participant audio off (muted)</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="checkbox" class="formbold-input-checkbox" name="virtual_tools[]" value="Online-Participant video on">
+                <span class="large-text">Participant video on</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="checkbox" class="formbold-input-checkbox" name="virtual_tools[]" value="Online-Participant video off">
+                <span class="large-text">Participant video off</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- See Screen -->
+        <div id="see-screen-section" class="hidden">
+
+        <label class="formbold-form-label">See Screen: Can you see a screen displaying the virtual software platform?</label>
         <div class="formbold-grid-two-columns">
           <div class="formbold-card">
             <label class="formbold-radio-label">
-              <input type="radio" class="formbold-input-radio" name="special_circumstances[]" value="too_long" />
+              <input type="radio" class="formbold-input-radio" name="see_screen" value="Yes">
               <div class="formbold-card-content">
-                <span class="large-text">Online only (e.g. Zoom)</span>
-                <span class="small-text">observed online</span>
+                <span class="large-text">Yes</span>
               </div>
             </label>
           </div>
           <div class="formbold-card">
             <label class="formbold-radio-label">
-              <input type="radio" class="formbold-input-radio" name="special_circumstances[]" value="multiple_concurrent" />
+              <input type="radio" class="formbold-input-radio" name="see_screen" value="No">
               <div class="formbold-card-content">
-                <span class="large-text">In person only (no virtual participants)</span>
-                <span class="small-text">observed in person</span>
-              </div>
-            </label>
-          </div>
-          <div class="formbold-card">
-            <label class="formbold-radio-label">
-              <input type="radio" class="formbold-input-radio" name="special_circumstances[]" value="fifty_or_more" />
-              <div class="formbold-card-content">
-                <span class="large-text">Hybrid, in person with virtual participants</span>
-                <span class="small-text">observed in person</span>
-              </div>
-            </label>
-          </div>
-
-          <div class="formbold-card">
-            <label class="formbold-radio-label">
-              <input type="radio" class="formbold-input-radio" name="special_circumstances[]" value="part_of_event" />
-              <div class="formbold-card-content">
-                <span class="large-text">Hybrid, in person with virtual participants</span>
-                <span class="small-text">observed online</span>
+                <span class="large-text">No</span>
               </div>
             </label>
           </div>
         </div>
-
-        <!-- Organization Role -->
-        <div class="formbold-input-group">
-          <label class="formbold-form-label">Organization Role</label>
-          <select class="formbold-form-select" name="organization_role" id="organization-role">
-            <option value="sole_host">Sole/primary host</option>
-            <option value="coalition">Coalition, Committee, or Partnership</option>
-            <option value="attendee">Attendee</option>
-            <option value="other">Other</option>
-          </select>
+          
+          
         </div>
-          
-        <div class="formbold-input-group" id="other-role-group" style="display: none;">
-          <label for="other-role" class="formbold-form-label">Please specify:</label>
-          <input type="text" id="other-role" name="other_role" placeholder="Enter your role" class="formbold-form-input" />
+
+
+        <!-- Virtual Participants -->
+        <div id="virtual-participants-section" class="hidden">
+
+        <label class="formbold-form-label">Virtual participants for in-person convening are included using...</label>
+          <div class="formbold-grid-two-columns">
+
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="virtual_participants" value="Video">
+                <span class="large-text">Video</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="virtual_participants" value="Audio">
+                <span class="large-text">Audio</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="virtual_participants" value="Both">
+                <span class="large-text">Both</span>
+              </label>
+            </div>
+
+            
+          </div>
         </div>
-          
-        <!-- Convening Type -->
-              <label class="formbold-form-label">Convening Type</label>
-              <p class="formbold-form-subtext">Select the type of convening:</p>
-              <div class="formbold-grid-two-columns">
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="business_meeting" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Business/Planning/Decision-making Meeting</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="fundraising_event" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Fundraising Event</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="recruitment_event" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Recruitment Event</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="press_conference" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Press Conference</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="training_event" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Initiation/Training Event</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="meeting_gov_officials" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Meeting with Government Officials</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="social_activity" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Social/Recreational Activity</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="meeting_org_representatives" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Meeting with Other Organization Representatives</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="participant_benefit" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Member/Participant-Benefit Activity</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="meeting_outsiders" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Meeting with Other Outsiders</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="community_activity" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Community/Public-Benefit Activity</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="protest_event" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Protest Event</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="rehearsal_practice" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Rehearsal/practice</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="other_type" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Other Convening Type</span>
-                    </div>
-                  </label>
-                </div>
-                <div class="formbold-card">
-                  <label class="formbold-radio-label">
-                    <input type="radio" class="formbold-input-radio" name="convening_type" value="performance_game" />
-                    <div class="formbold-card-content">
-                      <span class="large-text">Performance/game</span>
-                    </div>
-                  </label>
-                </div>
-              </div>
 
-          
-        <!-- Exclusivity -->
-            <label class="formbold-form-label">Exclusivity</label>
-            <p class="formbold-form-subtext">Who is allowed to attend?</p>
-            <div class="formbold-grid">
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="private" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Private</span>
-                    <span class="small-text">specific people</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="excludable_public" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Excludable public</span>
-                    <span class="small-text">anyone who buys a ticket/registers</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="fully_public" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Fully Public</span>
-                    <span class="small-text">anyone</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="exclusivity" value="ct" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">CT</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-          
-        <!-- Attendance -->
-        <div class="formbold-input-radio-wrapper">
-            <label class="formbold-form-label">Attendance</label>
-            <div class="formbold-grid-two-columns">
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="attendance" value="drop_by" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Drop by</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="attendance" value="attend_whole" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Attend whole</span>
-                  </div>
-                </label>
-              </div>
-            </div>
+        <!-- Indoor Outdoor -->
+        <div id="indoor-outdoor-section" class="hidden">
+          <div class="formbold-input-group">
+            <label for="address" class="formbold-form-label">Addresses</label>
+            <input type="text" name="address" id="address" placeholder="Enter observer name" class="formbold-form-input" />
           </div>
-          
-
-        <!-- Timing -->
-        <div class="formbold-input-radio-wrapper">
-            <label class="formbold-form-label">Timing</label>
-            <div class="formbold-grid-two-columns">
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="timing" value="pre_planned" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Pre-planned</span>
-                  </div>
-                </label>
-              </div>
-              <div class="formbold-card">
-                <label class="formbold-radio-label">
-                  <input type="radio" class="formbold-input-radio" name="timing" value="post_impromptu" />
-                  <div class="formbold-card-content">
-                    <span class="large-text">Post/Impromptu</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-          
-          <div class = "feature-table">
-            <table class="features-table">
-              <tr>
-                <th rowspan="2" class="feature-column">Features</th>
-                <th colspan="2">Available</th>
-                <th colspan="2">Works?</th>
-              </tr>
-              <tr>
-                <th>Yes</th>
-                <th>Used</th>
-                <th>Acceptable</th>
-                <th>No or Detrimental</th>
-              </tr>
         
-              <!-- Row for each feature with unique ids and classes -->
-              <tr id="feature-stage">
-                <td class="feature-column">Stage</td>
-                <td><input type="checkbox" id="stage_available" name="stage_available" class="feature-checkbox-table"></td>
-                <td><input type="checkbox" id="stage_used" name="stage_used" class="feature-checkbox-table"></td>
-                <td><input type="radio" id="stage_works_acceptable" name="stage_works" value="acceptable" class="feature-radio-table"></td>
-                <td><input type="radio" id="stage_works_no_detrimental" name="stage_works" value="no_detrimental" class="feature-radio-table"></td>
-              </tr>
-              
-              <tr id="feature-podium">
-                <td class="feature-column">Podium</td>
-                <td><input type="checkbox" id="podium_available" name="podium_available" class="feature-checkbox-table"></td>
-                <td><input type="checkbox" id="podium_used" name="podium_used" class="feature-checkbox-table"></td>
-                <td><input type="radio" id="podium_works_acceptable" name="podium_works" value="acceptable" class="feature-radio-table"></td>
-                <td><input type="radio" id="podium_works_no_detrimental" name="podium_works" value="no_detrimental" class="feature-radio-table"></td>
-              </tr>
-              
-              <tr id="feature-amplification">
-                <td class="feature-column">Amplification System</td>
-                <td><input type="checkbox" id="amplification_available" name="amplification_available" class="feature-checkbox-table"></td>
-                <td><input type="checkbox" id="amplification_used" name="amplification_used" class="feature-checkbox-table"></td>
-                <td><input type="radio" id="amplification_works_acceptable" name="amplification_works" value="acceptable" class="feature-radio-table"></td>
-                <td><input type="radio" id="amplification_works_no_detrimental" name="amplification_works" value="no_detrimental" class="feature-radio-table"></td>
-              </tr>
-              
-              <tr id="feature-microphone">
-                <td class="feature-column">Microphone</td>
-                <td><input type="checkbox" id="microphone_available" name="microphone_available" class="feature-checkbox-table"></td>
-                <td><input type="checkbox" id="microphone_used" name="microphone_used" class="feature-checkbox-table"></td>
-                <td><input type="radio" id="microphone_works_acceptable" name="microphone_works" value="acceptable" class="feature-radio-table"></td>
-                <td><input type="radio" id="microphone_works_no_detrimental" name="microphone_works" value="no_detrimental" class="feature-radio-table"></td>
-              </tr>
-              
-              <tr id="feature-screen">
-                <td class="feature-column">Large Screen/Projection</td>
-                <td><input type="checkbox" id="screen_available" name="screen_available" class="feature-checkbox-table"></td>
-                <td><input type="checkbox" id="screen_used" name="screen_used" class="feature-checkbox-table"></td>
-                <td><input type="radio" id="screen_works_acceptable" name="screen_works" value="acceptable" class="feature-radio-table"></td>
-                <td><input type="radio" id="screen_works_no_detrimental" name="screen_works" value="no_detrimental" class="feature-radio-table"></td>
-              </tr>
-              
-              <tr id="feature-single-desk">
-                <td class="feature-column">Single-person Desks</td>
-                <td><input type="checkbox" id="single_desk_available" name="single_desk_available" class="feature-checkbox-table"></td>
-                <td><input type="checkbox" id="single_desk_used" name="single_desk_used" class="feature-checkbox-table"></td>
-                <td><input type="radio" id="single_desk_works_acceptable" name="single_desk_works" value="acceptable" class="feature-radio-table"></td>
-                <td><input type="radio" id="single_desk_works_no_detrimental" name="single_desk_works" value="no_detrimental" class="feature-radio-table"></td>
-              </tr>
-              
-              <tr id="feature-multi-table">
-                <td class="feature-column">Multi-person Tables</td>
-                <td><input type="checkbox" id="multi_table_available" name="multi_table_available" class="feature-checkbox-table"></td>
-                <td><input type="checkbox" id="multi_table_used" name="multi_table_used" class="feature-checkbox-table"></td>
-                <td><input type="radio" id="multi_table_works_acceptable" name="multi_table_works" value="acceptable" class="feature-radio-table"></td>
-                <td><input type="radio" id="multi_table_works_no_detrimental" name="multi_table_works" value="no_detrimental" class="feature-radio-table"></td>
-              </tr>
-              
-              <tr id="feature-ramps">
-                <td class="feature-column">Accessible Ramps/Lifts</td>
-                <td><input type="checkbox" id="ramps_available" name="ramps_available" class="feature-checkbox-table"></td>
-                <td><input type="checkbox" id="ramps_used" name="ramps_used" class="feature-checkbox-table"></td>
-                <td><input type="radio" id="ramps_works_acceptable" name="ramps_works" value="acceptable" class="feature-radio-table"></td>
-                <td><input type="radio" id="ramps_works_no_detrimental" name="ramps_works" value="no_detrimental" class="feature-radio-table"></td>
-              </tr>
-              
-              <tr id="feature-sink">
-                <td class="feature-column">Sink with Running Water</td>
-                <td><input type="checkbox" id="sink_available" name="sink_available" class="feature-checkbox-table"></td>
-                <td><input type="checkbox" id="sink_used" name="sink_used" class="feature-checkbox-table"></td>
-                <td><input type="radio" id="sink_works_acceptable" name="sink_works" value="acceptable" class="feature-radio-table"></td>
-                <td><input type="radio" id="sink_works_no_detrimental" name="sink_works" value="no_detrimental" class="feature-radio-table"></td>
-              </tr>
-              
-              <tr id="feature-restroom">
-                <td class="feature-column">Adjacent/Adjoining Restroom</td>
-                <td><input type="checkbox" id="restroom_available" name="restroom_available" class="feature-checkbox-table"></td>
-                <td><input type="checkbox" id="restroom_used" name="restroom_used" class="feature-checkbox-table"></td>
-                <td><input type="radio" id="restroom_works_acceptable" name="restroom_works" value="acceptable" class="feature-radio-table"></td>
-                <td><input type="radio" id="restroom_works_no_detrimental" name="restroom_works" value="no_detrimental" class="feature-radio-table"></td>
-              </tr>
+          <div class="formbold-input-group">
+              <label for="place_name" class="formbold-form-label">Plae name(s)</label>
+              <input type="text" name="place_name" id="place-name" placeholder="Place Names" class="formbold-form-input" />
+          </div>
+        
+          <div class="formbold-input-group">
+              <label for="brief_description" class="formbold-form-label">Brief Description</label>
+              <input type="text" name="brief_description" id="brief_description" placeholder="Brief Description" class="formbold-form-input" />
+          </div>
+
+          <label class="formbold-form-label">Indoors or Outdoors ?</label>
+          <div class="formbold-grid-two-columns">
+
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="place" value="InPerson-Indoor">
+                <span class="large-text">Indoor</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="place" value="InPerson-Outdoor">
+                <span class="large-text">Outdoor</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="place" value="InPerson-Both">
+                <span class="large-text">Both</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="platform" value="InPerson-Can't Tell(Hybrid online onserver only)">
+                <span class="large-text">Can't Tell (Hybrid, online Observeronly)</span>
+              </label>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Stationary -->
+        <div id="stationary-section" class="hidden">
+          <label class="formbold-form-label">Stationary?</label>
+          <div class="formbold-grid-two-columns">
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="stationary" value="Mobile">
+                <span class="large-text">Mobile</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="stationary" value="Stationary">
+                <span class="large-text">Stationary</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="stationary" value="Both">
+                <span class="large-text">Both</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="stationary" value="Can't Tell(Hybrid online onserver only)">
+                <span class="large-text">Can't Tell (Hybrid, online Observeronly)</span>
+              </label>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Weather -->
+        <div id="weather-section" class="hidden ">
+          <label class="formbold-form-label">Weather?</label>
+          <div class="formbold-grid-two-columns">
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="checkbox" class="formbold-input-radio" name="weather" value="Direct Sun">
+                <span class="large-text">Direct Sun</span>
+              </label>
+            </div>
+
+            
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="checkbox" class="formbold-input-radio" name="weather" value="Shade">
+                <span class="large-text">Shade</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="checkbox" class="formbold-input-radio" name="weather" value="Wind">
+                <span class="large-text">Wind</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="checkbox" class="formbold-input-radio" name="weather" value="Rain">
+                <span class="large-text">Rain</span>
+              </label>
+            </div>
+
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="checkbox" class="formbold-input-radio" name="weather" value="Snow/Ice">
+                <span class="large-text">Snow/Ice</span>
+              </label>
+            </div>
+
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="checkbox" class="formbold-input-radio" name="weather" value="Can't Tell(Hybrid online onserver only)">
+                <span class="large-text">Can't Tell (Hybrid, online Observeronly)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Temperature Question -->
+          <div id="temprature-section" class="hidden ">
+            <label class="formbold-form-label">Temperature (use digital thermometer)</label>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+              <thead>
+                <tr>
+                  <th style="text-align: left; border-bottom: 1px solid #ccc;">Temperature (in degrees F)</th>
+                  <th style="text-align: center; border-bottom: 1px solid #ccc;">Start Temp</th>
+                  <th style="text-align: center; border-bottom: 1px solid #ccc;">End Temp</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">Temperature</td>
+                  <td style="text-align: center; padding: 10px; border-bottom: 1px solid #ccc;">
+                    <input type="text" name="start_temp" placeholder="Enter start temp" style="width: 80%; padding: 5px; border: 1px solid #000; border-radius: 4px;">
+                  </td>
+                  <td style="text-align: center; padding: 10px; border-bottom: 1px solid #ccc;">
+                    <input type="text" name="end_temp" placeholder="Enter end temp" style="width: 80%; padding: 5px; border: 1px solid #000; border-radius: 4px;">
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
-
           
-        <!-- <button type="submit" class="formbold-btn">Submit</button> -->
+      <!-- Space function -->
+      <div id="space-function-section" class="hidden">
+        <label class="formbold-form-label">Space Functional Features</label>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr>
+              <th style="border-bottom: 1px solid #ddd;"></th>
+              <th style="border-bottom: 1px solid #ddd;">Available</th>
+              <th style="border-bottom: 1px solid #ddd;">Used</th>
+              <th colspan="2" style="border-bottom: 1px solid #ddd;">Works?</th>
+            </tr>
+            <tr>
+              <th style="border-bottom: 1px solid #ddd; text-align: left;">Features</th>
+              <th style="border-bottom: 1px solid #ddd;">Yes</th>
+              <th style="border-bottom: 1px solid #ddd;">Yes</th>
+              <th style="border-bottom: 1px solid #ddd;">Acceptable</th>
+              <th style="border-bottom: 1px solid #ddd;">No or Detrimental</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left; border-bottom: 1px solid #ddd;">Stage</td>
+              <td><input type="checkbox" name="functional_features[stage][available]"></td>
+              <td><input type="checkbox" name="functional_features[stage][used]"></td>
+              <td><input type="radio" name="functional_features[stage][works]" value="acceptable"></td>
+              <td><input type="radio" name="functional_features[stage][works]" value="no_or_detrimental"></td>
+            </tr>
+            <tr>
+              <td style="text-align: left; border-bottom: 1px solid #ddd;">Podium</td>
+              <td><input type="checkbox" name="functional_features[podium][available]"></td>
+              <td><input type="checkbox" name="functional_features[podium][used]"></td>
+              <td><input type="radio" name="functional_features[podium][works]" value="acceptable"></td>
+              <td><input type="radio" name="functional_features[podium][works]" value="no_or_detrimental"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    <!-- Space Dimension  -->
+    <div id="space-dimension-section" class="hidden">
+      <label class="formbold-form-label">Space Dimensions (use pen laser measure)</label>
+      <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+        <thead>
+          <tr>
+            <th style="text-align: left; border-bottom: 1px solid #ddd;">Dimension</th>
+            <th style="text-align: center; border-bottom: 1px solid #ddd;">Measurement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: left; border-bottom: 1px solid #ddd;">Length (at longest usable point)</td>
+            <td style="text-align: center; border-bottom: 1px solid #ddd;">
+              <input type="text" name="space_dimensions[length]" placeholder="Enter length" style="width: 80%; padding: 5px; border: 1px solid #000; border-radius: 4px;">
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left; border-bottom: 1px solid #ddd;">Width (at widest usable point)</td>
+            <td style="text-align: center; border-bottom: 1px solid #ddd;">
+              <input type="text" name="space_dimensions[width]" placeholder="Enter width" style="width: 80%; padding: 5px; border: 1px solid #000; border-radius: 4px;">
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left; border-bottom: 1px solid #ddd;">Height (at height of greatest area)</td>
+            <td style="text-align: center; border-bottom: 1px solid #ddd;">
+              <input type="text" name="space_dimensions[height]" placeholder="Enter height" style="width: 80%; padding: 5px; border: 1px solid #000; border-radius: 4px;">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+        <!-- Convening Space access -->
+        <div id="convening-space-section" class="hidden">
+          <label class="formbold-form-label"> Convening space access </label>
+          <div class="formbold-grid-two-columns">
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="conveining-space" value="Convener-Controlled">
+                <span class="large-text">Convener-Controlled</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="conveining-space" value="Uncontrolled">
+                <span class="large-text">Uncontrolled</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="conveining-space" value="Both(multiple spaces)">
+                <span class="large-text">Both(multiple spaces)</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="conveining-space" value="Can't Tell(Hybrid online onserver only)">
+                <span class="large-text">Can't Tell (Hybrid, online Observeronly)</span>
+              </label>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Space Type Question -->
+        <div id="space-type-section" class="hidden">
+          <label class="formbold-form-label"> Space Type </label>
+          <div class="formbold-grid-two-columns">
+            <!-- First Row -->
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="space_type" value="Auditorium/Theater/Performance Hall">
+                <span class="large-text">Auditorium/Theater/Performance Hall</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="space_type" value="Office">
+                <span class="large-text">Office</span>
+              </label>
+            </div>
+
+            <!-- Second Row -->
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="space_type" value="Gymnasium">
+                <span class="large-text">Gymnasium</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="space_type" value="Pavilion/Shelter/Gazebo">
+                <span class="large-text">Pavilion/Shelter/Gazebo</span>
+              </label>
+            </div>
+
+            <!-- Third Row -->
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="space_type" value="Worship Hall">
+                <span class="large-text">Worship Hall</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="space_type" value="Deck/Patio">
+                <span class="large-text">Deck/Patio</span>
+              </label>
+            </div>
+
+            <!-- Fourth Row -->
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="space_type" value="Multipurpose/Function Room">
+                <span class="large-text">Multipurpose/Function Room</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="space_type" value="Sidewalk/Footpath">
+                <span class="large-text">Sidewalk/Footpath</span>
+              </label>
+            </div>
+
+            <!-- Fifth Row -->
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="space_type" value="Common Room/Living Room/Parlor">
+                <span class="large-text">Common Room/Living Room/Parlor</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="space_type" value="Lawn/Field/Grass">
+                <span class="large-text">Lawn/Field/Grass</span>
+              </label>
+            </div>
+
+            <!-- Sixth Row -->
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="space_type" value="Restaurant/Bar/Cafe Dining Area">
+                <span class="large-text">Restaurant/Bar/Cafe Dining Area</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="space_type" value="Stadium">
+                <span class="large-text">Stadium</span>
+              </label>
+            </div>
+
+            <!-- Seventh Row -->
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="space_type" value="Lobby/Foyer/Entranceway">
+                <span class="large-text">Lobby/Foyer/Entranceway</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="space_type" value="Other">
+                <span class="large-text">Other, specify:
+                  <input type="text" name="space_type_other" placeholder="Specify other type" style="margin-left: 10px; padding: 5px; border: 1px solid #000; border-radius: 4px; width: calc(100% - 20px);">
+                </span>
+              </label>
+            </div>
+
+            <!-- Eighth Row -->
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="space_type" value="Classroom">
+                <span class="large-text">Classroom</span>
+              </label>
+            </div>
+            <div class="formbold-card">
+              <label class="formbold-radio-label">
+                <input type="radio" class="formbold-input-radio" name="space_type" value="Can't see the space (Hybrid, online observer only)">
+                <span class="large-text">Can't see the space (Hybrid, online observer only)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+         <!-- Convening Entrance --> 
+        <div id="convening-entrance-section" class="hidden">
+        <label class="formbold-form-label">Convening Entrance</label>
+        <div class="formbold-grid-two-columns">
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="entrance[]" value="Open door">
+              <span class="large-text">Open door</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="entrance[]" value="Keep out sign">
+              <span class="large-text">Keep out sign</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="entrance[]" value="Name tags/cards">
+              <span class="large-text">Name tags/cards</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="entrance[]" value="Closed door">
+              <span class="large-text">Closed door</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="entrance[]" value="Greeter">
+              <span class="large-text">Greeter</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="entrance[]" value="Sign-in">
+              <span class="large-text">Sign-in</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="entrance[]" value="Welcome sign">
+              <span class="large-text">Welcome sign</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="entrance[]" value="Bouncer">
+              <span class="large-text">Bouncer</span>
+            </label>
+          </div>
+        </div>
+        </div>
+
+        <!-- Seating -->
+        <div id="seating-section" class="hidden">
+
+        <label class="formbold-form-label">Seating</label>
+        <div class="formbold-grid-two-columns">
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="seating[]" value="Fixed position seats">
+              <span class="large-text">Fixed position seats</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="seating[]" value="Moveable seats">
+              <span class="large-text">Moveable seats</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="seating[]" value="Sittable architecture (low walls, flower boxes)">
+              <span class="large-text">Sittable architecture (low walls, flower boxes)</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="seating[]" value="Participants sit on floors/ground">
+              <span class="large-text">Participants sit on floors/ground</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="seating[]" value="Enough (non-floor) seats for all participants">
+              <span class="large-text">Enough (non-floor) seats for all participants</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="seating[]" value="Can't See Seating (Hybrid, online observer only)">
+              <span class="large-text">Can't See Seating (Hybrid, online observer only)</span>
+            </label>
+          </div>
+        </div>
+        </div>
+
+        <!-- Decorative Features -->
+        <div id="decorat-features-section" class="hidden">
+        <label class="formbold-form-label">Decorative Features</label>
+        <div class="formbold-grid-two-columns">
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="decorative_features[]" value="Signs/art with organization name, logo, or images">
+              <span class="large-text">Signs/art with organization name, logo, or images</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="decorative_features[]" value="Signs/art with other organization names, logos, or images">
+              <span class="large-text">Signs/art with other organization names, logos, or images</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="decorative_features[]" value="Other decorative signs/pictures/wall art">
+              <span class="large-text">Other decorative signs/pictures/wall art</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="decorative_features[]" value="Decorative sculptures/statues">
+              <span class="large-text">Decorative sculptures/statues</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="decorative_features[]" value="Decorative water features (fountains, pools, waterfalls)">
+              <span class="large-text">Decorative water features (fountains, pools, waterfalls)</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="decorative_features[]" value="Plants, trees, flowers">
+              <span class="large-text">Plants, trees, flowers</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="checkbox" class="formbold-input-checkbox" name="decorative_features[]" value="Can't see space features (hybrid, online observer only)">
+              <span class="large-text">Can't see space features (hybrid, online observer only)</span>
+            </label>
+          </div>
+        </div>
+        </div>
+
+        <!-- Space Needs convener needs -->
+        <div id="space-convener-section" class="hidden">
+        <label class="formbold-form-label">Space meets convener needs?</label>
+        <div class="formbold-grid-two-columns">
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="radio" class="formbold-input-radio" name="space_needs" value="Yes">
+              <span class="large-text">Yes</span>
+            </label>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="radio" class="formbold-input-radio" name="space_needs" value="No">
+              <span class="large-text">No. Reason why not:</span>
+            </label>
+            <textarea name="space_needs_reason" placeholder="Explain here..."></textarea>
+          </div>
+          <div class="formbold-card">
+            <label class="formbold-radio-label">
+              <input type="radio" class="formbold-input-radio" name="space_needs" value="Can't See Space Use (Hybrid, online observer only)">
+              <span class="large-text">Can't See Space Use (Hybrid, online observer only)</span>
+            </label>
+          </div>
+        </div>
+        </div>
+
+        
         <!-- Previous and Next Button Navigation -->
         <div class="button-container">
-          <button type="button" class="formbold-btn" onclick="navigateForm(-1)">Previous</button>
-          <button type="button" class="formbold-btn" onclick="window.location.href='index.html'">Index</button>
-          <button type="button" class="formbold-btn" onclick="navigateForm(1)">Next</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('convening_basics') }}'">Previous</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('home') }}'">Index</button>
+          <button type="submit" class="formbold-btn" id="next-btn">Next</button>
         </div>
-
-        <!-- Tab Navigation for Forms -->
-        <div class="form-navigation">
-          <a href="conveningBasics.html" class="form-tab">Convening Basics</a>
-          <a href="conveningFormats&Spaces.html" class="form-tab">Convening Formats & Spaces</a>
-          <a href="spacePhotos.html" class="form-tab">Space Photos</a>
-          <a href="times&Counts.html" class="form-tab">Times and Counts</a>
-          <a href="procedures&Norms.html" class="form-tab">Procedures & Norms</a>
-          <a href="activities.html" class="form-tab">Activities</a>
-          <a href="organizing&Mobilizing.html" class="form-tab">Organizing & Mobilizing</a>
-          <a href="publicSphere.html" class="form-tab">Public-Sphere Discussion</a>
-          <a href="decisionMaking.html" class="form-tab">Decision Making</a>
-          <a href="planningStrategizing.html" class="form-tab">Planning/Strategizing</a>
-          <a href="leaders.html" class="form-tab">Leaders</a>
-          <a href="socialBoundaries.html" class="form-tab">Social Boundaries</a>
-          <a href="interactionStyles.html" class="form-tab">Interactions & Styles</a>
-          <a href="fieldNotes.html" class="form-tab">Field Notes</a>
-        </div>
-
-
       </form>
     </div>
   </div>
-
 <script>
-  document.getElementById('organization-role').addEventListener('change', function() {
-    var otherRoleGroup = document.getElementById('other-role-group');
-    if (this.value === 'other') {
-      otherRoleGroup.style.display = 'block';
-    } else {
-      otherRoleGroup.style.display = 'none';
+  document.addEventListener('DOMContentLoaded', function () {
+    const onlineOnlyRadio = document.getElementById('online-only');
+    const inpersonOnlyRadio = document.getElementById('inperson-only');
+    const hybridinpersonRadio = document.getElementById('hybrid-inperson');
+    const hybridonlineRadio = document.getElementById('hybrid-online');
+
+    const virtualSoftwareSection = document.getElementById('virtual-software-section');
+    const virtualToolsSection = document.getElementById('virtual-tools-section');
+    const indoorOutdoorSection = document.getElementById('indoor-outdoor-section');
+    const stationarySection = document.getElementById('stationary-section');
+    const weatherSection = document.getElementById('weather-section');
+    const tempratureSection = document.getElementById('temprature-section');
+    const conveningEntranceSection = document.getElementById('convening-entrance-section');
+    const seatingSection = document.getElementById('seating-section');
+    const decoratFeaturesSection = document.getElementById('decorat-features-section');
+    const spaceConvenerSection = document.getElementById('space-convener-section');
+    const spacefeaturesSection = document.getElementById('space-function-section');
+    const spacedimensionSection = document.getElementById('space-dimension-section');
+    const visrtualparticipantsSection = document.getElementById('virtual-participants-section');
+    const seescreenSection = document.getElementById('see-screen-section');
+
+    // Function to reset inputs
+    function resetSection(section) {
+        const inputs = section.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            if (input.type === 'radio' || input.type === 'checkbox') {
+                input.checked = false;
+            } else {
+                input.value = '';
+            }
+        });
     }
-  });
+
+    // Handle changes for the convening format radio buttons
+    document.querySelectorAll('input[name="convening_format"]').forEach(radio => {
+        radio.addEventListener('change', function () {
+            // Reset all sections
+            const sections = [
+                virtualSoftwareSection, virtualToolsSection, indoorOutdoorSection,
+                stationarySection, weatherSection, tempratureSection, conveningEntranceSection,
+                seatingSection, decoratFeaturesSection, spaceConvenerSection,
+                spacefeaturesSection, spacedimensionSection, visrtualparticipantsSection, seescreenSection
+            ];
+
+            sections.forEach(section => {
+                resetSection(section);
+                section.classList.add('hidden');
+            });
+
+            // Show relevant sections
+            if (onlineOnlyRadio.checked) {
+                virtualSoftwareSection.classList.remove('hidden');
+                virtualToolsSection.classList.remove('hidden');
+                visrtualparticipantsSection.classList.remove('hidden');
+            } else if (inpersonOnlyRadio.checked) {
+                indoorOutdoorSection.classList.remove('hidden');
+                stationarySection.classList.remove('hidden');
+                weatherSection.classList.remove('hidden');
+                tempratureSection.classList.remove('hidden');
+                conveningEntranceSection.classList.remove('hidden');
+                seatingSection.classList.remove('hidden');
+                decoratFeaturesSection.classList.remove('hidden');
+                spaceConvenerSection.classList.remove('hidden');
+                spacefeaturesSection.classList.remove('hidden');
+                spacedimensionSection.classList.remove('hidden');
+            } else if (hybridinpersonRadio.checked) {
+              seescreenSection.classList.remove('hidden');
+
+                indoorOutdoorSection.classList.remove('hidden');
+                stationarySection.classList.remove('hidden');
+                weatherSection.classList.remove('hidden');
+                tempratureSection.classList.remove('hidden');
+                conveningEntranceSection.classList.remove('hidden');
+                seatingSection.classList.remove('hidden');
+                decoratFeaturesSection.classList.remove('hidden');
+                spaceConvenerSection.classList.remove('hidden');
+                spacefeaturesSection.classList.remove('hidden');
+                spacedimensionSection.classList.remove('hidden');
+                visrtualparticipantsSection.classList.remove('hidden');
+            } else if (hybridonlineRadio.checked) {
+                virtualSoftwareSection.classList.remove('hidden');
+                virtualToolsSection.classList.remove('hidden');
+                seescreenSection.classList.remove('hidden');
+            }
+        });
+    });
+});
+
 </script>
+  
 </body>
 </html>
-
-  

@@ -60,7 +60,7 @@
 
   <div class="formbold-main-wrapper ">
     <div class="formbold-form-wrapper toc-main-wrapper">
-      <form action="https://formbold.com/s/FORM_ID" method="POST">
+      <form action="/activities.html" method="POST">
   
   
         <h2>Activities</h2>
@@ -374,9 +374,11 @@
            <!-- <button type="submit" class="formbold-btn">Submit</button> -->
         <!-- Previous and Next Button Navigation -->
         <div class="button-container">
-          <button type="button" class="formbold-btn" onclick="navigateForm(-1)">Previous</button>
-          <button type="button" class="formbold-btn" onclick="navigateForm(1)">Next</button>
-          <button type="button" class="formbold-btn" onclick="window.location.href='index.html'">Index</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('procedures_and_norms') }}'">Previous</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('home') }}'">Index</button>
+          <!-- <button type="submit" class="formbold-btn" onclick="navigateForm(1)">Next</button> -->
+          <!-- <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for("organizing_and_mobilizing") }}'">Next</button> -->
+          <button type="submit" class="formbold-btn" id="next-btn">Next</button>
         </div>
 
         <!-- Tab Navigation for Forms -->

@@ -52,20 +52,33 @@
 
   <div class="formbold-main-wrapper ">
     <div class="formbold-form-wrapper">
-      <form action="https://formbold.com/s/FORM_ID" method="POST">
+      <form action="/timesandcounts.html" method="POST">
         <h1 class="formbold-heading">Times and Counts</h1>
         <p>If observing Long convening, enter "na" for non-applicable start/end items.</p>
         <p>Times (HH.MM am/pm)</p>
         <p>"dk" if don't know</p>
         <div class="formbold-input-group">
           <label for="scheduled_start" class="formbold-form-label">Scheduled Start</label>
-          <input type="text" name="scheduled_start" id="scheduled_start" placeholder="Scheduled Start Time" class="formbold-form-input" />
+          <input 
+            type="date" 
+            name="scheduled_start" 
+            id="scheduled_start" 
+            class="formbold-form-input",
+            onclick="this.showPicker()"
+          />
         </div>
 
         <div class="formbold-input-group">
           <label for="observer_arrives" class="formbold-form-label">Observer Arrives</label>
-          <input type="text" name="scheduled_start" id="scheduled_start" placeholder="Observer Arrives" class="formbold-form-input" />
-        </div>
+            <input 
+              type="date" 
+              name="observer_arrives" 
+              id="observer_arrives" 
+              class="formbold-form-input" 
+              placeholder="Observer Arrives" 
+              onclick="this.showPicker()" 
+            />
+          </div>
         <!-- <div class="formbold-input-group">
           <label for="first_person_arrives" class="formbold-form-label">Forst Person Arrives</label>
           <input type="text" name="first_person_arrives" id="first_person_arrives" placeholder="First Person Arrives" class="formbold-form-input" />
@@ -204,67 +217,234 @@
           </tr>
           <tr>
             <td class="row-header">Org Staff (in person)</td>
-            <td><input type="text" name="org_staff_in_person" value="0"></td>
+            <td><input type="text" name="org_staff_in_person_number" value="0"></td>
             <td><input type="radio" name="org_staff_in_person_value" value="ct"></td>
             <td><input type="radio" name="org_staff_in_person_value" value="est"></td>
           </tr>
           <tr>
             <td class="row-header">Org staff (virtual)</td>
-            <td><input type="text" name="org_staff_virtual"></td>
+            <td><input type="text" name="org_staff_virtual_number"></td>
             <td><input type="radio" name="org_staff_virtual_value" value="ct"></td>
             <td><input type="radio" name="org_staff_virtual_value" value="est"></td>
           </tr>
           <tr>
             <td class="row-header">Non-staff Participant (in person)</td>
-            <td><input type="text" name="non_staff_in_person" value="0"></td>
+            <td><input type="text" name="non_staff_in_person_number" value="0"></td>
             <td><input type="radio" name="non_staff_in_person_value" value="ct"></td>
             <td><input type="radio" name="non_staff_in_person_value" value="est"></td>
           </tr>
           <tr>
             <td class="row-header">Participant (virtual)</td>
-            <td><input type="text" name="participant_virtual"></td>
+            <td><input type="text" name="participant_virtual_number"></td>
             <td><input type="radio" name="participant_virtual_value" value="ct"></td>
             <td><input type="radio" name="participant_virtual_value" value="est"></td>
           </tr>
           <tr>
             <td class="row-header">Notable Others</td>
-            <td><input type="text" name="notable_others"></td>
+            <td><input type="text" name="notable_others_number"></td>
             <td><input type="radio" name="notable_others_value" value="ct"></td>
             <td><input type="radio" name="notable_others_value" value="est"></td>
           </tr>
           <tr>
             <td class="row-header">Other belong (guard, waiter)</td>
-            <td><input type="text" name="other_belong" value="0"></td>
+            <td><input type="text" name="other_belong_number" value="0"></td>
             <td><input type="radio" name="other_belong_value" value="ct"></td>
             <td><input type="radio" name="other_belong_value" value="est"></td>
           </tr>
           <tr>
             <td class="row-header">Other random</td>
-            <td><input type="text" name="other_random" value="0"></td>
+            <td><input type="text" name="other_random_number" value="0"></td>
             <td><input type="radio" name="other_random_value" value="ct"></td>
             <td><input type="radio" name="other_random_value" value="est"></td>
           </tr>
           <tr>
             <td class="row-header">Can't tell</td>
-            <td><input type="text" name="cant_tell" value="0"></td>
+            <td><input type="text" name="cant_tell_number" value="0"></td>
             <td><input type="radio" name="cant_tell_value" value="ct"></td>
             <td><input type="radio" name="cant_tell_value" value="est"></td>
           </tr>
           <tr>
             <td class="row-header">Non-randoms wearing health/medical masks (cloth, surgical, N95, respirator)</td>
-            <td><input type="text" name="non_random_masks"></td>
+            <td><input type="text" name="non_random_masks_number"></td>
             <td><input type="radio" name="non_random_masks_value" value="ct"></td>
             <td><input type="radio" name="non_random_masks_value" value="est"></td>
           </tr>
         </table>
 
-    
+        <label for="software_glitches" class="formbold-form-label">How many of the following virtual convening software glitches occurred?</label>
+        <table>
+          <thead>
+            <tr>
+              <th class="row-header">Glitches</th>
+              <th>Counts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-header">Inaudible/garbled audio</td>
+              <td><input type="text" name="glitch_inaudible_audio" placeholder="Count" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Lagged/frozen video</td>
+              <td><input type="text" name="glitch_lagged_video" placeholder="Count" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Unwanted audio (e.g., unmuted background noise)</td>
+              <td><input type="text" name="glitch_unwanted_audio" placeholder="Count" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Unwanted video (e.g., kids, pets, other distractions)</td>
+              <td><input type="text" name="glitch_unwanted_video" placeholder="Count" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">User confusion/mistakes (e.g., can't screen share, speaking while muted)</td>
+              <td><input type="text" name="glitch_user_confusion" placeholder="Count" class="formbold-form-input"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <label for="demographic_counts" class="formbold-form-label">Demographic Counts</label>
+        <table>
+          <thead>
+            <tr>
+              <th class="row-header">Gender</th>
+              <th>Percent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-header">Men</td>
+              <td><input type="text" name="men" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Women</td>
+              <td><input type="text" name="women" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Non-binary/ Can't tell</td>
+              <td><input type="text" name="non_binary_other" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+          
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th class="row-header">Race/Ethnicity</th>
+              <th>Percent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-header">White</td>
+              <td><input type="text" name="white" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Black</td>
+              <td><input type="text" name="black" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Asian</td>
+              <td><input type="text" name="asian" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Latinx</td>
+              <td><input type="text" name="latinx" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Other/Non-white</td>
+              <td><input type="text" name="other_non_white" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Can't tell</td>
+              <td><input type="text" name="other" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th class="row-header">Age</th>
+              <th>Percent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-header">Child/Teen (0-18)</td>
+              <td><input type="text" name="chil_teen" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Young Adult (19-35)</td>
+              <td><input type="text" name="young_adult" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Middle Age (36-65)</td>
+              <td><input type="text" name="middle_age" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Other Adult (66+)</td>
+              <td><input type="text" name="adult" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Can't Tell</td>
+              <td><input type="text" name="no_idea" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th class="row-header">Religious Identity</th>
+              <th>Percent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-header">Christian</td>
+              <td><input type="text" name="christian" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Jewish</td>
+              <td><input type="text" name="jewish" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Muslim</td>
+              <td><input type="text" name="muslim" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Hindu</td>
+              <td><input type="text" name="hindu" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Buddhist</td>
+              <td><input type="text" name="buddhist" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Spiritual</td>
+              <td><input type="text" name="spiritual" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Atheist</td>
+              <td><input type="text" name="atheist" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+            <tr>
+              <td class="row-header">Can't tell</td>
+              <td><input type="text" name="other" placeholder="Percent" class="formbold-form-input"></td>
+            </tr>
+          </tbody>
+        </table>
+
         <!-- <button type="submit" class="formbold-btn">Submit</button> -->
         <!-- Previous and Next Button Navigation -->
         <div class="button-container">
-          <button type="button" class="formbold-btn" onclick="navigateForm(-1)">Previous</button>
-          <button type="button" class="formbold-btn" onclick="window.location.href='index.html'">Index</button>
-          <button type="button" class="formbold-btn" onclick="navigateForm(1)">Next</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('space_photos') }}'">Previous</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('home') }}'">Index</button>
+          <!-- <button type="submit" class="formbold-btn" onclick="navigateForm(1)">Next</button> -->
+          <!-- <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for("procedures_and_norms") }}'">Next</button> -->
+          <button type="submit" class="formbold-btn" id="next-btn">Next</button>
         </div>
 
         <!-- Tab Navigation for Forms -->

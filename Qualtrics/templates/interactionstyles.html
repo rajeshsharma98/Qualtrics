@@ -84,13 +84,16 @@
 
   <div class="formbold-main-wrapper ">
     <div class="formbold-form-wrapper">
-      <form action="https://formbold.com/s/FORM_ID" method="POST">
+      <form action="/interactionstyles.html" method="POST">
         <h1 class="formbold-heading">Interactions Overall</h1>
 
-        <h2>How many in-person participants never interact with others?</h2>
+        <h2>Interactions across In-Person and Virtual Participants</h2>
+        <h2>Hybrid Interactions</h2>
+        <p>How many of the following interactions occurred at any time during the convening (actual start to actual end)?</p>
+
         <table>
           <tr>
-            <th rowspan="2" class="row-header"># Never Interact</th>
+            <th rowspan="2" class="row-header"></th>
             <th rowspan="2">Number</th>
             <th colspan="2">Number is:</th>
           </tr>
@@ -99,13 +102,19 @@
             <th>Est.</th>
           </tr>
           <tr>
-            <td class="row-header">During convener requested interactions</td>
+            <td class="row-header">Virtual participant verbally addressed in-person participants</td>
             <td><input type="text" name="during_interactions_number"></td>
             <td><input type="radio" name="during_interactions_ct_est" value="Ct"></td>
             <td><input type="radio" name="during_interactions_ct_est" value="Est"></td>
           </tr>
           <tr>
-            <td class="row-header">Outside of convener requested interactions</td>
+            <td class="row-header">In-person participant DIRECTLY addressed by a virtual participant(s) (e.g. by name or mentions "the people online")</td>
+            <td><input type="text" name="outside_interactions_number"></td>
+            <td><input type="radio" name="outside_interactions_ct_est" value="Ct"></td>
+            <td><input type="radio" name="outside_interactions_ct_est" value="Est"></td>
+          </tr>
+          <tr>
+            <td class="row-header">Comment by virtual chat is mentioned verbally by the participant</td>
             <td><input type="text" name="outside_interactions_number"></td>
             <td><input type="radio" name="outside_interactions_ct_est" value="Ct"></td>
             <td><input type="radio" name="outside_interactions_ct_est" value="Est"></td>
@@ -164,7 +173,6 @@
             <td><input type="radio" name="laugh_awkward" value="NA"></td>
           </tr>
       
-          <!-- Repeat similar rows for other interaction styles -->
           <tr>
             <td class="row-header">Clap</td>
             <td><input type="radio" name="clap_times" value="0"></td>
@@ -176,7 +184,125 @@
             <td><input type="radio" name="clap_awkward" value="NA"></td>
           </tr>
       
-          <!-- Add rows for other styles (Interrupt, Raise voice, etc.) -->
+          <tr>
+            <td class="row-header">Interrupt</td>
+            <td><input type="radio" name="interrupt_times" value="0"></td>
+            <td><input type="radio" name="interrupt_times" value="1-4"></td>
+            <td><input type="radio" name="interrupt_times" value="5+"></td>
+            <td><input type="radio" name="interrupt_times" value="DK"></td>
+            <td><input type="radio" name="interrupt_awkward" value="Yes"></td>
+            <td><input type="radio" name="interrupt_awkward" value="No"></td>
+            <td><input type="radio" name="interrupt_awkward" value="NA"></td>
+          </tr>
+
+          <tr>
+            <td class="row-header">Raise voice</td>
+            <td><input type="radio" name="raise_voice_times" value="0"></td>
+            <td><input type="radio" name="raise_voice_times" value="1-4"></td>
+            <td><input type="radio" name="raise_voice_times" value="5+"></td>
+            <td><input type="radio" name="raise_voice_times" value="DK"></td>
+            <td><input type="radio" name="raise_voice_awkward" value="Yes"></td>
+            <td><input type="radio" name="raise_voice_awkward" value="No"></td>
+            <td><input type="radio" name="raise_voice_awkward" value="NA"></td>
+          </tr>
+
+          <tr>
+            <td class="row-header">Insult each other</td>
+            <td><input type="radio" name="insult_times" value="0"></td>
+            <td><input type="radio" name="insult_times" value="1-4"></td>
+            <td><input type="radio" name="insult_times" value="5+"></td>
+            <td><input type="radio" name="insult_times" value="DK"></td>
+            <td><input type="radio" name="insult_awkward" value="Yes"></td>
+            <td><input type="radio" name="insult_awkward" value="No"></td>
+            <td><input type="radio" name="insult_awkward" value="NA"></td>
+          </tr>
+          <tr>
+            <td class="row-header">Jargon</td>
+            <td><input type="radio" name="jargon_times" value="0"></td>
+            <td><input type="radio" name="jargon_times" value="1-4"></td>
+            <td><input type="radio" name="jargon_times" value="5+"></td>
+            <td><input type="radio" name="jargon_times" value="DK"></td>
+            <td><input type="radio" name="jargon_awkward" value="Yes"></td>
+            <td><input type="radio" name="jargon_awkward" value="No"></td>
+            <td><input type="radio" name="jargon_awkward" value="NA"></td>
+          </tr>
+
+          <tr>
+            <td class="row-header">Slang</td>
+            <td><input type="radio" name="slang_times" value="0"></td>
+            <td><input type="radio" name="slang_times" value="1-4"></td>
+            <td><input type="radio" name="slang_times" value="5+"></td>
+            <td><input type="radio" name="slang_times" value="DK"></td>
+            <td><input type="radio" name="slang_awkward" value="Yes"></td>
+            <td><input type="radio" name="slang_awkward" value="No"></td>
+            <td><input type="radio" name="slang_awkward" value="NA"></td>
+          </tr>
+
+          <tr>
+            <td class="row-header">Crass language</td>
+            <td><input type="radio" name="crass_language_times" value="0"></td>
+            <td><input type="radio" name="crass_language_times" value="1-4"></td>
+            <td><input type="radio" name="crass_language_times" value="5+"></td>
+            <td><input type="radio" name="crass_language_times" value="DK"></td>
+            <td><input type="radio" name="crass_language_awkward" value="Yes"></td>
+            <td><input type="radio" name="crass_language_awkward" value="No"></td>
+            <td><input type="radio" name="crass_language_awkward" value="NA"></td>
+          </tr>
+
+          <tr>
+            <td class="row-header">Slurs</td>
+            <td><input type="radio" name="slurs_times" value="0"></td>
+            <td><input type="radio" name="slurs_times" value="1-4"></td>
+            <td><input type="radio" name="slurs_times" value="5+"></td>
+            <td><input type="radio" name="slurs_times" value="DK"></td>
+            <td><input type="radio" name="slurs_awkward" value="Yes"></td>
+            <td><input type="radio" name="slurs_awkward" value="No"></td>
+            <td><input type="radio" name="slurs_awkward" value="NA"></td>
+          </tr>
+
+          <tr>
+            <td class="row-header">Out jokes</td>
+            <td><input type="radio" name="out_jokes_times" value="0"></td>
+            <td><input type="radio" name="out_jokes_times" value="1-4"></td>
+            <td><input type="radio" name="out_jokes_times" value="5+"></td>
+            <td><input type="radio" name="out_jokes_times" value="DK"></td>
+            <td><input type="radio" name="out_jokes_awkward" value="Yes"></td>
+            <td><input type="radio" name="out_jokes_awkward" value="No"></td>
+            <td><input type="radio" name="out_jokes_awkward" value="NA"></td>
+          </tr>
+
+          <tr>
+            <td class="row-header">Mention Politics/Government</td>
+            <td><input type="radio" name="politics_times" value="0"></td>
+            <td><input type="radio" name="politics_times" value="1-4"></td>
+            <td><input type="radio" name="politics_times" value="5+"></td>
+            <td><input type="radio" name="politics_times" value="DK"></td>
+            <td><input type="radio" name="politics_awkward" value="Yes"></td>
+            <td><input type="radio" name="politics_awkward" value="No"></td>
+            <td><input type="radio" name="politics_awkward" value="NA"></td>
+          </tr>
+
+          <tr>
+            <td class="row-header">Mention Religion/God</td>
+            <td><input type="radio" name="religion_times" value="0"></td>
+            <td><input type="radio" name="religion_times" value="1-4"></td>
+            <td><input type="radio" name="religion_times" value="5+"></td>
+            <td><input type="radio" name="religion_times" value="DK"></td>
+            <td><input type="radio" name="religion_awkward" value="Yes"></td>
+            <td><input type="radio" name="religion_awkward" value="No"></td>
+            <td><input type="radio" name="religion_awkward" value="NA"></td>
+          </tr>
+          <tr>
+            <td class="row-header">Mention Family Members</td>
+            <td><input type="radio" name="family_times" value="0"></td>
+            <td><input type="radio" name="family_times" value="1-4"></td>
+            <td><input type="radio" name="family_times" value="5+"></td>
+            <td><input type="radio" name="family_times" value="DK"></td>
+            <td><input type="radio" name="family_awkward" value="Yes"></td>
+            <td><input type="radio" name="family_awkward" value="No"></td>
+            <td><input type="radio" name="family_awkward" value="NA"></td>
+          </tr>
+
         </table>
 
   
@@ -226,9 +352,11 @@
         <!-- <button type="submit" class="formbold-btn">Submit</button> -->
         <!-- Previous and Next Button Navigation -->
         <div class="button-container">
-          <button type="button" class="formbold-btn" onclick="navigateForm(-1)">Previous</button>
-          <button type="button" class="formbold-btn" onclick="window.location.href='index.html'">Index</button>
-          <button type="button" class="formbold-btn" onclick="navigateForm(1)">Next</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('social_boundaries') }}'">Previous</button>
+          <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('home') }}'">Index</button>
+          <!-- <button type="submit" class="formbold-btn" onclick="navigateForm(1)">Next</button> -->
+          <!-- <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for("field_notes") }}'">Next</button> -->
+          <button type="submit" class="formbold-btn" id="next-btn">Next</button>
         </div>
 
         <!-- Tab Navigation for Forms -->

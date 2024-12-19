@@ -111,7 +111,7 @@
 
   <div class="formbold-main-wrapper ">
     <div class="formbold-form-wrapper toc-main-wrapper">
-      <form action="https://formbold.com/s/FORM_ID" method="POST">
+      <form action="/socialboundaries.html" method="POST">
         <h1 class="formbold-heading">Social Boundaries</h1>
         <p>Indicate what groups are in/out and how you know</p>
   
@@ -496,12 +496,14 @@
     </tr>
   </table>
   
-        <div class="button-container">
-          <button type="button" class="formbold-btn" onclick="navigateForm(-1)">Previous</button>
-          <button type="button" class="formbold-btn" onclick="window.location.href='index.html'">Index</button>
-          <button type="button" class="formbold-btn" onclick="navigateForm(1)">Next</button>
+  <div class="button-container">
+    <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('leaders') }}'">Previous</button>
+    <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for('home') }}'">Index</button>
+    <!-- <button type="submit" class="formbold-btn" onclick="navigateForm(1)">Next</button> -->
+    <!-- <button type="button" class="formbold-btn" onclick="window.location.href='{{ url_for("interaction_styles") }}'">Next</button> -->
+    <button type="submit" class="formbold-btn" id="next-btn">Next</button>
 
-        </div>
+  </div>
         
         <!-- Tab Navigation for Forms -->
         <div class="form-navigation">
